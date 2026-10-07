@@ -1,0 +1,60 @@
+Tìm thấy 101 ảnh trong /tmp/claude-0/-home-claude/19812239-d685-5c40-8bbb-59c314c77367/scratchpad/src_renamed. Cần có 100 ảnh bắt buộc + 18 tùy chọn.
+
+== THIẾU (bắt buộc): 11 ==
+  - nv03_attack
+  - nv04_card
+  - nv05_card
+  - nv06_card
+  - nv07_card
+  - nv08_card
+  - nv09_card
+  - fx_bang
+  - fx_hoisinh
+  - fx_dientiet
+  - fx_khieukich
+
+== THIẾU (tùy chọn): 6 ==
+  fx_sao, fx_zzz, fx_khien, intro_hieu_chao, intro_hieu_gietminh, intro_hieu_gai_dau
+
+== TÊN LẠ (không có trong danh sách): 0 ==
+
+== CẢNH BÁO TỪNG ẢNH ==
+  nv01_idle: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv01_windup: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv01_attack: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv01_hit: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv01_dead: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv02_windup: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv02_attack: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv02_skill: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv02_hit: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv02_dead: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv03_idle: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv03_windup: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv03_skill: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv03_hit: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv03_dead: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv04_idle: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv04_windup: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv04_attack: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv04_skill: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv05_skill: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv05_hit: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv06_idle: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv06_attack: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv06_skill: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv07_windup: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv07_hit: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv08_windup: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv08_attack: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv08_hit: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv08_dead: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv09_idle: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv09_windup: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv09_attack: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv09_dead: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv11_idle: nền không phẳng (độ lệch 37); tách nền có thể xấu; có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow'); nhân vật hoặc hiệu ứng chạm mép ảnh (có thể bị cắt)
+  nv11_attack: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv11_hit: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+
+Tổng: 101 ảnh hợp lệ, 11 thiếu bắt buộc, 0 tên lạ, 37 ảnh có cảnh báo.

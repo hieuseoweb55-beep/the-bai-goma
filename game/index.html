@@ -2,12 +2,18 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0b0b10">
+<link rel="manifest" href="manifest.webmanifest">
 <title>GOMA – Game thẻ bài (game vui)</title>
 <link rel="stylesheet" href="ui/style.css">
 </head>
 <body>
 <div id="stage"><div id="screen"></div><div id="overlay"></div></div>
+<div id="rotate"><div class="rbox"><div class="ricon">⟳</div><div class="rtxt">Xoay ngang điện thoại để chơi</div><button id="btn-fs" class="rbtn">Toàn màn hình</button></div></div>
+<button id="fsbtn" title="Toàn màn hình">⛶</button>
 <script src="data.js"></script>
 <script src="assets/manifest.js"></script>
 <script src="engine.js"></script>

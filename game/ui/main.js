@@ -3,8 +3,25 @@
   'use strict';
   const U = window.GomaUI;
   const stage = document.getElementById('stage');
-  function fit() { const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080); stage.style.transform = `translate(-50%,-50%) scale(${s})`; }
-  window.addEventListener('resize', fit); fit();
+  function vw() { return (window.visualViewport && window.visualViewport.width) || window.innerWidth; }
+  function vh() { return (window.visualViewport && window.visualViewport.height) || window.innerHeight; }
+  function fit() {
+    const w = vw(), h = vh();
+    document.body.classList.toggle('portrait', h > w * 1.1);    // điện thoại đang để dọc -> nhắc xoay ngang
+    const s = Math.min(w / 1920, h / 1080); stage.style.transform = `translate(-50%,-50%) scale(${s})`;
+  }
+  window.addEventListener('resize', fit); window.addEventListener('orientationchange', () => setTimeout(fit, 250));
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', fit);
+  fit();
+  // toàn màn hình (Android/Chrome, máy tính); khóa xoay ngang nếu trình duyệt cho phép
+  function goFullscreen() {
+    const d = document.documentElement, rq = d.requestFullscreen || d.webkitRequestFullscreen;
+    if (!rq) { U.toast && U.toast('Máy này không hỗ trợ toàn màn hình: hãy dùng "Thêm vào màn hình chính" trong menu trình duyệt'); return; }
+    Promise.resolve(rq.call(d)).then(() => { try { screen.orientation.lock('landscape').catch(() => {}); } catch (e) { /* bỏ qua */ } setTimeout(fit, 300); }).catch(() => {});
+  }
+  document.addEventListener('fullscreenchange', () => { document.body.classList.toggle('isfs', !!document.fullscreenElement); setTimeout(fit, 250); });
+  document.getElementById('fsbtn').addEventListener('click', goFullscreen);
+  document.getElementById('btn-fs').addEventListener('click', goFullscreen);
 
   U.boot = function () {
     const S = U.save;
