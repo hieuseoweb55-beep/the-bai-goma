@@ -1,0 +1,20 @@
+
+=== Đội 5 tướng ngẫu nhiên, TẤT CẢ bậc Trắng (300 đội × 3 chặng) ===
+Kho thảm – trận 1                    thắng 100.0% | lượt TB 7.3
+Kho thảm – trận 2                    thắng 87.0% | lượt TB 12.8
+Kho thảm – trùm: Khách khó tính      thắng 34.3% | lượt TB 14.7
+
+=== Đội 5 tướng ngẫu nhiên, TẤT CẢ bậc Xanh lá (300 đội × 3 chặng) ===
+Kho thảm – trận 1                    thắng 100.0% | lượt TB 6.2
+Kho thảm – trận 2                    thắng 100.0% | lượt TB 9.9
+Kho thảm – trùm: Khách khó tính      thắng 75.7% | lượt TB 13.5
+
+=== Đội 5 tướng ngẫu nhiên, TẤT CẢ bậc Xanh dương (300 đội × 3 chặng) ===
+Kho thảm – trận 1                    thắng 100.0% | lượt TB 5.2
+Kho thảm – trận 2                    thắng 100.0% | lượt TB 8.0
+Kho thảm – trùm: Khách khó tính      thắng 93.3% | lượt TB 11.5
+
+=== Kịch bản chồng buff: tank + khiêu khích + hồi vs 5 địch tập trung ===
+địch công 100: Thủ kho còn sống cuối trận 100% (máu còn TB 87%) | tướng gục TB 0.00/5
+địch công 140: Thủ kho còn sống cuối trận 100% (máu còn TB 53%) | tướng gục TB 0.99/5
+địch công 180: Thủ kho còn sống cuối trận 3% (máu còn TB 10%) | tướng gục TB 2.02/5

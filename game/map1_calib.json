@@ -1,0 +1,82 @@
+[
+ {
+  "man": 1,
+  "hpMul": 1.46,
+  "atkMul": 1.28,
+  "win": 0.97,
+  "turns": 10.8275,
+  "team": 2
+ },
+ {
+  "man": 2,
+  "hpMul": 1.69,
+  "atkMul": 1.41,
+  "win": 0.95,
+  "turns": 10.1375,
+  "team": 3
+ },
+ {
+  "man": 3,
+  "hpMul": 1.28,
+  "atkMul": 1.17,
+  "win": 0.9225,
+  "turns": 11.11,
+  "team": 3
+ },
+ {
+  "man": 4,
+  "hpMul": 1.54,
+  "atkMul": 1.32,
+  "win": 0.9,
+  "turns": 12.2,
+  "team": 4
+ },
+ {
+  "man": 5,
+  "hpMul": 1.27,
+  "atkMul": 1.16,
+  "win": 0.8825,
+  "turns": 12.175,
+  "team": 4
+ },
+ {
+  "man": 6,
+  "hpMul": 1.29,
+  "atkMul": 1.17,
+  "win": 0.8475,
+  "turns": 13.0075,
+  "team": 5
+ },
+ {
+  "man": 7,
+  "hpMul": 1.04,
+  "atkMul": 1.02,
+  "win": 0.855,
+  "turns": 12.7425,
+  "team": 5
+ },
+ {
+  "man": 8,
+  "hpMul": 1.65,
+  "atkMul": 1.39,
+  "win": 0.805,
+  "turns": 13.3125,
+  "team": 5
+ },
+ {
+  "man": 9,
+  "hpMul": 0.88,
+  "atkMul": 0.93,
+  "win": 0.805,
+  "turns": 13.065,
+  "team": 5
+ },
+ {
+  "man": 10,
+  "hpMul": 0.87,
+  "atkMul": 0.92,
+  "win": 0.59,
+  "turns": 14.085,
+  "team": 5
+ }
+]
