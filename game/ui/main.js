@@ -7,8 +7,10 @@
   function vh() { return (window.visualViewport && window.visualViewport.height) || window.innerHeight; }
   function fit() {
     const w = vw(), h = vh();
-    document.body.classList.toggle('portrait', h > w * 1.1);    // điện thoại đang để dọc -> nhắc xoay ngang
-    const s = Math.min(w / 1920, h / 1080); stage.style.transform = `translate(-50%,-50%) scale(${s})`;
+    const port = h > w * 1.1;                    // điện thoại đang để dọc -> tự xoay game 90° cho nằm ngang
+    document.body.classList.toggle('vport', port);
+    if (port) { const s = Math.min(h / 1920, w / 1080); stage.style.transform = `translate(-50%,-50%) rotate(90deg) scale(${s})`; }
+    else { const s = Math.min(w / 1920, h / 1080); stage.style.transform = `translate(-50%,-50%) scale(${s})`; }
   }
   window.addEventListener('resize', fit); window.addEventListener('orientationchange', () => setTimeout(fit, 250));
   if (window.visualViewport) window.visualViewport.addEventListener('resize', fit);

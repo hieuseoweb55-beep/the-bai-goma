@@ -98,3 +98,9 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 - Vòng 16: nhớ đội hình lần trước (`lastTeam` trong save, lưu mỗi lần kéo thả / bấm Vào trận); mở màn chọn đội ở bất kỳ màn nào cũng dùng lại đội đó, tướng không còn thì bỏ. Nút "Tự chọn đội mạnh nhất" vẫn đặt lại đội tự động.
 - Vòng 17: Map 2, 3 luôn 5 quái từ màn đầu (bù thêm quái cùng loại có trong màn, boss giữ nguyên) + hệ số máu/công riêng (`mapBalance` trong `ui/config.js`; áp lên D.levels lúc chạy, KHÔNG sửa Excel/data.js). Map 2 dùng bảng hệ số máu theo màn đã hiệu chỉnh bằng mô phỏng (công = 1 + 0,8 x (máu - 1)): đội 5 tướng bậc Xanh lá thắng ~83% ở 2.1, 2.2 75%, 2.3 63%, 2.4 54%, boss 2.5 46%, 2.6 54%, 2.7 63%, 2.8 54%, 2.9 42%, boss 2.10 ~17-25%; đội 5 tướng bậc Xanh dương thắng hết. Boss 2.5/2.9/2.10 có hệ số <1 vì chỉ số gốc của boss trong Excel đã rất cao (với hệ số 1 thì thắng 0%). Map 3 dùng hệ số tuyến tính chưa hiệu chỉnh (vẫn khóa). Sửa lỗi hiển thị "Đề nghị: null tướng" ở Map 2/3 (nay = 5).
 - Vòng 18: điện thoại: sửa khung bị lệch/phóng to (stage position:fixed, đo bằng visualViewport), tự hiện màn "Xoay ngang điện thoại để chơi" khi để dọc, thêm nút toàn màn hình (⛶, Android/Chrome; thử khóa xoay ngang), khóa zoom, thêm manifest.webmanifest + icon để "Thêm vào màn hình chính" mở toàn màn hình ngang. iPhone Safari không hỗ trợ Fullscreen API: dùng Thêm vào Màn hình chính.
+
+## Vòng 19 – sửa điện thoại (ngoài yêu cầu gốc, theo yêu cầu người dùng)
+- Nguyên nhân lỗi: class `body.portrait` trùng với class `.portrait` (khung ảnh nhân vật) nên giao diện méo. Đổi thành `body.vport`.
+- Điện thoại để dọc: game tự xoay 90° để chiếm đầy màn hình (không cần xoay máy). Muốn đẹp nhất: bật tự xoay + xoay máy ngang.
+- Nút ⛶: thử toàn màn hình + khóa ngang (chủ yếu Android Chrome). iPhone Safari không hỗ trợ.
+- Thêm `?v=19` vào link css/js để tránh cache cũ.
