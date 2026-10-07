@@ -11,8 +11,8 @@ window.GOMA_CONFIG = {
   gachaWeightsEarly: [70, 30, 0],   // trước khi thắng màn 2.6: chỉ ra Trắng/Xanh lá
   gachaWeightsLate: [66, 29, 5],    // sau khi thắng màn 2.6: Xanh dương xuất hiện (5%)
   blueUnlockLevel: { map: 2, man: 6 },
-  enemyHpMul: 0.95,               // máu quái nhân 0,9 (nhân thêm vào hpMul của từng màn; không sửa Excel/engine)
-  knobs: { enemyDmgMul: 1.2, heroDmgMul: 1.1 },   // núm cân bằng của engine (không đổi luật): quái x1,1 sát thương theo yêu cầu
+  enemyHpMul: 0.80,               // máu quái nhân 0,9 (nhân thêm vào hpMul của từng màn; không sửa Excel/engine)
+  knobs: { enemyDmgMul: 1.2, heroDmgMul: 1.25 },   // núm cân bằng của engine (không đổi luật): quái x1,1 sát thương theo yêu cầu
   maxTurns: 20,                  // số lượt tối đa mỗi trận (engine mặc định 15, UI ghi đè lên E.K.MAX_TURNS; không sửa engine.js)
   mapBalance: {                  // GIẢ ĐỊNH (xem README): Map 2, 3 luôn 5 quái; hệ số máu/công tăng dần từ màn 1 -> 10 của map
     2: { monsters: 5, hpByMan: [1.35, 1.55, 1.33, 1.52, 0.83, 1.35, 1.29, 1.59, 0.81, 0.52] },   // hiệu chỉnh: đội 5 tướng bậc Xanh lá thắng ~80% ở 2.1 giảm dần còn ~30% ở boss 2.10

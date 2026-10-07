@@ -127,3 +127,8 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 
 ## Vòng 25
 - Tỉ lệ rớt lượt quay khi đánh lại: 2 màn gần tiền tuyến 30% (trước 20%), các màn xa hơn 10% (trước 5%). Sửa ở ui/config.js: dropRateNear, dropRateFar.
+
+## Vòng 26 – cân bằng lại Map 2 (theo yêu cầu người dùng)
+- Mục tiêu người dùng: 4 xanh lá + 1 trắng thắng ~75%, 3 xanh lá + 2 trắng ~50% (2-1, 2-2). Chỉ giảm 7% máu quái + tăng 7% công tướng chỉ đạt 36–43% và 18–20% → cần mạnh tay hơn.
+- Đã đặt: `knobs.heroDmgMul` 1.1 → 1.25 (toàn tướng), `enemyHpMul` 0.95 → 0.80 (toàn quái). Mô phỏng (250 trận/ô, đội ngẫu nhiên): 4X+1T = 76%/77%/62% (2-1/2-2/2-3); 3X+2T = 56%/58%/37%; 5 xanh lá cao hơn. Map 1 dễ hơn (1.10 vẫn ≥99%).
+- GIẢ ĐỊNH: tỉ lệ mục tiêu tính trên đội ngẫu nhiên trong 10 tướng.
