@@ -124,3 +124,6 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 
 ## Vòng 24
 - Màn kết quả khi thắng: thêm nút 'Đánh lại' (cùng đội hình) để cày huy hiệu gacha.
+
+## Vòng 25
+- Tỉ lệ rớt lượt quay khi đánh lại: 2 màn gần tiền tuyến 30% (trước 20%), các màn xa hơn 10% (trước 5%). Sửa ở ui/config.js: dropRateNear, dropRateFar.

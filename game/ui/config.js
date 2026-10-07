@@ -4,8 +4,8 @@ window.GOMA_CONFIG = {
   enableMap2: true,              // GIẢ ĐỊNH: mở Map 2 vì anh nhắc "màn 2.x" (xem README)
   pullFirstClear: 1,             // thắng lần đầu một màn: +1 lượt quay
   dropNearRange: 2,              // đánh lại các màn cách tiền tuyến (màn xa nhất đã mở) tối đa 2 màn: tỉ lệ rớt huy hiệu cao
-  dropRateNear: 0.20,            // 20% rớt huy hiệu (= 1 lượt quay) ở các màn gần tiền tuyến
-  dropRateFar: 0.05,             // 5% ở các màn cũ hơn
+  dropRateNear: 0.30,            // 20% rớt huy hiệu (= 1 lượt quay) ở các màn gần tiền tuyến
+  dropRateFar: 0.10,             // 5% ở các màn cũ hơn
   shardsByTier: [1, 5, 10, 20],  // mảnh nhận được khi rút trúng tướng ĐÃ CÓ: Trắng 1, Xanh lá 5, Xanh dương 10, Tím 20
   mergeCost: [12, 35, 80, 200],  // mảnh cần để lên bậc kế (Trắng->Lá, Lá->Dương, Dương->Tím, Tím->Đỏ), cần thêm chính tướng ở bậc hiện tại
   gachaWeightsEarly: [70, 30, 0],   // trước khi thắng màn 2.6: chỉ ra Trắng/Xanh lá
