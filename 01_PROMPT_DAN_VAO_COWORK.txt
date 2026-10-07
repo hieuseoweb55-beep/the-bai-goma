@@ -1,0 +1,11 @@
+Chọn thư mục "goma_game_package" làm thư mục làm việc, và cho phép đọc thêm thư mục ảnh F:\game the bai (chỉ đọc).
+
+Rồi dán đoạn này:
+
+Đọc kỹ file 00_HUONG_DAN_COWORK.md trong thư mục này, sau đó làm đúng theo thứ tự ở mục 4:
+(0) kiểm tra môi trường, chạy node game/test_engine.js (phải ra 25 đạt);
+(1) xử lý ảnh từ F:\game the bai bằng game/xu_ly_anh.py, đọc báo cáo và báo tôi ảnh nào thiếu/lỗi;
+(2) dựng game/index.html theo đặc tả ở mục 5 (mở thẳng bằng file://, không framework, không tải gì từ mạng);
+(3) tự kiểm toàn bộ luồng (chọn main, intro, rút lần đầu, trận 1.1, nhận thưởng, mở màn 1.2) và chụp ảnh màn hình;
+(4) báo cáo ngắn gọn cho tôi.
+Không đổi luật trong engine.js và không sửa số trong file Excel nếu chưa hỏi tôi. Ảnh nào chưa có thì dùng hình thay thế để game vẫn chạy. Hỏi tôi tối đa một câu mỗi lần và chỉ khi bị chặn thật sự.
