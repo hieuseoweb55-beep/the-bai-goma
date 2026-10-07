@@ -49,7 +49,7 @@
       const q = el('div', { class: 'quote' });
       wrap.append(fl, tag, q, closeBtn);
       setTimeout(() => { fl.classList.add('show'); }, 350);
-      setTimeout(() => { tag.textContent = (r.kind === 'new' ? 'Tướng mới! ' : 'Trùng · +' + r.shards + ' mảnh ' + U.shortName(r.hero.name) + ' (' + U.tierNames[r.tier] + ') ') ; q.textContent = '“' + (r.hero.quote ? U.cap(r.hero.quote).replace(/^“|”$/g, '') : '') + '”'; closeBtn.style.visibility = 'visible'; }, 1250);
+      setTimeout(() => { tag.textContent = r.kind === 'new' ? 'Tướng mới! ' : r.kind === 'upgrade' ? 'Nâng bậc! ' + U.shortName(r.hero.name) + ' ' + U.tierNames[r.prev] + ' → ' + U.tierNames[r.tier] + ' · bản cũ đổi thành +' + r.shards + ' mảnh' : 'Trùng · bằng/thấp hơn bản đang có → +' + r.shards + ' mảnh ' + U.shortName(r.hero.name); q.textContent = '“' + (r.hero.quote ? U.cap(r.hero.quote).replace(/^“|”$/g, '') : '') + '”'; closeBtn.style.visibility = 'visible'; }, 1250);
     } else {
       const grid = el('div', { class: 'grid10' });
       results.forEach((r, i) => {
@@ -57,7 +57,7 @@
           el('div', { class: 'face back' }, ['?']), el('div', { class: 'face front', style: 'position:absolute;inset:0' }, [U.heroCard(r.hero, r.tier, { small: true })])])]);
         const tg = el('div', { class: 'tg ' + r.kind, text: '' });
         grid.appendChild(el('div', { class: 'cellw' }, [fl, tg]));
-        setTimeout(() => { fl.classList.add('show'); tg.textContent = r.kind === 'new' ? 'Mới!' : '+' + r.shards + ' mảnh'; }, 300 + i * 220);
+        setTimeout(() => { fl.classList.add('show'); tg.textContent = r.kind === 'new' ? 'Mới!' : r.kind === 'upgrade' ? 'Nâng bậc · +' + r.shards + ' mảnh' : 'Trùng · +' + r.shards + ' mảnh'; }, 300 + i * 220);
       });
       wrap.append(el('div', { style: 'font-size:48px;font-weight:900', text: 'Kết quả rút 10 lần' }), grid, closeBtn);
       setTimeout(() => { closeBtn.style.visibility = 'visible'; }, 300 + results.length * 220 + 500);
@@ -151,10 +151,11 @@
       fig,
       el('div', { style: 'position:absolute;left:760px;right:100px;top:240px;font-size:32px;line-height:1.6;background:rgba(18,14,30,.85);border:4px solid #4a4560;border-radius:20px;padding:30px 40px' }, [
         el('div', { style: 'font-weight:900;color:#ffb340;font-size:38px', text: 'Tỉ lệ phẩm chất' }),
-        el('div', { text: `Trắng ${D.gacha.weights[0]}%  ·  Xanh lá ${D.gacha.weights[1]}%  ·  Xanh dương ${D.gacha.weights[2]}%` }),
+        el('div', { text: `Trước khi thắng màn 2.6: Trắng ${C.gachaWeightsEarly[0]}% · Xanh lá ${C.gachaWeightsEarly[1]}% · Xanh dương ${C.gachaWeightsEarly[2]}%` }),
+        el('div', { text: `Sau khi thắng màn 2.6: Trắng ${C.gachaWeightsLate[0]}% · Xanh lá ${C.gachaWeightsLate[1]}% · Xanh dương ${C.gachaWeightsLate[2]}%` }),
         el('div', { text: 'Tướng chọn đều trong 10 tướng (kể cả Hiếu).' }),
-        el('div', { text: 'Bạn giữ phẩm chất cao nhất đã rút của mỗi tướng.' }),
-        el('div', { text: 'Rút trùng hoặc thấp hơn: hoàn 1 lượt quay. Rút cao hơn: nâng cấp.' }),
+        el('div', { text: 'Rút bậc CAO hơn bản đang có: thay thẳng, bản cũ đổi thành mảnh.' }),
+        el('div', { text: `Rút bằng/thấp hơn: đổi thành mảnh (Trắng ${C.shardsByTier[0]} · Xanh lá ${C.shardsByTier[1]} · Xanh dương ${C.shardsByTier[2]}).` }),
       ]),
       el('div', { class: 'bottombar', style: 'left:760px' }, [b1, b10]),
       el('div', { class: 'note', text: NOTE })

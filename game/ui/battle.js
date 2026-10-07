@@ -126,7 +126,7 @@
     }
     function shake(v) { return anim(v.mv, [{ transform: 'translate(0,0)' }, { transform: 'translate(-9px,0)' }, { transform: 'translate(8px,0)' }, { transform: 'translate(-5px,0)' }, { transform: 'translate(0,0)' }], 220).then(() => v.mv.getAnimations().forEach(a => a.cancel())); }
     function flash(v) { if (skipping) return; v.sp.el.classList.remove('flash'); void v.sp.el.offsetWidth; v.sp.el.classList.add('flash'); setTimeout(() => v.sp.el.classList.remove('flash'), 200); }
-    function showBanner(text, sub) { if (skipping) return Promise.resolve(); const b = el('div', { class: 'banner' }, [text, sub ? el('small', { text: sub }) : null]); world.appendChild(b); return anim(b, [{ transform: 'scale(.4)', opacity: 0 }, { transform: 'scale(1.1)', opacity: 1, offset: .25 }, { transform: 'scale(1)', opacity: 1, offset: .75 }, { transform: 'scale(1.05)', opacity: 0 }], 900).then(() => b.remove()); }
+    function showBanner(text, sub) { if (skipping) return Promise.resolve(); window.GomaAudio && GomaAudio.sfx('skill'); const b = el('div', { class: 'banner' }, [text, sub ? el('small', { text: sub }) : null]); world.appendChild(b); return anim(b, [{ transform: 'scale(.4)', opacity: 0 }, { transform: 'scale(1.1)', opacity: 1, offset: .25 }, { transform: 'scale(1)', opacity: 1, offset: .75 }, { transform: 'scale(1.05)', opacity: 0 }], 900).then(() => b.remove()); }
     function setHeroPose(v, pose) { if (v.isHero && !v.dead) v.sp.setPose(pose); }
     function revertHit(v) {
       const tok = ++v.hitTok;
@@ -137,8 +137,9 @@
     function endSkillPose() { if (skillActor) { const v = skillActor; skillActor = null; if (!v.dead) v.sp.setPose('idle'); } }
 
     function impact(T, e, dir) {
-      if (e.dodged) { float(T, 'NÉ', 'dodge'); anim(T.mv, [{ transform: 'translate(0,0)' }, { transform: `translate(${dir * 36}px,0)` }, { transform: 'translate(0,0)' }], 320).then(() => T.mv.getAnimations().forEach(a => a.cancel())); applySnap(e.snap); return; }
+      if (e.dodged) { window.GomaAudio && GomaAudio.sfx('dodge'); float(T, 'NÉ', 'dodge'); anim(T.mv, [{ transform: 'translate(0,0)' }, { transform: `translate(${dir * 36}px,0)` }, { transform: 'translate(0,0)' }], 320).then(() => T.mv.getAnimations().forEach(a => a.cancel())); applySnap(e.snap); return; }
       if (T.isHero) T.sp.setPose('hit', true); revertHit(T); flash(T); shake(T); spark(T);
+      if (!skipping && window.GomaAudio) GomaAudio.sfx(e.crit ? 'crit' : 'hit');
       const ab = Math.round(e.absorbed || 0), dmg = Math.round((e.dmg || 0) - (e.absorbed || 0));   // e.dmg = tổng trước khi trừ khiên
       if (dmg > 0) float(T, e.crit ? dmg + '!' : String(dmg), e.crit ? 'crit' : '');
       if (ab > 0) float(T, String(ab), 'abs', dmg > 0 ? -50 : 0);
@@ -167,7 +168,7 @@
 
     async function doDie(e) {
       const T = units[e.target]; if (!T) return;
-      T.dead = true; T.hitTok++; applySnap(e.snap); T.bars.style.opacity = 0;
+      T.dead = true; T.hitTok++; applySnap(e.snap); T.bars.style.opacity = 0; if (!skipping && window.GomaAudio) GomaAudio.sfx('die');
       if (skipping) { T.root.style.opacity = 0; return; }
       if (T.isHero) { T.sp.setPose('dead'); mainSet('cry', 900); setTimeout(() => { if (!ended) mainSet('worry'); }, 950 / speed); await wait(500); await anim(T.root, [{ opacity: 1 }, { opacity: 0 }], 600); }
       else await anim(T.root, [{ opacity: 1, transform: 'rotate(0deg)' }, { opacity: 0, transform: 'rotate(75deg) translateY(30px)' }], 650);
@@ -196,7 +197,7 @@
           break;
         }
         case 'strike': await doStrike(e); break;
-        case 'heal': { const T = units[e.target]; if (T) { float(T, '+' + Math.round(e.amount), 'heal'); } applySnap(e.snap); await wait(180); break; }
+        case 'heal': { const T = units[e.target]; if (T) { window.GomaAudio && GomaAudio.sfx('heal'); float(T, '+' + Math.round(e.amount), 'heal'); } applySnap(e.snap); await wait(180); break; }
         case 'shield': { const T = units[e.target]; if (T) float(T, 'Khiên ' + Math.round(e.v), 'abs'); applySnap(e.snap); await wait(250); break; }
         case 'status': { const T = units[e.target]; if (T) float(T, e.status, 'stat'); applySnap(e.snap); await wait(260); break; }
         case 'buff': { const T = units[e.target]; if (T) float(T, 'Công +' + Math.round(e.atk * 100) + '%', 'stat'); applySnap(e.snap); await wait(200); break; }
@@ -229,6 +230,7 @@
     function showResult() {
       ended = true; clearTimeout(mainTimer);
       const win = res.result === 'win';
+      if (window.GomaAudio) { GomaAudio.bgm(null); GomaAudio.sfx(win ? 'win' : 'lose'); }
       const cr = win ? U.markCleared(level) : null;
       mainSp.setPose(win ? 'win' : 'cry');
       const box = el('div', { class: 'result' }, [

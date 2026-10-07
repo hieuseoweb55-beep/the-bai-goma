@@ -116,7 +116,9 @@
     }
     const cur = S.owned[hero.code]; let kind, shards = 0;
     if (cur === undefined) { kind = 'new'; S.owned[hero.code] = tier; }
-    else { kind = 'dup'; shards = C.shardsByTier[tier]; S.shards = S.shards || {}; S.shards[hero.code] = (S.shards[hero.code] || 0) + shards; }   // tướng đã có -> nhận mảnh theo bậc của lần rút
+    else if (tier > cur) {                                      // rút ra bậc CAO hơn bản đang có -> thay thẳng, bản cũ quy đổi thành mảnh
+      kind = 'upgrade'; shards = C.shardsByTier[cur]; S.owned[hero.code] = tier; S.shards = S.shards || {}; S.shards[hero.code] = (S.shards[hero.code] || 0) + shards;
+    } else { kind = 'dup'; shards = C.shardsByTier[tier]; S.shards = S.shards || {}; S.shards[hero.code] = (S.shards[hero.code] || 0) + shards; }   // bằng/thấp hơn -> quy đổi mảnh theo bậc của lần rút
     if (first) S.firstPullDone = true;
     U.persist();
     return { hero, tier, kind, prev: cur, shards };
@@ -126,7 +128,7 @@
     for (let i = 0; i < n; i++) { S.pulls -= 1; out.push(U.pull(false)); }
     U.persist(); return out;
   };
-  U.kindText = { new: 'Tướng mới!', dup: 'Trùng, nhận mảnh' };
+  U.kindText = { new: 'Tướng mới!', dup: 'Trùng, nhận mảnh', upgrade: 'Nâng bậc!' };
   U.shardsOf = code => (U.save.shards || {})[code] || 0;
   U.mergeNeed = code => { const t = U.save.owned[code]; return (t === undefined || t >= C.maxTier) ? null : C.mergeCost[t]; };
   U.canMerge = code => { const n = U.mergeNeed(code); return n != null && U.shardsOf(code) >= n; };

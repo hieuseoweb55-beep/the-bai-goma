@@ -104,3 +104,14 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 - Điện thoại để dọc: game tự xoay 90° để chiếm đầy màn hình (không cần xoay máy). Muốn đẹp nhất: bật tự xoay + xoay máy ngang.
 - Nút ⛶: thử toàn màn hình + khóa ngang (chủ yếu Android Chrome). iPhone Safari không hỗ trợ.
 - Thêm `?v=19` vào link css/js để tránh cache cũ.
+
+## Vòng 20 – sửa gacha (theo yêu cầu người dùng)
+- Rút trúng tướng đã có: bậc rút CAO hơn bản đang có → thay thẳng bằng bậc cao, bản cũ quy đổi thành mảnh theo bậc cũ (Trắng=1, Xanh lá=5, Xanh dương=10, Tím=20). Bằng/thấp hơn → quy đổi mảnh theo bậc vừa rút.
+- Màn rút hiện rõ: "Nâng bậc! A → B · bản cũ đổi thành +N mảnh" hoặc "Trùng · +N mảnh" (cả rút 1 và rút 10).
+- GIẢ ĐỊNH: "bản cũ quy đổi" lấy đúng bảng mảnh theo bậc cũ (ví dụ Trắng cũ = 1 mảnh).
+
+## Vòng 21 – tên rõ hơn, bảng tỉ lệ gacha, nhạc/âm thanh tạm (theo yêu cầu người dùng)
+- Tên nhân vật/quái: chữ to hơn, nền tối bán trong suốt + viền nhạt.
+- Màn gacha: bảng tỉ lệ lấy từ config (trước/sau màn 2.6) + quy tắc nâng bậc/mảnh mới.
+- ui/audio.js (ngoài yêu cầu gốc): nhạc nền menu/trận + âm thanh (click, đánh, chí mạng, né, skill, hồi máu, chết, thắng/thua, rút thẻ, ghép) tự tổng hợp bằng WebAudio, không cần file. Nút 🔊 góc phải bật/tắt, nhớ trong localStorage. Sau này thay bằng file nhạc thật.
+- GIẢ ĐỊNH: trình duyệt chỉ cho phát âm sau lần chạm đầu tiên.
