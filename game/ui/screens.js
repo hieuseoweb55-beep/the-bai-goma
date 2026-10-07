@@ -196,9 +196,13 @@
         if (l.kind === 'Boss') card.appendChild(el('div', { class: 'badge', text: 'BOSS' }));
         else if (l.kind === 'Tinh anh') card.appendChild(el('div', { class: 'badge elite', text: 'TINH ANH' }));
         if (cl) card.appendChild(el('div', { class: 'ok', text: '✓' }));
+        if (un) card.appendChild(el('div', { class: 'droptag' + (cl && U.dropChance(l) >= 0.2 ? ' hot' : ''), text: cl ? 'Rớt thẻ ' + Math.round(U.dropChance(l) * 100) + '%' : 'Thắng lần đầu +' + C.pullFirstClear + ' lượt' }));
         g.appendChild(card);
       });
       root.appendChild(g);
+      const near = [1, 2, 3].filter(m => U.mapEnabled(m)).reduce((acc, m) => acc.concat(U.levelsOf(m)), []).filter(l => U.isCleared(l) && U.dropChance(l) >= C.dropRateNear).map(l => l.map + '.' + l.man);
+      const tip = near.length ? `Mẹo cày lượt quay: đánh lại màn ${near.join(', ')} → ${Math.round(C.dropRateNear * 100)}% rớt 1 lượt. Các màn xa hơn chỉ ${Math.round(C.dropRateFar * 100)}%. Thắng màn mới lần đầu: +${C.pullFirstClear} lượt.` : `Mẹo: thắng màn mới lần đầu +${C.pullFirstClear} lượt quay. Đánh lại các màn gần tiền tuyến (${Math.round(C.dropRateNear * 100)}%) để cày thêm lượt, màn xa hơn ${Math.round(C.dropRateFar * 100)}%.`;
+      root.appendChild(el('div', { class: 'droptip', id: 'droptip', text: tip }));
     }
     root.appendChild(el('div', { class: 'bottombar' }, [
       el('button', { class: 'btn', id: 'btn-gacha', text: 'Gacha', onclick: () => U.screenGacha() }),

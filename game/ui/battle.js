@@ -240,6 +240,7 @@
       const btns = el('div', { style: 'display:flex;gap:22px;margin-top:20px' });
       const nl = win ? U.nextLevel(level) : null;
       if (win && nl && U.isUnlocked(nl)) btns.appendChild(el('button', { class: 'btn', id: 'btn-next', text: 'Màn kế ▶', onclick: () => U.screenTeam(nl) }));
+      if (win) btns.appendChild(el('button', { class: 'btn sec', id: 'btn-replay', text: 'Đánh lại', onclick: () => U.startBattle(level, placed) }));
       if (!win) btns.appendChild(el('button', { class: 'btn', id: 'btn-retry', text: 'Thử lại', onclick: () => U.startBattle(level, placed) }));
       if (!win && U.save.pulls > 0) btns.appendChild(el('button', { class: 'btn sec', id: 'btn-to-gacha', text: 'Rút thêm tướng', onclick: () => U.screenGacha() }));
       btns.appendChild(el('button', { class: win && nl && U.isUnlocked(nl) ? 'btn sec' : 'btn', id: 'btn-map', text: 'Về bản đồ', onclick: () => U.screenMap(level.map) }));

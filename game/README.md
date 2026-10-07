@@ -115,3 +115,12 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 - Màn gacha: bảng tỉ lệ lấy từ config (trước/sau màn 2.6) + quy tắc nâng bậc/mảnh mới.
 - ui/audio.js (ngoài yêu cầu gốc): nhạc nền menu/trận + âm thanh (click, đánh, chí mạng, né, skill, hồi máu, chết, thắng/thua, rút thẻ, ghép) tự tổng hợp bằng WebAudio, không cần file. Nút 🔊 góc phải bật/tắt, nhớ trong localStorage. Sau này thay bằng file nhạc thật.
 - GIẢ ĐỊNH: trình duyệt chỉ cho phát âm sau lần chạm đầu tiên.
+
+## Vòng 22
+- Nút ⛶ và 🔊 chuyển sang góc trái (không che nút ở góc phải). Màn dọc: góc trên-trái của màn hình.
+
+## Vòng 23
+- Màn bản đồ: nhãn 'Rớt thẻ X%' trên từng màn đã qua (xanh = 20%), 'Thắng lần đầu +1 lượt' cho màn chưa thắng, và dòng mẹo cày lượt quay (liệt kê các màn 20% của mọi map).
+
+## Vòng 24
+- Màn kết quả khi thắng: thêm nút 'Đánh lại' (cùng đội hình) để cày huy hiệu gacha.
