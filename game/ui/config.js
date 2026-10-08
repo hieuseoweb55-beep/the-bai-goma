@@ -3,6 +3,8 @@ window.GOMA_CONFIG = {
   maxMap: 8,                     // map cao nhất đang mở (1..8). Map 3 đến 8 đã có dữ liệu; mở khi đã hiệu chỉnh. Xem trước: ?maxmap=8
   enableMap23: false,            // (cũ) true = mở tất cả map
   enableMap2: true,              // GIẢ ĐỊNH: mở Map 2 vì anh nhắc "màn 2.x" (xem README)
+  ticketMinutes: 10, ticketMax: 20, quickChoices: [1, 5, 10, 20],   // Thẻ đặc quyền: 10 phút +1 thẻ, tối đa 20; 1 thẻ = đánh nhanh 1 trận đã thắng
+  dailyGiftPulls: 10,            // quà đăng nhập đầu tiên mỗi ngày: +10 lượt quay
   dailyWinLimit: 30,             // tối đa số lần THẮNG mỗi màn / ngày (chống cày gacha)
   pullFirstClear: 1,             // thắng lần đầu một màn: +1 lượt quay
   dropNearRange: 2,              // đánh lại các màn cách tiền tuyến (màn xa nhất đã mở) tối đa 2 màn: tỉ lệ rớt huy hiệu cao
@@ -19,7 +21,7 @@ window.GOMA_CONFIG = {
   topUnlockLevel: { map: 3, man: 10 },
   vipShare: 0.20,                // ra Tím: 20% là VIP bản Xanh dương; ra Đỏ: 20% là VIP bản Tím (cả gacha lẫn ô Tím/Đỏ trong shop)
   honorPerPull: 1,               // mỗi lượt quay trả về 1 thẻ bài danh dự = 1 huân công
-  shop: { resetHours: 5, prices: [5, 30, 70, 120, 500], exchangeNormal: 2, exchangeVip: 3 },   // giá (huân công) ô Trắng/Lá/Dương/Tím/Đỏ; đổi mảnh 2 -> 1 tướng thường, 3 -> 1 tướng VIP
+  shop: { resetHours: 5, prices: [5, 30, 70, 170, 500], exchangeNormal: 2, exchangeVip: 3 },   // giá (huân công) ô Trắng/Lá/Dương/Tím/Đỏ; đổi mảnh 2 -> 1 tướng thường, 3 -> 1 tướng VIP
   enemyHpMul: 0.80,               // máu quái nhân 0,9 (nhân thêm vào hpMul của từng màn; không sửa Excel/engine)
   knobs: { enemyDmgMul: 1.3, heroDmgMul: 1.25 },   // núm cân bằng của engine (không đổi luật): sát thương quái x1,3 (Vòng 35: 1,2 → 1,3 theo yêu cầu)
   maxTurns: 20,                  // số lượt tối đa mỗi trận (engine mặc định 15, UI ghi đè lên E.K.MAX_TURNS; không sửa engine.js)

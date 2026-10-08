@@ -205,3 +205,9 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 - `config.js`: `dailyWinLimit: 30`. Mỗi màn (1-1, 1-2, …) tối đa 30 lần THẮNG/ngày, tính theo giờ máy, qua 0h tự reset. Đủ 30 lần: bấm "Vào trận/Đánh lại/Thử lại" sẽ báo "Mai quay lại nhé" và không vào trận.
 - Lưu trong save: `dailyWins: { day, n: { '1-1': số lần } }`. Màn team hiện "Hôm nay còn x/30 lượt thắng màn này"; màn kết quả hiện "Hôm nay: x/30".
 - Lưu ý: dựa vào đồng hồ máy nên chỉnh giờ máy hoặc xóa dữ liệu trình duyệt là lách được (game chạy offline, không có server).
+
+## Vòng 39 – Thẻ đặc quyền, quà hằng ngày, giá ô Tím (cache ?v=40)
+- **Thẻ đặc quyền**: `config.js` `ticketMinutes: 10`, `ticketMax: 20`, `quickChoices: [1,5,10,20]`. Cứ 10 phút +1 thẻ (cộng dồn cả khi tắt game, tối đa 20; đầy thì đồng hồ dừng). Ở màn chọn đội của màn ĐÃ THẮNG có nút "⚡ Đánh nhanh": chọn 1/5/10/20 lần (hoặc "Tối đa"); mỗi lần tốn 1 thẻ, tính là 1 lần thắng (trừ vào giới hạn 30 thắng/màn/ngày) và roll rớt huy hiệu như đánh lại bình thường. Không mô phỏng trận (coi như thắng chắc). Nút vượt quá số thẻ hoặc số lượt thắng còn lại bị khóa.
+- **Quà hằng ngày**: lần mở bản đồ đầu tiên trong ngày (giờ máy) +10 lượt quay (`dailyGiftPulls`), hiện popup "Quà hằng ngày". Chế độ `?debug=1` không tặng.
+- **Shop**: ô Tím giá 170 huân công (trước 120). Giá luôn lấy theo config nên có hiệu lực ngay cả khi bảng 5 giờ đã sinh.
+- Save mới: `tickets {n,t}`, `giftDay`. Test nhanh giờ: thêm `?now=<epoch_ms>` vào URL.

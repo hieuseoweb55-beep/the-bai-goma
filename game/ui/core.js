@@ -96,7 +96,7 @@
 
   // ---------- lưu tiến trình ----------
   const KEY = U.debug ? 'goma_save_v1_debug' : 'goma_save_v1';
-  const defaults = () => ({ v: 1, sex: null, name: '', owned: { NV01: 0 }, shards: {}, pulls: 0, firstPullDone: false, cleared: {}, dailyWins: { day: '', n: {} }, speed: C.defaultSpeed, honor: 0, shop: null, shopSeed: 0 });
+  const defaults = () => ({ v: 1, sex: null, name: '', owned: { NV01: 0 }, shards: {}, pulls: 0, firstPullDone: false, cleared: {}, tickets: null, giftDay: '', dailyWins: { day: '', n: {} }, speed: C.defaultSpeed, honor: 0, shop: null, shopSeed: 0 });
   function load() {
     try { const s = localStorage.getItem(KEY); if (s) return Object.assign(defaults(), JSON.parse(s)); } catch (e) { /* bỏ qua */ }
     const d = defaults();
@@ -202,7 +202,7 @@
   U.shopNextReset = () => (U.shopSlot() + 1) * U.shopPeriodMs();
   U.shopState = function () {                                   // sinh bảng đổi cho khung 5 giờ hiện tại (cố định theo khung + hạt giống của người chơi, tải lại trang không đổi được)
     const S = U.save, slot = U.shopSlot();
-    if (S.shop && S.shop.slot === slot) return S.shop;
+    if (S.shop && S.shop.slot === slot) { S.shop.offers.forEach(o => { o.price = C.shop.prices[o.slotTier]; }); return S.shop; }   // giá luôn lấy theo config (đổi giá có hiệu lực ngay cả khi bảng đã sinh)
     if (!S.shopSeed) S.shopSeed = 1 + Math.floor(Math.random() * 2147483000);
     const rng = E.makeRng((S.shopSeed + slot * 7919) >>> 0), pick = a => a[Math.floor(rng() * a.length)];
     const offers = [0, 1, 2, 3, 4].map(slotTier => {
@@ -264,12 +264,36 @@
   };
   U.pct = x => { const v = Math.round(x * 1000) / 10; return String(v).replace('.', ','); };   // 0.035 -> '3,5'
   // ---- Giới hạn thắng mỗi màn tối đa C.dailyWinLimit lần / ngày (giờ máy, qua 0h tự reset) – chống cày thẻ gacha ----
-  U.today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+  U.today = () => { const d = new Date(U.now()); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
   U.dailyBox = function () { const s = U.save; if (!s.dailyWins || s.dailyWins.day !== U.today()) s.dailyWins = { day: U.today(), n: {} }; return s.dailyWins; };
   U.winsToday = l => U.dailyBox().n[U.levelKey(l)] || 0;
   U.dailyLeft = l => Math.max(0, C.dailyWinLimit - U.winsToday(l));
   U.addDailyWin = function (l) { const b = U.dailyBox(), k = U.levelKey(l); b.n[k] = (b.n[k] || 0) + 1; U.persist(); };
   U.canFight = function (l) { if (U.dailyLeft(l) > 0) return true; U.toast('Hôm nay đã thắng màn ' + U.levelKey(l) + ' đủ ' + C.dailyWinLimit + ' lần. Mai quay lại nhé!'); return false; };
+  // ---- Thẻ đặc quyền: 10 phút +1 thẻ (tối đa 20). 1 thẻ = đánh nhanh 1 trận ở màn ĐÃ THẮNG (tính vào giới hạn thắng/ngày) ----
+  U.tickets = function () {
+    const s = U.save, per = C.ticketMinutes * 60000, now = U.now();
+    if (!s.tickets || typeof s.tickets.n !== 'number') s.tickets = { n: 0, t: now };
+    const t = s.tickets;
+    if (t.n >= C.ticketMax) { t.n = C.ticketMax; t.t = now; }
+    else { const k = Math.floor((now - t.t) / per); if (k > 0) { t.n = Math.min(C.ticketMax, t.n + k); t.t = t.n >= C.ticketMax ? now : t.t + k * per; } }
+    return t;
+  };
+  U.ticketNextMs = function () { const t = U.tickets(); return t.n >= C.ticketMax ? 0 : Math.max(0, t.t + C.ticketMinutes * 60000 - U.now()); };
+  U.quickMax = l => Math.min(U.tickets().n, U.dailyLeft(l));
+  U.quickBattle = function (l, times) {
+    if (!U.isCleared(l)) return { error: 'Chỉ đánh nhanh được màn đã thắng' };
+    const n = Math.min(times, U.quickMax(l)); if (n < 1) return { error: U.tickets().n < 1 ? 'Hết thẻ đặc quyền' : 'Hết lượt thắng hôm nay' };
+    let pulls = 0, drops = 0; for (let i = 0; i < n; i++) { const r = U.markCleared(l); pulls += r.pulls; if (r.pulls) drops++; }
+    U.save.tickets.n -= n; U.persist(); return { ok: true, n, pulls, drops };
+  };
+  // ---- Quà hằng ngày: lần đăng nhập đầu tiên trong ngày +10 lượt quay ----
+  U.claimDailyGift = function () {
+    const s = U.save, d = U.today(); if (s.giftDay === d) return 0;
+    s.giftDay = d; if (U.debug) { U.persist(); return 0; }
+    s.pulls += C.dailyGiftPulls; U.persist(); return C.dailyGiftPulls;
+  };
+  U.fmtMs = ms => { const s = Math.ceil(ms / 1000); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
   U.markCleared = function (l) {                               // trả về { pulls, first, chance }: thắng lần đầu +1 lượt; đánh lại có tỉ lệ rớt huy hiệu (= 1 lượt quay)
     const k = U.levelKey(l); U.addDailyWin(l);
     if (!U.save.cleared[k]) { U.save.cleared[k] = { rewarded: true }; U.save.pulls += C.pullFirstClear; U.persist(); return { pulls: C.pullFirstClear, first: true, chance: 0 }; }

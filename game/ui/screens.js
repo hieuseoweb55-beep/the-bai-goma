@@ -131,6 +131,25 @@
   };
 
   // ---------- gacha ----------
+  U.quickDialog = function (level, after) {
+    const m = el('div', { class: 'modal', id: 'quick-modal' }), box = el('div', { class: 'panel', style: 'position:relative;text-align:center;padding:36px 56px;min-width:760px' });
+    m.appendChild(box); U.overlay().appendChild(m);
+    const draw = res => {
+      box.innerHTML = '';
+      const t = U.tickets(), left = U.dailyLeft(level), cap = U.quickMax(level);
+      box.appendChild(el('div', { style: 'font-size:56px;font-weight:900;color:#ffd770', text: '⚡ Đánh nhanh màn ' + U.levelKey(level) }));
+      if (res && res.ok) box.appendChild(el('div', { id: 'quick-result', style: 'font-size:34px;color:#ffe14a;margin:18px 0', text: `Đã đánh ${res.n} trận thắng · nhận ${res.pulls} lượt quay (${res.drops} lần rớt huy hiệu)` }));
+      else if (res && res.error) box.appendChild(el('div', { style: 'font-size:30px;color:#ff8a8a;margin:14px 0', text: res.error }));
+      box.appendChild(el('div', { id: 'quick-info', style: 'font-size:28px;margin:14px 0;line-height:1.5', text: `Thẻ đặc quyền: ${t.n}/${C.ticketMax}` + (t.n < C.ticketMax ? ` (thẻ kế sau ${U.fmtMs(U.ticketNextMs())})` : ' (đã đầy)') + `\nCòn ${left}/${C.dailyWinLimit} lượt thắng màn này hôm nay · 1 thẻ = 1 trận` }));
+      box.lastChild.style.whiteSpace = 'pre-line';
+      const row = el('div', { style: 'display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:18px 0' });
+      const opts = C.quickChoices.slice(); if (cap > 0 && !opts.includes(cap)) opts.push(cap);
+      opts.sort((a, b) => a - b).forEach(n => row.appendChild(el('button', { class: 'btn', 'data-n': n, text: n === cap && !C.quickChoices.includes(n) ? 'Tối đa (' + n + ')' : n + ' lần', disabled: n > cap ? 'disabled' : null, onclick: () => { const r = U.quickBattle(level, n); if (after) after(); draw(r); } })));
+      box.appendChild(row);
+      box.appendChild(el('button', { class: 'btn sec', id: 'btn-quick-close', text: 'Đóng', onclick: () => m.remove() }));
+    };
+    draw(null);
+  };
   U.screenGacha = function () {
     const root = el('div', { style: 'position:absolute;inset:0' });
     root.appendChild(U.bg('bg_phonghop', true));
@@ -245,7 +264,7 @@
     if (map) curMap = map;
     const root = el('div', { style: 'position:absolute;inset:0' });
     root.appendChild(U.bg(MAP_BG[curMap], true));
-    root.appendChild(el('div', { class: 'topbar' }, [el('div', { style: 'font-size:32px;font-weight:800', text: U.playerName() }), el('div', { class: 'pulls', id: 'pulls-count', text: 'Lượt quay: ' + S().pulls + ' · Huân công: ' + (S().honor || 0) })]));
+    root.appendChild(el('div', { class: 'topbar' }, [el('div', { style: 'font-size:32px;font-weight:800', text: U.playerName() }), el('div', { class: 'pulls', id: 'pulls-count', text: 'Lượt quay: ' + S().pulls + ' · Huân công: ' + (S().honor || 0) + ' · Thẻ đặc quyền: ' + U.tickets().n + '/' + C.ticketMax })]));
     const tabs = el('div', { class: 'tabs' });
     [1, 2, 3, 4, 5, 6, 7, 8].forEach(m => tabs.appendChild(el('button', { class: 'tab' + (m === curMap ? ' act' : '') + (U.mapEnabled(m) ? '' : ' lock'), 'data-map': m, text: 'Map ' + m + (U.mapEnabled(m) ? '' : ' (khóa)'), onclick: () => U.screenMap(m) })));
     root.appendChild(tabs);
@@ -282,6 +301,15 @@
     ]));
     root.appendChild(el('div', { class: 'note', style: 'bottom:2px;font-size:20px', text: NOTE }));
     U.show(root);
+    const gift = U.claimDailyGift();
+    if (gift) {
+      const refresh = () => { const p = document.getElementById('pulls-count'); if (p) p.textContent = 'Lượt quay: ' + S().pulls + ' · Huân công: ' + (S().honor || 0) + ' · Thẻ đặc quyền: ' + U.tickets().n + '/' + C.ticketMax; };
+      const m = el('div', { class: 'modal', id: 'daily-gift' }, [el('div', { class: 'panel', style: 'position:relative;text-align:center;padding:40px 60px' }, [
+        el('div', { style: 'font-size:64px;font-weight:900;color:#ffd770', text: 'Quà hằng ngày' }), el('div', { style: 'font-size:48px;margin:20px 0', text: '+' + gift + ' lượt quay' }),
+        el('div', { style: 'font-size:26px;opacity:.85;margin-bottom:24px', text: 'Cảm ơn bạn đã đăng nhập hôm nay. Mai quay lại nhận tiếp nhé!' }),
+        el('button', { class: 'btn', id: 'btn-gift-ok', text: 'Nhận', onclick: () => { m.remove(); refresh(); } })])]);
+      U.overlay().appendChild(m); refresh();
+    }
   };
 
   // ---------- chọn đội ----------
@@ -381,6 +409,7 @@
     root.appendChild(el('div', { class: 'bottombar' }, [
       el('button', { class: 'btn sec', id: 'btn-back', text: '◀ Quay lại', onclick: () => U.screenMap(level.map) }),
       el('button', { class: 'btn sec', id: 'btn-auto', text: 'Tự chọn đội mạnh nhất', onclick: () => { pos = null; const a = U.autoTeam(owned, tierOf); pos = {}; U.buildTeam(a, tierOf, null).forEach(d => { pos[d.code] = { row: d.row, slot: d.slot }; }); rerender(); } }),
+      U.isCleared(level) ? el('button', { class: 'btn sec', id: 'btn-quick', text: '⚡ Đánh nhanh', onclick: () => U.quickDialog(level, () => { const d = document.getElementById('daily-left'); if (d) d.textContent = `Hôm nay còn ${U.dailyLeft(level)}/${C.dailyWinLimit} lượt thắng màn này`; }) }) : null,
       el('button', { class: 'btn', id: 'btn-fight', text: 'Vào trận ▶', disabled: sel().length ? null : 'disabled', onclick: go }),
     ]));
     U.show(root);
