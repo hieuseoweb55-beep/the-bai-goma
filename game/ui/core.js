@@ -96,7 +96,7 @@
 
   // ---------- lưu tiến trình ----------
   const KEY = U.debug ? 'goma_save_v1_debug' : 'goma_save_v1';
-  const defaults = () => ({ v: 1, sex: null, name: '', owned: { NV01: 0 }, shards: {}, pulls: 0, firstPullDone: false, cleared: {}, speed: C.defaultSpeed, honor: 0, shop: null, shopSeed: 0 });
+  const defaults = () => ({ v: 1, sex: null, name: '', owned: { NV01: 0 }, shards: {}, pulls: 0, firstPullDone: false, cleared: {}, dailyWins: { day: '', n: {} }, speed: C.defaultSpeed, honor: 0, shop: null, shopSeed: 0 });
   function load() {
     try { const s = localStorage.getItem(KEY); if (s) return Object.assign(defaults(), JSON.parse(s)); } catch (e) { /* bỏ qua */ }
     const d = defaults();
@@ -263,8 +263,15 @@
     return d <= C.dropNearRange ? C.dropRateNear : d <= C.dropMidRange ? C.dropRateMid : C.dropRateFar;
   };
   U.pct = x => { const v = Math.round(x * 1000) / 10; return String(v).replace('.', ','); };   // 0.035 -> '3,5'
+  // ---- Giới hạn thắng mỗi màn tối đa C.dailyWinLimit lần / ngày (giờ máy, qua 0h tự reset) – chống cày thẻ gacha ----
+  U.today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+  U.dailyBox = function () { const s = U.save; if (!s.dailyWins || s.dailyWins.day !== U.today()) s.dailyWins = { day: U.today(), n: {} }; return s.dailyWins; };
+  U.winsToday = l => U.dailyBox().n[U.levelKey(l)] || 0;
+  U.dailyLeft = l => Math.max(0, C.dailyWinLimit - U.winsToday(l));
+  U.addDailyWin = function (l) { const b = U.dailyBox(), k = U.levelKey(l); b.n[k] = (b.n[k] || 0) + 1; U.persist(); };
+  U.canFight = function (l) { if (U.dailyLeft(l) > 0) return true; U.toast('Hôm nay đã thắng màn ' + U.levelKey(l) + ' đủ ' + C.dailyWinLimit + ' lần. Mai quay lại nhé!'); return false; };
   U.markCleared = function (l) {                               // trả về { pulls, first, chance }: thắng lần đầu +1 lượt; đánh lại có tỉ lệ rớt huy hiệu (= 1 lượt quay)
-    const k = U.levelKey(l);
+    const k = U.levelKey(l); U.addDailyWin(l);
     if (!U.save.cleared[k]) { U.save.cleared[k] = { rewarded: true }; U.save.pulls += C.pullFirstClear; U.persist(); return { pulls: C.pullFirstClear, first: true, chance: 0 }; }
     const chance = U.dropChance(l), got = U.rand() < chance ? 1 : 0;
     if (got) { U.save.pulls += got; U.persist(); }

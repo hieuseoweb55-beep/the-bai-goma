@@ -200,3 +200,8 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 - Làn giữa (slot lẻ) lệch về phía SAU của mỗi bên 110px (trước là lệch về phía trước 50px) → so le zigzag, tên và thanh máu không bị đè.
 - Đã cắt 234 ảnh mới vào assets (manifest 340 mục); bản gốc ở `assets/_goc_truoc_khi_cat/`; `nv12_idle` đã thu ×0.5 cho khớp tỉ lệ.
 - Thu hẹp khoảng cách hàng trước–sau ~20% (460→368px): heroX back 512, enemyX back 1526.
+
+## Vòng 38 – Giới hạn thắng mỗi màn 30 lần/ngày (cache ?v=39)
+- `config.js`: `dailyWinLimit: 30`. Mỗi màn (1-1, 1-2, …) tối đa 30 lần THẮNG/ngày, tính theo giờ máy, qua 0h tự reset. Đủ 30 lần: bấm "Vào trận/Đánh lại/Thử lại" sẽ báo "Mai quay lại nhé" và không vào trận.
+- Lưu trong save: `dailyWins: { day, n: { '1-1': số lần } }`. Màn team hiện "Hôm nay còn x/30 lượt thắng màn này"; màn kết quả hiện "Hôm nay: x/30".
+- Lưu ý: dựa vào đồng hồ máy nên chỉnh giờ máy hoặc xóa dữ liệu trình duyệt là lách được (game chạy offline, không có server).

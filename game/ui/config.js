@@ -3,6 +3,7 @@ window.GOMA_CONFIG = {
   maxMap: 8,                     // map cao nhất đang mở (1..8). Map 3 đến 8 đã có dữ liệu; mở khi đã hiệu chỉnh. Xem trước: ?maxmap=8
   enableMap23: false,            // (cũ) true = mở tất cả map
   enableMap2: true,              // GIẢ ĐỊNH: mở Map 2 vì anh nhắc "màn 2.x" (xem README)
+  dailyWinLimit: 30,             // tối đa số lần THẮNG mỗi màn / ngày (chống cày gacha)
   pullFirstClear: 1,             // thắng lần đầu một màn: +1 lượt quay
   dropNearRange: 2,              // đánh lại các màn cách tiền tuyến (màn xa nhất đã mở) tối đa 2 màn: tỉ lệ rớt huy hiệu cao
   dropRateNear: 0.30,            // 30% rớt thẻ gacha (= 1 lượt quay) ở max-1, max-2

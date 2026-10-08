@@ -250,13 +250,13 @@
       mainSp.setPose(win ? 'win' : 'cry');
       const box = el('div', { class: 'result' }, [
         el('h1', { class: win ? 'win' : 'lose', id: 'result-title', text: win ? 'Chiến thắng' : 'Thất bại' }),
-        win ? el('div', { class: 'rw', id: 'result-reward', text: cr.first ? `+${cr.pulls} lượt quay (lần đầu thắng màn này)` : (cr.pulls > 0 ? `Rớt huy hiệu! +${cr.pulls} lượt quay` : `Không rớt huy hiệu (tỉ lệ ${Math.round(cr.chance * 100)}% khi đánh lại màn này)`) }) : el('div', { class: 'hint', text: (res.turns >= E.K.MAX_TURNS ? 'Hết ' + E.K.MAX_TURNS + ' lượt mà chưa hạ hết quái. ' : '') + 'Gợi ý: Rút thêm tướng hoặc nâng đội.' }),
+        win ? el('div', { class: 'rw', id: 'result-reward', text: (cr.first ? `+${cr.pulls} lượt quay (lần đầu thắng màn này)` : (cr.pulls > 0 ? `Rớt huy hiệu! +${cr.pulls} lượt quay` : `Không rớt huy hiệu (tỉ lệ ${Math.round(cr.chance * 100)}% khi đánh lại màn này)`)) + ` · Hôm nay: ${U.winsToday(level)}/${C.dailyWinLimit} lần thắng` }) : el('div', { class: 'hint', text: (res.turns >= E.K.MAX_TURNS ? 'Hết ' + E.K.MAX_TURNS + ' lượt mà chưa hạ hết quái. ' : '') + 'Gợi ý: Rút thêm tướng hoặc nâng đội.' }),
       ]);
       const btns = el('div', { style: 'display:flex;gap:22px;margin-top:20px' });
       const nl = win ? U.nextLevel(level) : null;
       if (win && nl && U.isUnlocked(nl)) btns.appendChild(el('button', { class: 'btn', id: 'btn-next', text: 'Màn kế ▶', onclick: () => U.screenTeam(nl) }));
-      if (win) btns.appendChild(el('button', { class: 'btn sec', id: 'btn-replay', text: 'Đánh lại', onclick: () => U.startBattle(level, placed) }));
-      if (!win) btns.appendChild(el('button', { class: 'btn', id: 'btn-retry', text: 'Thử lại', onclick: () => U.startBattle(level, placed) }));
+      if (win) btns.appendChild(el('button', { class: 'btn sec', id: 'btn-replay', text: 'Đánh lại', onclick: () => { if (U.canFight(level)) U.startBattle(level, placed); } }));
+      if (!win) btns.appendChild(el('button', { class: 'btn', id: 'btn-retry', text: 'Thử lại', onclick: () => { if (U.canFight(level)) U.startBattle(level, placed); } }));
       if (!win && U.save.pulls > 0) btns.appendChild(el('button', { class: 'btn sec', id: 'btn-to-gacha', text: 'Rút thêm tướng', onclick: () => U.screenGacha() }));
       btns.appendChild(el('button', { class: win && nl && U.isUnlocked(nl) ? 'btn sec' : 'btn', id: 'btn-map', text: 'Về bản đồ', onclick: () => U.screenMap(level.map) }));
       box.appendChild(btns); U.overlay().appendChild(box);

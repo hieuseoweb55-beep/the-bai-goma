@@ -375,8 +375,9 @@
       right.appendChild(el('div', {}, [el('div', { class: 'rowlabel', text: row === 'front' ? 'Hàng trước (chịu đòn)' : 'Hàng sau' }), sl]));
     });
     right.appendChild(el('div', { style: 'font-size:22px;opacity:.85;margin-top:6px', text: 'Kéo tướng vào ô · kéo ô sang ô để đổi chỗ · kéo ra danh sách để bỏ' }));
+    right.appendChild(el('div', { style: 'font-size:24px;opacity:.9', id: 'daily-left', text: `Hôm nay còn ${U.dailyLeft(level)}/${C.dailyWinLimit} lượt thắng màn này` }));
     right.appendChild(el('div', { style: 'font-size:24px;opacity:.9', text: 'Quái: ' + level.comp.map(c => (D.monsters.find(m => m.code === c.code) || {}).name + ' ×' + c.count).join(', ') }));
-    const go = () => { const codes = sel(); if (codes.length) saveTeam(); if (codes.length) U.startBattle(level, U.buildTeamPos(codes, tierOf, pos)); };
+    const go = () => { if (!U.canFight(level)) return; const codes = sel(); if (codes.length) saveTeam(); if (codes.length) U.startBattle(level, U.buildTeamPos(codes, tierOf, pos)); };
     root.appendChild(el('div', { class: 'bottombar' }, [
       el('button', { class: 'btn sec', id: 'btn-back', text: '◀ Quay lại', onclick: () => U.screenMap(level.map) }),
       el('button', { class: 'btn sec', id: 'btn-auto', text: 'Tự chọn đội mạnh nhất', onclick: () => { pos = null; const a = U.autoTeam(owned, tierOf); pos = {}; U.buildTeam(a, tierOf, null).forEach(d => { pos[d.code] = { row: d.row, slot: d.slot }; }); rerender(); } }),
