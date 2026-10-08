@@ -38,14 +38,16 @@
 
   // Sprite: các pose của cùng 1 đơn vị dùng chung hệ số phóng (tính từ body_h của idle), căn theo foot_y + cx.
   U.Sprite = function (prefix, targetH, tier, label) {
-    const idleE = M[prefix + '_idle'];
-    const scale = idleE ? targetH / idleE.body_h : 1;
+    const vk = pose => (tier >= 3 && M[prefix + '_' + pose + '_t' + tier]) ? prefix + '_' + pose + '_t' + tier : prefix + '_' + pose;   // ảnh Tím/Đỏ riêng (idle, skill) nếu có, thiếu thì dùng ảnh gốc
+    const baseIdle = M[prefix + '_idle'], idleE = M[vk('idle')] || baseIdle;
+    const scaleOf = key => { const ref = key.endsWith('_t' + tier) && tier >= 3 ? idleE : baseIdle; return ref ? targetH / ref.body_h : 1; };
+    const scale = idleE ? scaleOf(vk('idle')) : 1;
     const root = el('div', { class: 'sprite' + (tier ? ' t' + tier : '') });
     const imgs = {}; let ph = null;
     const s = { el: root, prefix, scale, pose: null, h: idleE ? idleE.body_h * scale : targetH, w: idleE ? idleE.body_w * scale : targetH * 0.5 };
     s.setPose = function (pose, quiet) {
-      let e = M[prefix + '_' + pose];
-      if (!e) { if (!quiet && pose !== 'idle') U.noteMissing(prefix + '_' + pose); e = idleE; pose = 'idle'; }
+      let key = vk(pose), e = M[key];
+      if (!e) { if (!quiet && pose !== 'idle') U.noteMissing(prefix + '_' + pose); key = vk('idle'); e = idleE; pose = 'idle'; }
       s.pose = pose;
       Object.keys(imgs).forEach(k => { imgs[k].style.display = 'none'; });
       if (ph) ph.style.display = 'none';
@@ -55,8 +57,10 @@
         ph.style.display = 'flex'; return;
       }
       if (!imgs[pose]) {
+        let sc = scaleOf(key);
+        if (pose === 'dead' && e.body_w && e.body_h) sc = Math.min(targetH * 0.9 / e.body_w, targetH * 0.55 / e.body_h);   // xác: ảnh nằm vốn rất rộng → ép vào khung chung (Vòng 36)
         const im = new Image(); im.src = 'assets/' + e.file; im.draggable = false;
-        im.style.cssText = `width:${e.w * scale}px;height:${e.h * scale}px;left:${-e.cx * scale}px;top:${-e.foot_y * scale}px`;
+        im.style.cssText = `width:${e.w * sc}px;height:${e.h * sc}px;left:${-e.cx * sc}px;top:${-e.foot_y * sc}px`;
         root.appendChild(im); imgs[pose] = im;
       }
       imgs[pose].style.display = 'block';
@@ -74,8 +78,8 @@
   U.heroCard = function (hero, tier, o) {
     o = o || {};
     const art = el('div', { class: 'art' });
-    const cardSrc = U.has(hero.code.toLowerCase() + '_card') ? U.src(hero.code.toLowerCase() + '_card') : null;
-    const idleSrc = U.has(hero.code.toLowerCase() + '_idle') ? U.src(hero.code.toLowerCase() + '_idle') : null;
+    const pick = pose => { const c = hero.code.toLowerCase(), vn = c + '_' + pose + '_t' + tier; return (tier >= 3 && U.has(vn)) ? U.src(vn) : (U.has(c + '_' + pose) ? U.src(c + '_' + pose) : null); };   // thẻ/idle Tím, Đỏ riêng nếu có
+    const cardSrc = pick('card'), idleSrc = pick('idle');
     if (cardSrc && !o.locked) art.appendChild(el('img', { class: 'cardimg', src: cardSrc, draggable: 'false' }));
     else if (idleSrc) art.appendChild(el('img', { src: idleSrc, style: 'height:92%;width:auto;object-fit:contain', draggable: 'false' }));
     else art.appendChild(el('div', { text: U.shortName(hero.name), style: 'color:#333;font-weight:800;font-size:22px;text-align:center;padding:10px' }));
@@ -92,11 +96,11 @@
 
   // ---------- lưu tiến trình ----------
   const KEY = U.debug ? 'goma_save_v1_debug' : 'goma_save_v1';
-  const defaults = () => ({ v: 1, sex: null, name: '', owned: { NV01: 0 }, shards: {}, pulls: 0, firstPullDone: false, cleared: {}, speed: C.defaultSpeed });
+  const defaults = () => ({ v: 1, sex: null, name: '', owned: { NV01: 0 }, shards: {}, pulls: 0, firstPullDone: false, cleared: {}, speed: C.defaultSpeed, honor: 0, shop: null, shopSeed: 0 });
   function load() {
     try { const s = localStorage.getItem(KEY); if (s) return Object.assign(defaults(), JSON.parse(s)); } catch (e) { /* bỏ qua */ }
     const d = defaults();
-    if (U.debug) { d.sex = 'nam'; d.name = 'Debug'; d.pulls = 99; d.shards = {}; d.firstPullDone = true; D.heroes.forEach(h => { d.owned[h.code] = C.maxTierDebug; d.shards[h.code] = 300; }); }
+    if (U.debug) { d.sex = 'nam'; d.name = 'Debug'; d.pulls = 99; d.honor = 9999; d.shards = {}; d.firstPullDone = true; D.heroes.forEach(h => { d.owned[h.code] = C.maxTierDebug; d.shards[h.code] = 300; }); }
     return d;
   }
   U.save = load();
@@ -106,22 +110,33 @@
 
   // ---------- gacha ----------
   U.blueUnlocked = () => { const l = D.levels.find(x => x.map === C.blueUnlockLevel.map && x.man === C.blueUnlockLevel.man); return !!l && U.isCleared(l); };
-  U.pull = function (first) {
-    const S = U.save; let hero, tier = 0;
-    if (first) { const pool = D.heroes.filter(h => h.code !== 'NV01'); hero = pool[Math.floor(U.rand() * pool.length)]; }
-    else {
-      const w = U.blueUnlocked() ? C.gachaWeightsLate : C.gachaWeightsEarly, tot = w.reduce((a, b) => a + b, 0); let r = U.rand() * tot;
-      for (let i = 0; i < w.length; i++) { if (r < w[i]) { tier = i; break; } r -= w[i]; tier = i; }
-      hero = D.heroes[Math.floor(U.rand() * D.heroes.length)];
-    }
-    const cur = S.owned[hero.code]; let kind, shards = 0;
+  U.topUnlocked = () => { const l = D.levels.find(x => x.map === C.topUnlockLevel.map && x.man === C.topUnlockLevel.man); return !!l && U.isCleared(l); };   // đã thắng 3-10 (mở 4-1): Tím/Đỏ + VIP vào gacha
+  U.gachaWeights = () => U.topUnlocked() ? C.gachaWeightsTop : (U.blueUnlocked() ? C.gachaWeightsLate : C.gachaWeightsEarly);
+  U.nonVip = () => D.heroes.filter(h => !h.vip);
+  U.vipHeroes = () => D.heroes.filter(h => h.vip);
+  U.hasVip = () => U.vipHeroes().some(h => U.save.owned[h.code] !== undefined);
+  U.grantCard = function (hero, tier) {                        // nhận 1 thẻ tướng ở phẩm chất `tier` (dùng chung cho gacha và shop)
+    const S = U.save; const cur = S.owned[hero.code]; let kind, shards = 0;
     if (cur === undefined) { kind = 'new'; S.owned[hero.code] = tier; }
-    else if (tier > cur) {                                      // rút ra bậc CAO hơn bản đang có -> thay thẳng, bản cũ quy đổi thành mảnh
+    else if (tier > cur) {                                      // bậc CAO hơn bản đang có -> thay thẳng, bản cũ quy đổi thành mảnh
       kind = 'upgrade'; shards = C.shardsByTier[cur]; S.owned[hero.code] = tier; S.shards = S.shards || {}; S.shards[hero.code] = (S.shards[hero.code] || 0) + shards;
     } else { kind = 'dup'; shards = C.shardsByTier[tier]; S.shards = S.shards || {}; S.shards[hero.code] = (S.shards[hero.code] || 0) + shards; }   // bằng/thấp hơn -> quy đổi mảnh theo bậc của lần rút
+    return { hero, tier, kind, prev: cur, shards };
+  };
+  U.pull = function (first) {
+    const S = U.save; let hero, tier = 0;
+    if (first) { const pool = D.heroes.filter(h => h.code !== 'NV01' && !h.vip); hero = pool[Math.floor(U.rand() * pool.length)]; }
+    else {
+      const w = U.gachaWeights(), tot = w.reduce((a, b) => a + b, 0); let r = U.rand() * tot;
+      for (let i = 0; i < w.length; i++) { if (r < w[i]) { tier = i; break; } r -= w[i]; tier = i; }
+      if (tier >= 3 && U.rand() < C.vipShare) { const v = U.vipHeroes(); hero = v[Math.floor(U.rand() * v.length)]; tier -= 1; }   // ra Tím: 20% là VIP bản Xanh dương; ra Đỏ: 20% là VIP bản Tím
+      else { const pool = U.nonVip(); hero = pool[Math.floor(U.rand() * pool.length)]; }
+    }
+    const res = U.grantCard(hero, tier);
+    S.honor = (S.honor || 0) + C.honorPerPull; res.honor = C.honorPerPull;   // mỗi lượt quay trả về 1 thẻ bài danh dự (huân công)
     if (first) S.firstPullDone = true;
     U.persist();
-    return { hero, tier, kind, prev: cur, shards };
+    return res;
   };
   U.pullMany = function (n) {
     const S = U.save; if (S.pulls < n) return null; const out = [];
@@ -137,17 +152,40 @@
     U.save.shards[code] -= U.mergeNeed(code); U.save.owned[code] += 1; U.persist(); return true;
   };
 
+  // Độ khó theo công thức. F = sức mạnh quái tính theo "đội 5 Xanh lá hòa 50%" (F=1 -> đội 5 xanh lá thắng ~50%; 1,13 ~ 1 Xanh dương + 4 Xanh lá...).
+  U.difficultyF = function (l) {
+    const d = C.difficulty, ln = Math.log, k = l.map, man = l.man, A = window.GomaDifficultyAnchors || {};
+    const anc = (kk, mm) => { const v = A[kk + '-' + mm]; return v ? ln(v) : ln(d.fallback[kk + '-' + mm] || 1); };   // F tại mốc neo (đo bằng calibrate_difficulty.py)
+    const E = kk => anc(kk, 10);                                              // F màn 10: đội TỐI THIỂU của map đó thắng ~passRate
+    const S = k === 2 ? ln(d.f0) : E(k - 1) + ln(d.startBump);                // F đầu map (màn 1) ~ màn 10 của map trước
+    const L7 = k === 2 ? anc(2, 7) : S + d.earlyShare * (E(k) - S);           // màn 7: Map 2 = 5 Lá vừa đủ; map 3+ = 30% mức tăng
+    const tot = Math.max(0.02, E(k) - L7); let lg;
+    if (man <= 7) lg = S + (L7 - S) * (man - 1) / 6;
+    else lg = L7 + tot * d.wallShare.slice(0, man - 7).reduce((a, b) => a + b, 0);   // 8, 9, 10: leo tường
+    let F = Math.exp(lg);
+    if (man === 5) F *= 1 + d.bossBump;
+    const q = /[?&]diff=([\d.]+)/.exec(location.search);
+    return F * d.mul * (q ? +q[1] : 1);
+  };
+
   // Cân bằng Map 2, 3 (theo yêu cầu): luôn 5 quái từ màn 2.1 và chỉ số cao hơn Map 1. Không sửa Excel/data.js: áp lên D.levels lúc chạy.
   (function () {
     const MB = C.mapBalance || {};
     D.levels.forEach(l => {
       const b = MB[l.map]; if (!b || l._balanced) return; l._balanced = true;
       const minCount = b.monsters || 5; let total = l.comp.reduce((a, c) => a + c.count, 0);
-      const filler = []; l.comp.forEach(c => { const m = D.monsters.find(x => x.code === c.code); if (m && m.kind !== 'Boss' && !filler.includes(c.code)) filler.push(c.code); });
+      const filler = []; l.comp.forEach(c => { const m = D.monsters.find(x => x.code === c.code); if (m && m.kind === 'Thường' && !filler.includes(c.code)) filler.push(c.code); });   // ưu tiên quái Thường để độn cho đủ 5 (không độn thêm Tinh anh/Boss)
+      if (!filler.length) l.comp.forEach(c => { const m = D.monsters.find(x => x.code === c.code); if (m && m.kind !== 'Boss' && !filler.includes(c.code)) filler.push(c.code); });
       if (!filler.length) filler.push(l.comp[l.comp.length - 1].code);
       for (let i = 0; total < minCount; i++, total++) { const code = filler[i % filler.length]; const e = l.comp.find(c => c.code === code); if (e) e.count++; else l.comp.push({ code, count: 1 }); }
-      if (b.hpByMan) {                                         // bảng hệ số máu theo màn (đã hiệu chỉnh bằng mô phỏng); công = 1 + 0,8 x (máu - 1)
-        const m = b.hpByMan[l.man - 1]; l.hpMul = m; l.atkMul = Math.round((1 + 0.8 * (m - 1)) * 1000) / 1000; l.team = l.team || Math.min(C.teamMax, minCount); return;
+      if (C.difficulty && l.map >= 2) {                        // công thức độ khó chung (Vòng 29): F(màn) x hệ số nền đo bằng mô phỏng
+        const F = U.difficultyF(l), base = (window.GomaDifficultyBase || {})[l.map + '-' + l.man];
+        const m = base ? F * base : 1, sp = C.difficulty.split;
+        l.diffF = Math.round(F * 1000) / 1000; l.hpMul = Math.round(Math.pow(m, sp) * 1000) / 1000; l.atkMul = Math.round(Math.pow(m, 1 - sp) * 1000) / 1000;
+        l.team = l.team || Math.min(C.teamMax, minCount); return;
+      }
+      if (b.hpByMan) {                                         // (cũ) bảng hệ số máu theo màn; công = 1 + 0,8 x (máu - 1)
+        const m = b.hpByMan[l.man - 1]; l.hpMul = m; l.atkMul = b.atkFixed != null ? b.atkFixed : Math.round((1 + 0.8 * (m - 1)) * 1000) / 1000; l.team = l.team || Math.min(C.teamMax, minCount); return;
       }
       const f = (l.man - 1) / 9;                              // 0 ở màn đầu -> 1 ở màn 10 của map
       l.hpMul = Math.round((b.hp[0] + (b.hp[1] - b.hp[0]) * f) * 1000) / 1000;
@@ -156,11 +194,54 @@
     });
   })();
 
+  // ---------- shop huân công + đổi mảnh (làm mới mỗi 5 giờ) ----------
+  (function () { const q = /[?&]now=(\d+)/.exec(location.search); U._nowOff = q ? (+q[1] - Date.now()) : 0; })();
+  U.now = () => Date.now() + (U._nowOff || 0);
+  U.shopPeriodMs = () => C.shop.resetHours * 3600 * 1000;
+  U.shopSlot = () => Math.floor(U.now() / U.shopPeriodMs());
+  U.shopNextReset = () => (U.shopSlot() + 1) * U.shopPeriodMs();
+  U.shopState = function () {                                   // sinh bảng đổi cho khung 5 giờ hiện tại (cố định theo khung + hạt giống của người chơi, tải lại trang không đổi được)
+    const S = U.save, slot = U.shopSlot();
+    if (S.shop && S.shop.slot === slot) return S.shop;
+    if (!S.shopSeed) S.shopSeed = 1 + Math.floor(Math.random() * 2147483000);
+    const rng = E.makeRng((S.shopSeed + slot * 7919) >>> 0), pick = a => a[Math.floor(rng() * a.length)];
+    const offers = [0, 1, 2, 3, 4].map(slotTier => {
+      let tier = slotTier, hero;
+      if (slotTier >= 3 && rng() < C.vipShare) { hero = pick(U.vipHeroes()); tier = slotTier - 1; }   // ô Tím: 20% VIP Xanh dương; ô Đỏ: 20% VIP Tím
+      else hero = pick(U.nonVip());
+      return { slotTier, code: hero.code, tier, price: C.shop.prices[slotTier], bought: false };
+    });
+    S.shop = { slot, offers, exch: { code: pick(U.nonVip()).code, used: false } };
+    U.persist(); return S.shop;
+  };
+  U.shopBuy = function (i) {
+    const S = U.save, st = U.shopState(), o = st.offers[i];
+    if (!o || o.bought) return { error: 'Đã mua' };
+    if ((S.honor || 0) < o.price) return { error: 'Thiếu huân công' };
+    S.honor -= o.price; o.bought = true;
+    const res = U.grantCard(U.hero(o.code), o.tier); U.persist(); return res;
+  };
+  U.exchangeInfo = function () {
+    const st = U.shopState(), code = st.exch.code;
+    return { code, used: false, have: U.shardsOf(code), normalCost: C.shop.exchangeNormal, vipCost: C.shop.exchangeVip, hasVip: U.hasVip() };
+  };
+  U.exchangeShards = function (kind, target, times) {                  // kind 'normal': 2 mảnh -> 1 mảnh tướng thường tự chọn; 'vip': 3 mảnh -> 1 mảnh tướng VIP tự chọn (phải có VIP rồi)
+    const S = U.save, st = U.shopState(), info = U.exchangeInfo(), h = U.hero(target);
+    if (!h) return { error: 'Chọn tướng' };
+    if (kind === 'vip') { if (!info.hasVip) return { error: 'Cần có tướng VIP trước' }; if (!h.vip) return { error: 'Phải chọn tướng VIP' }; }
+    else { if (h.vip) return { error: 'Tướng VIP phải đổi bằng gói VIP' }; if (h.code === info.code) return { error: 'Chọn tướng khác' }; }
+    const unit = kind === 'vip' ? info.vipCost : info.normalCost, n = Math.max(1, Math.min(times || 1, Math.floor(info.have / unit)));   // đổi thoải mái, miễn còn mảnh
+    if (info.have < unit) return { error: 'Thiếu mảnh' };
+    S.shards[info.code] -= unit * n; S.shards[target] = (S.shards[target] || 0) + n; U.persist();
+    return { ok: true, cost: unit * n, got: n, from: info.code, to: target };
+  };
+
   // ---------- màn chơi ----------
   U.levelKey = l => l.map + '-' + l.man;
   U.levelsOf = map => D.levels.filter(l => l.map === map).sort((a, b) => a.man - b.man);
   U.isCleared = l => !!U.save.cleared[U.levelKey(l)];
-  U.mapEnabled = map => map === 1 || (map === 2 && C.enableMap2) || C.enableMap23;
+  U.maxMap = (function () { const q = /[?&]maxmap=(\d+)/.exec(location.search); return q ? +q[1] : (C.maxMap != null ? C.maxMap : (C.enableMap23 ? 8 : (C.enableMap2 ? 2 : 1))); })();
+  U.mapEnabled = map => map >= 1 && map <= U.maxMap;      // Map 1..maxMap (config.js hoặc ?maxmap=N để xem trước)
   U.isUnlocked = function (l) {
     if (!U.mapEnabled(l.map)) return false;
     if (U.debug && l.map === 1) return true;
@@ -177,9 +258,11 @@
     const ls = D.levels.filter(x => U.mapEnabled(x.map)).sort((a, b) => a.map - b.map || a.man - b.man); let m = 0;
     ls.forEach((x, i) => { if (U.isUnlocked(x)) m = i; }); return m;
   };
-  U.dropChance = function (l) {                                // đánh lại màn đã qua: gần tiền tuyến (max-2..max) 20%, xa hơn 5%
-    return (U.maxUnlockedIndex() - U.levelIndex(l)) <= C.dropNearRange ? C.dropRateNear : C.dropRateFar;
+  U.dropChance = function (l) {                                // đánh lại màn đã qua (d = max - chỉ số màn): d<=2 30%, d<=12 10%, xa hơn 3,5%
+    const d = U.maxUnlockedIndex() - U.levelIndex(l);
+    return d <= C.dropNearRange ? C.dropRateNear : d <= C.dropMidRange ? C.dropRateMid : C.dropRateFar;
   };
+  U.pct = x => { const v = Math.round(x * 1000) / 10; return String(v).replace('.', ','); };   // 0.035 -> '3,5'
   U.markCleared = function (l) {                               // trả về { pulls, first, chance }: thắng lần đầu +1 lượt; đánh lại có tỉ lệ rớt huy hiệu (= 1 lượt quay)
     const k = U.levelKey(l);
     if (!U.save.cleared[k]) { U.save.cleared[k] = { rewarded: true }; U.save.pulls += C.pullFirstClear; U.persist(); return { pulls: C.pullFirstClear, first: true, chance: 0 }; }

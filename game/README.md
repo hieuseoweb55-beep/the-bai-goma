@@ -132,3 +132,71 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 - Mục tiêu người dùng: 4 xanh lá + 1 trắng thắng ~75%, 3 xanh lá + 2 trắng ~50% (2-1, 2-2). Chỉ giảm 7% máu quái + tăng 7% công tướng chỉ đạt 36–43% và 18–20% → cần mạnh tay hơn.
 - Đã đặt: `knobs.heroDmgMul` 1.1 → 1.25 (toàn tướng), `enemyHpMul` 0.95 → 0.80 (toàn quái). Mô phỏng (250 trận/ô, đội ngẫu nhiên): 4X+1T = 76%/77%/62% (2-1/2-2/2-3); 3X+2T = 56%/58%/37%; 5 xanh lá cao hơn. Map 1 dễ hơn (1.10 vẫn ≥99%).
 - GIẢ ĐỊNH: tỉ lệ mục tiêu tính trên đội ngẫu nhiên trong 10 tướng.
+
+## Vòng 27 – 3 mốc rớt thẻ gacha khi đánh lại (theo yêu cầu người dùng)
+- Gọi d = (màn xa nhất đã mở) − (chỉ số màn). Màn tiền tuyến thắng lần đầu = +1 lượt (100%). d ≤ 2: 30%. d từ 3 đến 12: 10%. d ≥ 13: 3,5% (quái yếu, thông nhanh). Chặn lạm phát lượt quay khi về cày Map 1.
+- Sửa ở ui/config.js: dropRateNear 0.30, dropMidRange 12, dropRateMid 0.10, dropRateFar 0.035. Hàm U.dropChance (core.js), U.pct hiển thị '3,5%'.
+- Nhãn trên màn bản đồ và dòng mẹo cày hiện đủ 3 mốc, quét mọi map đã bật. Đã kiểm tra d=0..19 bằng Playwright (d=2→30%, 3→10%, 12→10%, 13→3,5%); test_engine 25/25, test_ui đạt.
+- GIẢ ĐỊNH: 'map max' = màn xa nhất đã mở khóa; màn cuối đã thắng (d=0) tính 30%.
+
+## Vòng 28 — dữ liệu v9: 10 tướng mới, Q13–Q37, Map 4–8
+* Nguồn dữ liệu: `data/Goma_Game_Data_v9.xlsx` (thêm NV12–NV21, quái Q13–Q37, 50 màn Map 4–8, sheet GHI_CHÚ_V9). `export_data.py` mặc định đọc v9 → 20 tướng, 37 quái, 80 màn.
+* NV20–NV21 là VIP (ghi chú cột H có "VIP"): **không** nằm trong gacha; cách có VIP chờ chốt (xem tài liệu thiết kế).
+* Map 4–8 mở mặc định (`maxMap: 8` trong config.js; `?maxmap=N` để xem trước/giới hạn). Map 3 giữ nguyên.
+* Mini-boss (màn 4-5, 5-3, 6-3, 7-3...): quái Tinh anh phóng to ×1,3 + đổi màu (tạm, thay bằng ảnh riêng sau).
+* GIẢ ĐỊNH cân bằng: hệ số máu từng màn Map 4–8 (`mapBalance[m].hpByMan`) được mô phỏng 400 trận/màn với đội 5 tướng bậc Xanh lá, công quái cố định ×1 (`atkFixed`); mục tiêu thắng 80% ở màn 1 giảm còn ~35% ở boss. Hệ số này nằm trong config, chưa ghi vào cột hệ số của sheet MAP_MÀN.
+* 3 passive thay thế tạm cho tướng mới vì engine chưa hỗ trợ trigger đúng ý (xem GHI_CHÚ_V9 trong Excel).
+* Ảnh tướng/quái/nền mới chưa có → tự dùng placeholder (chữ tên trên nền kem) cho tới khi bạn thêm ảnh.
+* Đây chỉ là game vui.
+
+## Vòng 30 — công thức độ khó chung (Map 2 đến 8), thước đo mới
+* THƯỚC ĐO (theo yêu cầu): thắng ~25-30% mỗi lượt = "vừa đủ qua" (người chơi đánh lại không giới hạn lượt); 50-60% = "dư sức". Trước đó (Vòng 29) tôi đo 50% = vừa đủ nên quái quá dễ.
+* Một công thức `U.difficultyF(level)` (ui/core.js), tham số ở `GOMA_CONFIG.difficulty` (config.js). Map 1 không đổi. F = sức mạnh quái, đơn vị "đội 5 Xanh lá thắng 50%".
+* Mốc neo (`difficulty.anchors`): mỗi map có 1 đội TỐI THIỂU phải thắng ~30% ở màn 10: 2-7 = 5 Lá; 2-10 = 1 Dương + 4 Lá; 3-10 = 4 Dương + 1 Lá; 4-10 = 1 Tím + 4 Dương; 5-10 = 3 Tím + 2 Dương; 6-10 = 5 Tím; 7-10 = 3 Đỏ + 2 Tím; 8-10 = 5 Đỏ. (Đội tối thiểu từng map là GIẢ ĐỊNH của tôi, trừ Map 2 và 3-1 do bạn quy định; sửa ở `anchors`.)
+* Giữa các mốc: màn 1 của map sau = màn 10 của map trước (`startBump` 1,0); màn 1..7 chỉ chiếm 30% mức tăng (`earlyShare`), 70% dồn vào màn 8, 9, 10 (`wallShare`); boss màn 5 +4%; 2-1 = F 0,78.
+* `ui/difficulty_base.js` TỰ SINH bằng `python3 calibrate_difficulty.py 300` (hệ số nền từng màn + F tại mốc neo). Chạy lại mỗi khi đổi engine / chỉ số / quái / tướng / thêm buff, đồ, hiệu ứng. Không sửa tay.
+* Núm toàn cục: `difficulty.mul` (hoặc `?diff=1.1` trên URL). Tăng = khó hơn cho Map 2 đến 8.
+* Kết quả đo (100 đội ngẫu nhiên mỗi ô, hạt giống khác bộ hiệu chỉnh): 2-7: 5 Lá 36%; 2-8: 5 Lá 9%; 2-8: 1 Dương 38% / 2 Dương 65%; 2-9: 35% / 56%; 2-10: 28% / 40%; 3-1: 3 Dương 65%; đội tối thiểu ở x-10: 3-10 22%, 4-10 25%, 5-10 25%, 6-10 25%, 7-10 22%, 8-10 26%.
+* HẠN CHẾ: (1) Ở 2-10 khoảng cách thắng giữa 1 và 2 Dương chỉ ~12 điểm (1 Dương +10% sức mạnh), nên không đạt đồng thời 30% và 50-60%. (2) Đội đo là đội NGẪU NHIÊN cùng bậc, không có tướng VIP; người chơi chọn đội mạnh nhất nên dễ hơn. (3) Dao động +-8 điểm mỗi màn. (4) Map 7-8 chỉ có đội gần tối đa mới qua được (5 Đỏ 23-28%).
+
+## Vòng 31 — shop huân công, đổi mảnh 5 giờ, gacha Tím/Đỏ/VIP
+* Mỗi lượt quay gacha (kể cả lượt miễn phí đầu) trả về 1 thẻ bài danh dự = 1 huân công (`honorPerPull`). Hiện ở góc phải màn bản đồ / gacha / shop.
+* Gacha sau khi thắng 3-10 (mở 4-1): Trắng 60 / Lá 24 / Dương 10 / Tím 5 / Đỏ 1. Ra Tím: 20% là VIP bản Xanh dương; ra Đỏ: 20% là VIP bản Tím (`vipShare` 0,20; VIP thực tế ~1,0% bản Dương và ~0,2% bản Tím mỗi lượt). Trước 3-10 giữ như cũ, không có VIP.
+* Shop huân công (nút "Shop huân công" ở bản đồ và gacha): bảng 5 ô Trắng/Lá/Dương/Tím/Đỏ, giá 5/30/70/120/500 huân công. Ô Tím: 20% là VIP Xanh dương (giá ô Tím), 80% Tím không VIP. Ô Đỏ: 20% là VIP Tím (giá ô Đỏ), 80% Đỏ không VIP. Ô Trắng/Lá/Dương không có VIP. Mua = nhận 1 thẻ như rút gacha (tướng mới -> có tướng ở bậc đó; bậc cao hơn -> nâng; bằng/thấp hơn -> mảnh).
+* Làm mới mỗi 5 giờ theo đồng hồ thật (mốc cố định theo giờ UTC, `shop.resetHours`). Bảng của mỗi khung cố định theo hạt giống người chơi: tải lại trang không đổi được bảng. Tham số thử `?now=<ms>` để giả giờ.
+* Đổi mảnh (cùng khung 5 giờ): có 1 tướng chỉ định ngẫu nhiên (không VIP). 2 mảnh tướng đó = 1 mảnh tướng thường tự chọn (khác tướng chỉ định); 3 mảnh tướng đó = 1 mảnh tướng VIP tự chọn (phải đang có ít nhất 1 tướng VIP). Đổi bao nhiêu lần cũng được miễn còn mảnh của tướng chỉ định (Vòng 32: có nút đổi 1 / 5 lần / tối đa); sang khung mới thì đổi tướng chỉ định.
+* GIẢ ĐỊNH (bạn chưa nói rõ, sửa nếu sai): (1) 1 thẻ bài danh dự = 1 huân công. (2) Mỗi ô trong bảng chỉ mua được 1 lần mỗi khung. (3) Không giới hạn số lần đổi trong khung, miễn còn mảnh (Vòng 32). (4) Shop mở ngay từ đầu, không chờ thắng 3-10 (nên người chơi có thể mua Tím/Đỏ sớm nếu đủ huân công). (5) Mảnh nhận về cho tướng chưa sở hữu vẫn lưu, dùng khi có tướng. (6) Hai tướng VIP đều chọn được khi có ít nhất 1 VIP.
+* Sửa lỗi: thanh chọn map chỉ hiện Map 1-3 (không vào được Map 4-8); nay hiện Map 1-8. Bộ sưu tập 20 tướng bị cắt dưới màn hình; nay cuộn được.
+
+## Vòng 33 — công cụ kiểm ảnh + ảnh Tím/Đỏ riêng
+* `cong_cu_anh.html` (mở trực tiếp bằng file://, nằm cạnh index.html): bảng ảnh còn thiếu theo tướng/quái/nền/FX, bấm ô để xem prompt ghép sẵn (khối phong cách + prompt riêng + tư thế + khối kỹ thuật) và nút sao chép. Tab "Kiểm thư mục ảnh": chọn thư mục hoặc thả ảnh vào để đối chiếu tên file, gợi ý tên đúng, cảnh báo kích thước / tỉ lệ / nền không phẳng / nhân vật chạm mép. Trang chỉ đọc, không ghi hay đổi tên file.
+* `cong_cu_anh_data.js`: toàn bộ prompt (lấy từ tài liệu thiết kế). Sửa prompt ở đây.
+* Ảnh Tím/Đỏ (tùy chọn): đặt tên `nvXX_card_t3`, `nvXX_idle_t3`, `nvXX_skill_t3` (Tím) và `..._t4` (Đỏ), chạy xu_ly_anh.py. Game tự dùng khi tướng ở bậc Tím/Đỏ (thẻ, đứng, skill); các tư thế khác (lấy đà, đánh, trúng đòn, gục) vẫn dùng ảnh gốc. Thiếu thì dùng ảnh gốc kèm viền màu như cũ. (ngoài yêu cầu nhỏ: sửa U.Sprite / U.heroCard để nhận ảnh _t3/_t4)
+* `xu_ly_anh.py`: danh sách ảnh cần có đã cập nhật (20 tướng, quái Q01–Q37, 5 nền mới, FX mới, ảnh Tím/Đỏ tùy chọn).
+* Hạn chế: trang kiểm ảnh dò file chưa vào manifest bằng cách thử tải ảnh nên console của trình duyệt báo nhiều dòng 404, bình thường. Kiểm tra chất lượng chỉ là ước lượng nhanh, `xu_ly_anh.py` mới là bước kiểm kỹ.
+
+
+## Vòng 34 — Icon trạng thái to hơn, xác nằm lại
+* Icon buff/debuff dưới thanh máu: 17px → 32px (xếp nhiều hàng nếu nhiều trạng thái); sao choáng, Zzz, dấu khiêu khích, chữ nổi trạng thái to hơn ~50%.
+* Tướng/quái chết không biến mất nữa: nằm lại tại chỗ đến hết trận (tướng giữ pose 'dead', quái nằm nghiêng 75°).
+* GIẢ ĐỊNH (ngoài yêu cầu): xác bị làm tối/xám và mờ nhẹ (85%), ẩn thanh máu/hiệu ứng; tên quái chết ẩn đi cho khỏi nằm ngang. Hồi sinh xóa các hiệu ứng này. Chưa có ảnh xác riêng cho quái — dùng ảnh thường xoay nghiêng.
+
+### Vòng 34b (index ?v=35) — chỉnh lại xác
+* Quái chết thì biến mất như cũ (không có ảnh xác nên nhìn xấu); chỉ tướng chết mới nằm lại (pose 'dead', tối/xám, mờ nhẹ). Icon trạng thái to giữ nguyên.
+
+## Vòng 35 — Tăng công quái +10 điểm %
+* `knobs.enemyDmgMul` 1,2 → 1,3 (quái đánh 120% → 130% so với gốc; áp cho mọi quái, cả Map 1). Hệ số theo màn của công thức độ khó vẫn nhân thêm bên trên.
+* GIẢ ĐỊNH: hiểu "+10%" là cộng 10 điểm (1,2 → 1,3), không phải nhân 1,1 (=1,32). Không chạy lại `calibrate_difficulty.py` nên hệ số nền cũ (đo ở 1,2) giữ nguyên → mốc neo thực tế thấp đi (5G ở 2-7 ~34% → ~15%). Muốn đưa neo về 30% thì chạy lại calibrate (khi đó +10% sẽ bị công thức bù lại cho Map 2+, chỉ còn tác dụng ở Map 1).
+* Đo 100 đội ngẫu nhiên/ô (thắng %), trước → sau: 5G 2-7 34→15, 2-10 16→11, 3-1 13→6; 4 Lá+1 Trắng 3-1 2→1; 1 Dương+4 Lá 3-1 35→24, 2-10 29→23; 3 Dương+2 Lá 3-1 68→61.
+
+* Vòng 35 — ĐO LẠI có tank: đội thử phải có ≥1 Tank hàng trước (NV01/02/09/12/13/19), phần còn lại ngẫu nhiên (100 đội/ô). Thắng %, công quái 1,2 → 1,3: 5G 2-7 40→20, 3-1 10→2; 4 Lá+1 Trắng 3-1 5→0; 1 Dương+4 Lá 2-7 65→46, 3-1 33→19, 2-10 27→26; 3 Dương+2 Lá 3-1 71→63. Số đo ở phần trên (không ép tank) bị thấp hơn thực tế.
+* Lưu ý: `calibrate_difficulty.py` và các mốc neo Vòng 29-30 đo bằng đội ngẫu nhiên KHÔNG ép tank → nếu chạy lại hiệu chỉnh nên thêm quy tắc ≥1 Tank.
+
+## Vòng 36 — Thu nhỏ ảnh tướng chết
+* Ảnh `_dead` (nằm ngang, rộng gấp 4–5 lần ảnh đứng) giờ được ép vào khung chung: tối đa rộng 0,9 × chiều cao tướng, cao 0,55 × chiều cao tướng; mọi tướng chết đều cùng cỡ. Chân/giữa thân vẫn neo đúng chỗ tướng ngã. (ảnh gốc không đổi)
+
+## Vòng 37 – Dàn đội rộng hơn (cache ?v=38)
+- Ảnh tướng/quái mới (Tím/Đỏ có cánh, lửa) rộng hơn nên che nhau: `heroBodyPx` 205→175, `lanesY` [710,865,1020], `heroX` front 880/back 420, `enemyX` front 1150/back 1620.
+- Làn giữa (slot lẻ) lệch về phía SAU của mỗi bên 110px (trước là lệch về phía trước 50px) → so le zigzag, tên và thanh máu không bị đè.
+- Đã cắt 234 ảnh mới vào assets (manifest 340 mục); bản gốc ở `assets/_goc_truoc_khi_cat/`; `nv12_idle` đã thu ×0.5 cho khớp tỉ lệ.
+- Thu hẹp khoảng cách hàng trước–sau ~20% (460→368px): heroX back 512, enemyX back 1526.

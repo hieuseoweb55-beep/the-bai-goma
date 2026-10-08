@@ -3,7 +3,7 @@
   'use strict';
   const U = window.GomaUI, C = U.C, D = U.D, el = U.el;
   const S = () => U.save;
-  const MAP_BG = { 1: 'bg_kho', 2: 'bg_phongkhach', 3: 'bg_congtykhach' };
+  const MAP_BG = { 1: 'bg_kho', 2: 'bg_phongkhach', 3: 'bg_congtykhach', 4: 'bg_xuongdet', 5: 'bg_cang', 6: 'bg_caotoc', 7: 'bg_hoicho', 8: 'bg_thamthan' };
   const NOTE = 'Đây chỉ là game vui';
 
   // ---------- chọn main ----------
@@ -135,7 +135,7 @@
     const root = el('div', { style: 'position:absolute;inset:0' });
     root.appendChild(U.bg('bg_phonghop', true));
     const pulls = el('div', { class: 'pulls', id: 'pulls-count' });
-    const update = () => { pulls.textContent = 'Lượt quay: ' + S().pulls; b1.disabled = S().pulls < 1; b10.disabled = S().pulls < 10; };
+    const update = () => { pulls.textContent = 'Lượt quay: ' + S().pulls + ' · Huân công: ' + (S().honor || 0); b1.disabled = S().pulls < 1; b10.disabled = S().pulls < 10; };
     const doPull = n => {
       const res = n === 1 ? (S().pulls >= 1 ? (S().pulls -= 1, [U.pull(false)]) : null) : U.pullMany(n);
       if (!res) return; U.persist(); update(); U.reveal(res, update);
@@ -146,14 +146,16 @@
     const fig = el('div', { style: 'position:absolute;left:220px;top:0;width:0;height:0' });
     const ms = U.Sprite('main_' + (S().sex || 'nam'), 520, 0, 'Main'); ms.setPose(U.has(mainName) ? 'joy' : 'idle'); fig.appendChild(ms.el); fig.style.top = '1000px';
     root.append(
-      el('div', { class: 'topbar' }, [el('button', { class: 'btn sec sm', id: 'btn-back', text: '◀ Về bản đồ', onclick: () => U.screenMap() }), pulls]),
+      el('div', { class: 'topbar' }, [el('button', { class: 'btn sec sm', id: 'btn-back', text: '◀ Về bản đồ', onclick: () => U.screenMap() }), el('button', { class: 'btn sec sm', id: 'btn-shop-g', text: 'Shop huân công', onclick: () => U.screenShop() }), pulls]),
       el('div', { class: 'title', text: 'Phòng họp – Đề xuất nhân sự' }),
       fig,
       el('div', { style: 'position:absolute;left:760px;right:100px;top:240px;font-size:32px;line-height:1.6;background:rgba(18,14,30,.85);border:4px solid #4a4560;border-radius:20px;padding:30px 40px' }, [
         el('div', { style: 'font-weight:900;color:#ffb340;font-size:38px', text: 'Tỉ lệ phẩm chất' }),
         el('div', { text: `Trước khi thắng màn 2.6: Trắng ${C.gachaWeightsEarly[0]}% · Xanh lá ${C.gachaWeightsEarly[1]}% · Xanh dương ${C.gachaWeightsEarly[2]}%` }),
         el('div', { text: `Sau khi thắng màn 2.6: Trắng ${C.gachaWeightsLate[0]}% · Xanh lá ${C.gachaWeightsLate[1]}% · Xanh dương ${C.gachaWeightsLate[2]}%` }),
-        el('div', { text: 'Tướng chọn đều trong 10 tướng (kể cả Hiếu).' }),
+        el('div', { text: `Sau khi thắng 3.10 (mở 4.1): Trắng ${C.gachaWeightsTop[0]}% · Lá ${C.gachaWeightsTop[1]}% · Dương ${C.gachaWeightsTop[2]}% · Tím ${C.gachaWeightsTop[3]}% · Đỏ ${C.gachaWeightsTop[4]}%` }),
+        el('div', { text: `Ra Tím: ${U.pct(C.vipShare)}% là tướng VIP bản Xanh dương. Ra Đỏ: ${U.pct(C.vipShare)}% là tướng VIP bản Tím.` }),
+        el('div', { text: `Tướng thường chọn đều (VIP chỉ ra theo cách trên). Mỗi lượt quay +${C.honorPerPull} huân công.` }),
         el('div', { text: 'Rút bậc CAO hơn bản đang có: thay thẳng, bản cũ đổi thành mảnh.' }),
         el('div', { text: `Rút bằng/thấp hơn: đổi thành mảnh (Trắng ${C.shardsByTier[0]} · Xanh lá ${C.shardsByTier[1]} · Xanh dương ${C.shardsByTier[2]}).` }),
       ]),
@@ -161,6 +163,72 @@
       el('div', { class: 'note', text: NOTE })
     );
     update(); U.show(root);
+  };
+
+  // ---------- shop huân công ----------
+  U.screenShop = function () {
+    const root = el('div', { style: 'position:absolute;inset:0' });
+    root.appendChild(U.bg('bg_phonghop', true));
+    const honor = el('div', { class: 'pulls', id: 'honor-count' }), timer = el('div', { id: 'shop-timer', style: 'font-size:26px;font-weight:700;color:#cfe3ff' });
+    root.appendChild(el('div', { class: 'topbar' }, [el('button', { class: 'btn sec sm', id: 'btn-back', text: '◀ Về bản đồ', onclick: () => U.screenMap() }), el('button', { class: 'btn sec sm', id: 'btn-gacha-s', text: 'Gacha', onclick: () => U.screenGacha() }), timer, honor]));
+    root.appendChild(el('div', { class: 'title', style: 'font-size:50px', text: 'Shop huân công' }));
+    const offersBox = el('div', { class: 'shopgrid', id: 'shop-offers' }), exBox = el('div', { class: 'exbox', id: 'shop-exchange' });
+    root.append(offersBox, exBox, el('div', { class: 'note', text: NOTE }));
+    const fmt = ms => { const t = Math.max(0, Math.floor(ms / 1000)), p = n => String(n).padStart(2, '0'); return p(Math.floor(t / 3600)) + ':' + p(Math.floor(t % 3600 / 60)) + ':' + p(t % 60); };
+    let slot = U.shopSlot();
+    function render() {
+      const st = U.shopState(); honor.textContent = 'Huân công: ' + (S().honor || 0);
+      offersBox.innerHTML = '';
+      st.offers.forEach((o, i) => {
+        const h = U.hero(o.code), can = !o.bought && (S().honor || 0) >= o.price;
+        const card = U.heroCard(h, o.tier, { small: true });
+        const btn = el('button', { class: 'btn sm', 'data-offer': i, text: o.bought ? 'Đã mua' : o.price + ' huân công', onclick: () => {
+          const r = U.shopBuy(i); if (r.error) { U.toast(r.error); return; }
+          render(); U.reveal([r], render);
+        } });
+        if (!can) btn.setAttribute('disabled', 'disabled');
+        offersBox.appendChild(el('div', { class: 'offer' }, [el('div', { class: 'slotlbl t' + o.slotTier, text: 'Ô ' + U.tierNames[o.slotTier] + (h.vip ? ' · VIP!' : '') }), card, btn]));
+      });
+      const x = U.exchangeInfo(), h = U.hero(x.code);
+      exBox.innerHTML = '';
+      const mk = (kind, cost, label) => {
+        const b = el('button', { class: 'btn sm', 'data-exch': kind, text: label, onclick: () => pickTarget(kind) });
+        if (x.used || x.have < cost || (kind === 'vip' && !x.hasVip)) b.setAttribute('disabled', 'disabled');
+        return b;
+      };
+      exBox.append(
+        el('div', { style: 'font-size:30px;font-weight:900;color:#ffb340', text: 'Đổi mảnh (tướng chỉ định đổi mỗi 5 giờ, đổi bao nhiêu cũng được nếu còn mảnh)' }),
+        el('div', { style: 'display:flex;gap:24px;align-items:center' }, [
+          U.heroCard(h, S().owned[h.code] !== undefined ? S().owned[h.code] : 0, { small: true, locked: S().owned[h.code] === undefined }),
+          el('div', { style: 'display:flex;flex-direction:column;gap:12px;font-size:24px' }, [
+            el('div', { text: 'Tướng chỉ định: ' + U.shortName(h.name) }),
+            el('div', { text: 'Mảnh đang có: ' + x.have }),
+            mk('normal', x.normalCost, x.normalCost + ' mảnh → 1 mảnh tướng thường tự chọn'),
+            mk('vip', x.vipCost, x.vipCost + ' mảnh → 1 mảnh tướng VIP tự chọn'),
+            x.hasVip ? null : el('div', { style: 'font-size:20px;opacity:.8', text: '(Gói VIP cần có tướng VIP trước)' }),
+          ]),
+        ]));
+    }
+    function pickTarget(kind) {
+      const x = U.exchangeInfo(), unit = kind === 'vip' ? x.vipCost : x.normalCost, list = D.heroes.filter(h => kind === 'vip' ? h.vip : (!h.vip && h.code !== x.code));
+      let qty = 1, m;
+      const info = el('div', { style: 'font-size:26px;margin-bottom:10px' });
+      const grid = el('div', { class: 'grid10', style: 'max-height:640px;overflow-y:auto;padding:8px' });
+      const upd = () => { const have = U.shardsOf(x.code), max = Math.floor(have / unit); info.textContent = 'Mảnh còn: ' + have + ' · mỗi ' + unit + ' mảnh = 1 mảnh nhận · đổi được tối đa ' + max + ' lần · lần này đổi ' + (qty === 'max' ? 'tối đa (' + max + ')' : qty); };
+      const qb = (label, v) => el('button', { class: 'btn sec sm', 'data-qty': v, text: label, onclick: () => { qty = v; upd(); } });
+      list.forEach(h => { const c = U.heroCard(h, S().owned[h.code] !== undefined ? S().owned[h.code] : 0, { small: true, pick: true, locked: S().owned[h.code] === undefined }); c.setAttribute('data-target', h.code);
+        c.addEventListener('click', () => { const n = qty === 'max' ? Math.floor(U.shardsOf(x.code) / unit) : qty; const r = U.exchangeShards(kind, h.code, n); if (r.error) { U.toast(r.error); return; } U.toast('Đổi ' + r.cost + ' mảnh → +' + r.got + ' mảnh ' + U.shortName(h.name)); upd(); render(); if (U.shardsOf(x.code) < unit) m.close(); }); grid.appendChild(c); });
+      m = U.modal(el('div', { style: 'text-align:center' }, [el('div', { style: 'font-size:34px;font-weight:800;margin-bottom:8px', text: 'Chọn tướng nhận mảnh' }), info,
+        el('div', { style: 'display:flex;gap:14px;justify-content:center;margin-bottom:12px' }, [qb('Đổi 1 lần', 1), qb('Đổi 5 lần', 5), qb('Đổi tối đa', 'max')]), grid]));
+      upd();
+    }
+    render(); U.show(root);
+    const iv = setInterval(() => {
+      if (!root.isConnected) { clearInterval(iv); return; }
+      timer.textContent = 'Làm mới sau ' + fmt(U.shopNextReset() - U.now());
+      if (U.shopSlot() !== slot) { slot = U.shopSlot(); render(); }
+    }, 500);
+    timer.textContent = 'Làm mới sau ' + fmt(U.shopNextReset() - U.now());
   };
 
   U.confirmReset = function () {   // xóa toàn bộ tiến trình để chơi lại từ đầu (hỏi xác nhận)
@@ -177,9 +245,9 @@
     if (map) curMap = map;
     const root = el('div', { style: 'position:absolute;inset:0' });
     root.appendChild(U.bg(MAP_BG[curMap], true));
-    root.appendChild(el('div', { class: 'topbar' }, [el('div', { style: 'font-size:32px;font-weight:800', text: U.playerName() }), el('div', { class: 'pulls', id: 'pulls-count', text: 'Lượt quay: ' + S().pulls })]));
+    root.appendChild(el('div', { class: 'topbar' }, [el('div', { style: 'font-size:32px;font-weight:800', text: U.playerName() }), el('div', { class: 'pulls', id: 'pulls-count', text: 'Lượt quay: ' + S().pulls + ' · Huân công: ' + (S().honor || 0) })]));
     const tabs = el('div', { class: 'tabs' });
-    [1, 2, 3].forEach(m => tabs.appendChild(el('button', { class: 'tab' + (m === curMap ? ' act' : '') + (U.mapEnabled(m) ? '' : ' lock'), 'data-map': m, text: 'Map ' + m + (U.mapEnabled(m) ? '' : ' (khóa)'), onclick: () => U.screenMap(m) })));
+    [1, 2, 3, 4, 5, 6, 7, 8].forEach(m => tabs.appendChild(el('button', { class: 'tab' + (m === curMap ? ' act' : '') + (U.mapEnabled(m) ? '' : ' lock'), 'data-map': m, text: 'Map ' + m + (U.mapEnabled(m) ? '' : ' (khóa)'), onclick: () => U.screenMap(m) })));
     root.appendChild(tabs);
     if (!U.mapEnabled(curMap)) {
       root.appendChild(el('div', { class: 'soon', text: 'Sắp ra mắt' }));
@@ -196,16 +264,18 @@
         if (l.kind === 'Boss') card.appendChild(el('div', { class: 'badge', text: 'BOSS' }));
         else if (l.kind === 'Tinh anh') card.appendChild(el('div', { class: 'badge elite', text: 'TINH ANH' }));
         if (cl) card.appendChild(el('div', { class: 'ok', text: '✓' }));
-        if (un) card.appendChild(el('div', { class: 'droptag' + (cl && U.dropChance(l) >= 0.2 ? ' hot' : ''), text: cl ? 'Rớt thẻ ' + Math.round(U.dropChance(l) * 100) + '%' : 'Thắng lần đầu +' + C.pullFirstClear + ' lượt' }));
+        if (un) card.appendChild(el('div', { class: 'droptag' + (cl && U.dropChance(l) >= 0.2 ? ' hot' : ''), text: cl ? 'Rớt thẻ ' + U.pct(U.dropChance(l)) + '%' : 'Thắng lần đầu +' + C.pullFirstClear + ' lượt' }));
         g.appendChild(card);
       });
       root.appendChild(g);
-      const near = [1, 2, 3].filter(m => U.mapEnabled(m)).reduce((acc, m) => acc.concat(U.levelsOf(m)), []).filter(l => U.isCleared(l) && U.dropChance(l) >= C.dropRateNear).map(l => l.map + '.' + l.man);
-      const tip = near.length ? `Mẹo cày lượt quay: đánh lại màn ${near.join(', ')} → ${Math.round(C.dropRateNear * 100)}% rớt 1 lượt. Các màn xa hơn chỉ ${Math.round(C.dropRateFar * 100)}%. Thắng màn mới lần đầu: +${C.pullFirstClear} lượt.` : `Mẹo: thắng màn mới lần đầu +${C.pullFirstClear} lượt quay. Đánh lại các màn gần tiền tuyến (${Math.round(C.dropRateNear * 100)}%) để cày thêm lượt, màn xa hơn ${Math.round(C.dropRateFar * 100)}%.`;
+      const near = [1, 2, 3, 4, 5, 6, 7, 8].filter(m => U.mapEnabled(m)).reduce((acc, m) => acc.concat(U.levelsOf(m)), []).filter(l => U.isCleared(l) && U.dropChance(l) >= C.dropRateNear).map(l => l.map + '.' + l.man);
+      const tiers = `${U.pct(C.dropRateNear)}% ở 2 màn sát tiền tuyến, ${U.pct(C.dropRateMid)}% ở 12 màn trước đó, ${U.pct(C.dropRateFar)}% ở các màn xa hơn`;
+      const tip = near.length ? `Mẹo cày lượt quay: đánh lại màn ${near.join(', ')} → ${U.pct(C.dropRateNear)}% rớt 1 lượt. Tỉ lệ rớt: ${tiers}. Thắng màn mới lần đầu: +${C.pullFirstClear} lượt.` : `Mẹo: thắng màn mới lần đầu +${C.pullFirstClear} lượt quay. Đánh lại để cày thêm: ${tiers}.`;
       root.appendChild(el('div', { class: 'droptip', id: 'droptip', text: tip }));
     }
     root.appendChild(el('div', { class: 'bottombar' }, [
       el('button', { class: 'btn', id: 'btn-gacha', text: 'Gacha', onclick: () => U.screenGacha() }),
+      el('button', { class: 'btn sec', id: 'btn-shop', text: 'Shop huân công', onclick: () => U.screenShop() }),
       el('button', { class: 'btn sec', id: 'btn-collection', text: 'Bộ sưu tập', onclick: () => U.screenCollection() }),
       el('button', { class: 'btn sec', id: 'btn-settings', text: 'Cài đặt', onclick: () => U.screenSettings() }),
       el('button', { class: 'btn sec', id: 'btn-reset-map', text: 'Xóa tài khoản', onclick: () => U.confirmReset() }),

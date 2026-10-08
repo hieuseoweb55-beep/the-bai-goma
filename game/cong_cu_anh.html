@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Công cụ kiểm ảnh GOMA</title>
+<style>
+:root{--bg:#14121c;--panel:#1d1a28;--line:#383350;--txt:#ece8f6;--mut:#9c97b3;--ok:#3fbf6a;--raw:#e0b13a;--miss:#e0566a;--opt:#5a566c;--acc:#ffb340;--t3:#b45cff;--t4:#ff5a5a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.45 system-ui,"Segoe UI",Roboto,sans-serif}
+header{padding:16px 20px 8px;display:flex;flex-wrap:wrap;gap:14px;align-items:baseline}
+h1{margin:0;font-size:22px}
+.sub{color:var(--mut);font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:0 20px 10px;border-bottom:1px solid var(--line)}
+nav button{background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px 14px;font:inherit;cursor:pointer}
+nav button.act{background:var(--acc);color:#2b1600;border-color:var(--acc);font-weight:700}
+main{padding:16px 20px 60px;display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:18px;align-items:start}
+@media(max-width:1100px){main{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.bars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:14px}
+.bar b{display:block;font-size:13px;color:var(--mut);font-weight:600}
+.bar .n{font-size:22px;font-weight:700}
+.track{height:8px;background:#2a2640;border-radius:6px;overflow:hidden;margin-top:6px}
+.track i{display:block;height:100%;background:var(--ok)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:4px 6px;text-align:center;border-bottom:1px solid #2a2640}
+th{color:var(--mut);font-weight:600;position:sticky;top:0;background:var(--panel)}
+td.nm{text-align:left;white-space:nowrap}
+th.t3,td.g3{border-left:2px solid var(--t3)}th.t4,td.g4{border-left:2px solid var(--t4)}
+.cell{display:inline-block;width:26px;height:22px;border-radius:5px;cursor:pointer;border:1px solid transparent;line-height:20px;font-size:12px;font-weight:700}
+.cell.ok{background:#1f4a31;color:#9ff0bd}.cell.raw{background:#554516;color:#ffe08a}.cell.miss{background:#5a2330;color:#ff9db0}.cell.opt{background:#2a2838;color:#7d7993}
+.cell.sel{outline:2px solid var(--acc)}
+.leg{display:flex;gap:14px;flex-wrap:wrap;color:var(--mut);font-size:12px;margin:6px 0 10px}
+.leg span:before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-2px}
+.leg .ok:before{background:#1f4a31}.leg .raw:before{background:#554516}.leg .miss:before{background:#5a2330}.leg .opt:before{background:#2a2838}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+label{color:var(--mut);font-size:13px}
+button.b,input[type=file]{background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font:inherit;cursor:pointer}
+button.b.pri{background:var(--acc);color:#2b1600;border-color:var(--acc);font-weight:700}
+#side{position:sticky;top:12px}
+#side h3{margin:0 0 6px;font-size:16px}
+.pbox{background:#14121c;border:1px solid var(--line);border-radius:8px;padding:10px;white-space:pre-wrap;word-break:break-word;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:340px;overflow:auto}
+.note{color:var(--mut);font-size:13px;margin:8px 0}
+.thumb{max-width:100%;max-height:200px;border-radius:8px;background:#fff;margin:6px 0}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;font-weight:700}
+.pill.ok{background:#1f4a31;color:#9ff0bd}.pill.raw{background:#554516;color:#ffe08a}.pill.miss{background:#5a2330;color:#ff9db0}.pill.opt{background:#2a2838;color:#9c97b3}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.item{border:1px solid var(--line);border-radius:8px;padding:8px;cursor:pointer;background:#181525}
+.item.sel{outline:2px solid var(--acc)}
+.item small{color:var(--mut);display:block}
+.drop{border:2px dashed var(--line);border-radius:12px;padding:22px;text-align:center;color:var(--mut)}
+.drop.over{border-color:var(--acc);color:var(--txt)}
+.rep td{text-align:left;vertical-align:top}
+.warn{color:var(--raw)}.bad{color:var(--miss)}.good{color:var(--ok)}
+</style>
+</head>
+<body>
+<header><h1>Công cụ kiểm ảnh GOMA</h1><span class="sub">Tự báo ảnh nào thiếu, kèm prompt dán nhanh. Mở trang này nằm trong thư mục game (cạnh index.html). Không gửi dữ liệu đi đâu.</span></header>
+<nav id="tabs"></nav>
+<main>
+  <div id="view"></div>
+  <aside id="side" class="card"><h3>Chọn một ô để xem prompt</h3><div class="note">Bấm vào ô màu ở bảng bên trái.</div></aside>
+</main>
+<script src="data.js"></script>
+<script src="assets/manifest.js"></script>
+<script src="cong_cu_anh_data.js"></script>
+<script>
+'use strict';
+const D = window.GOMA_DATA, M = window.GOMA_MANIFEST || {}, P = window.GOMA_PROMPTS;
+const POSES = ['idle','windup','attack','skill','hit','dead','card'];
+const POSE_VN = {idle:'đứng',windup:'lấy đà',attack:'đánh',skill:'skill',hit:'trúng đòn',dead:'gục',card:'thẻ'};
+const T_POSES = ['card','idle','skill'];
+const MAPBG = {1:'bg_kho',2:'bg_phongkhach',3:'bg_congtykhach',4:'bg_xuongdet',5:'bg_cang',6:'bg_caotoc',7:'bg_hoicho',8:'bg_thamthan'};
+const $ = (s, r) => (r || document).querySelector(s);
+const el = (t, a, c) => { const e = document.createElement(t); if (a) for (const k in a) { if (k === 'text') e.textContent = a[k]; else if (k === 'html') e.innerHTML = a[k]; else if (k.startsWith('on')) e.addEventListener(k.slice(2), a[k]); else e.setAttribute(k, a[k]); } (c || []).forEach(x => e.appendChild(typeof x === 'string' ? document.createTextNode(x) : x)); return e; };
+
+/* ---------- danh sách ảnh cần có ---------- */
+const items = [];   // {name, group, label, req, hero?, pose?, tier?}
+const byName = {};
+function add(it) { items.push(it); byName[it.name] = it; }
+D.heroes.forEach(h => {
+  const c = h.code.toLowerCase();
+  POSES.forEach(p => add({ name: c + '_' + p, group: 'hero', hero: h.code, pose: p, tier: 2, req: p !== 'card' || !!P.base[h.code] || !!M[c + '_card'], label: h.code + ' ' + POSE_VN[p] }));
+  [3,4].forEach(t => T_POSES.forEach(p => add({ name: c + '_' + p + '_t' + t, group: 'hero', hero: h.code, pose: p, tier: t, req: false, label: h.code + ' ' + p + (t === 3 ? ' Tím' : ' Đỏ') })));
+});
+D.monsters.forEach(m => add({ name: m.code.toLowerCase() + '_idle', group: 'monster', mon: m.code, req: !['Q03','Q04'].includes(m.code), label: m.code + ' ' + m.name }));
+Object.keys(MAPBG).forEach(k => add({ name: MAPBG[k], group: 'bg', map: +k, req: true, label: 'Map ' + k + ' · ' + MAPBG[k] }));
+['fx_bang','fx_hoisinh','fx_dientiet','fx_khieukich'].forEach(n => add({ name: n, group: 'fx', req: true, label: n, old: true }));
+P.fx.forEach(f => add({ name: f[0], group: 'fx', req: false, label: f[0] + ' · ' + f[1], fx: f }));
+
+const state = { status: {}, file: {}, filter: 'all', sel: null, tab: 'tong' };
+function statusOf(it) { return state.status[it.name] || (M[it.name] ? 'ok' : 'miss'); }
+
+/* ---------- dò file có trong assets nhưng chưa vào manifest ---------- */
+function probe(name) {
+  return new Promise(res => {
+    const exts = ['png','jpg','jpeg','webp']; let i = 0;
+    const tryNext = () => { if (i >= exts.length) return res(null); const im = new Image(); const f = name + '.' + exts[i++]; im.onload = () => res(f); im.onerror = tryNext; im.src = 'assets/' + f; };
+    tryNext();
+  });
+}
+async function scan() {
+  const todo = items.filter(it => !M[it.name]);
+  let k = 0;
+  const worker = async () => { while (k < todo.length) { const it = todo[k++]; const f = await probe(it.name); if (f) { state.status[it.name] = 'raw'; state.file[it.name] = f; } } };
+  await Promise.all(Array.from({ length: 12 }, worker));
+}
+
+/* ---------- ghép prompt ---------- */
+function promptFor(it) {
+  if (it.group === 'hero') {
+    const code = it.hero, isNew = !!P.base[code], tr = P.tier[code] || ['', '', ''];
+    if (it.tier >= 3) {
+      const blk = it.tier === 3 ? P.t3 : P.t4, add = tr[it.tier - 3];
+      const pose = it.pose === 'skill' ? tr[2] + ' (art fills a square frame)' : P.poses[it.pose];
+      return { text: [P.style, blk, 'Extra details: ' + add + '.', pose, P.tech].join(' '), ref: 'Đính kèm ảnh ' + code.toLowerCase() + '_idle hiện tại làm ảnh tham chiếu.', size: sizeHint(it) };
+    }
+    if (isNew) {
+      const subject = P.base[code][0], pose = it.pose === 'skill' ? P.base[code][1] + ' (art fills a square frame)' : P.poses[it.pose];
+      return { text: [P.style, subject, pose, P.tech].join(' '), ref: it.pose === 'idle' ? 'Ảnh đầu tiên của tướng: không cần tham chiếu. Làm idle trước, các tư thế sau dùng idle làm tham chiếu.' : 'Đính kèm ảnh ' + code.toLowerCase() + '_idle làm ảnh tham chiếu để giữ đúng khuôn mặt.', size: sizeHint(it) };
+    }
+    const pose = it.pose === 'skill' ? tr[2] + ' (art fills a square frame)' : P.poses[it.pose];
+    return { text: [P.style, 'The SAME character as the reference image, unchanged outfit and face.', pose, P.tech].join(' '), ref: 'Tướng cũ: đính kèm ảnh idle hiện có làm tham chiếu.', size: sizeHint(it) };
+  }
+  if (it.group === 'monster') {
+    const d = P.monsters[it.mon];
+    if (!d) return { text: '(Quái cũ, đã có ảnh. Nếu cần vẽ lại, dùng ảnh hiện có làm tham chiếu.)', ref: '', size: '' };
+    return { text: [P.style, d, P.monsterTech].join(' '), ref: 'Quái quay sang TRÁI. Nên tham chiếu một ảnh quái cũ (vd q01_idle) để giữ phong cách.', size: 'Cao tối thiểu 1024 px, nền trắng trơn.' };
+  }
+  if (it.group === 'bg') {
+    const d = P.bg[it.name];
+    return { text: d ? [P.style.replace(', same art style as the reference image', ''), d, P.techBg].join(' ') : '(Nền có sẵn trong game.)', ref: 'Nên tham chiếu một nền cũ (vd bg_kho) để cùng phong cách.', size: '16:9, tối thiểu 1920x1080.' };
+  }
+  if (it.group === 'fx') {
+    if (it.fx) return { text: it.fx[2] + ', ' + P.fxTail + '. ' + P.techFx, ref: 'Dùng chung cho cả 20 tướng, làm 1 lần.', size: 'Xem kích thước ở cuối prompt.' };
+    return { text: '(Hiệu ứng có sẵn trong game.)', ref: '', size: '' };
+  }
+  return { text: '', ref: '', size: '' };
+}
+function sizeHint(it) {
+  if (it.pose === 'card') return 'Khung 4:5 (vd 1024x1280).';
+  if (it.pose === 'skill') return 'Khung vuông 1:1 (vd 1536x1536).';
+  return 'Nền trắng trơn, toàn thân, chân cùng đường nền với ảnh khác.';
+}
+
+/* ---------- giao diện chung ---------- */
+const TABS = [['tong','Tổng quan'],['tuong','Tướng'],['quai','Quái'],['nen','Nền & FX'],['thumuc','Kiểm thư mục ảnh']];
+function renderTabs() { const n = $('#tabs'); n.innerHTML = ''; TABS.forEach(([k, v]) => n.appendChild(el('button', { class: state.tab === k ? 'act' : '', text: v, onclick: () => { state.tab = k; render(); } }))); }
+function legend() { return el('div', { class: 'leg' }, [el('span', { class: 'ok', text: 'Có, game đang dùng' }), el('span', { class: 'raw', text: 'Có file nhưng chưa xử lý (chạy xu_ly_anh.py)' }), el('span', { class: 'miss', text: 'Thiếu (bắt buộc)' }), el('span', { class: 'opt', text: 'Thiếu (không bắt buộc)' })]); }
+function cellFor(it) {
+  const s = statusOf(it), cls = s === 'miss' && !it.req ? 'opt' : s;
+  const c = el('span', { class: 'cell ' + cls + (state.sel === it.name ? ' sel' : ''), title: it.label, text: s === 'ok' ? '✓' : s === 'raw' ? '•' : '✗', onclick: () => { state.sel = it.name; render(); } });
+  return c;
+}
+function sideRender() {
+  const s = $('#side'); s.innerHTML = '';
+  const it = byName[state.sel]; if (!it) { s.append(el('h3', { text: 'Chọn một ô để xem prompt' }), el('div', { class: 'note', text: 'Bấm vào ô màu ở bảng bên trái.' })); return; }
+  const st = statusOf(it), pr = promptFor(it);
+  s.appendChild(el('h3', { text: it.label }));
+  s.appendChild(el('div', {}, [el('span', { class: 'pill ' + (st === 'miss' && !it.req ? 'opt' : st), text: st === 'ok' ? 'Có' : st === 'raw' ? 'Có file, chưa xử lý' : (it.req ? 'Thiếu' : 'Thiếu (tùy chọn)') }), ' ', el('code', { text: it.name + '.png' })]));
+  const f = M[it.name] ? M[it.name].file : state.file[it.name];
+  if (f) s.appendChild(el('img', { class: 'thumb', src: 'assets/' + f }));
+  if (pr.ref) s.appendChild(el('div', { class: 'note', text: pr.ref }));
+  const box = el('div', { class: 'pbox', text: pr.text });
+  s.appendChild(box);
+  if (pr.size) s.appendChild(el('div', { class: 'note', text: 'Kích thước: ' + pr.size }));
+  const btn = el('button', { class: 'b pri', text: 'Sao chép prompt', onclick: async () => { try { await navigator.clipboard.writeText(pr.text); } catch (e) { const r = document.createRange(); r.selectNodeContents(box); const sl = getSelection(); sl.removeAllRanges(); sl.addRange(r); document.execCommand('copy'); } btn.textContent = 'Đã chép'; setTimeout(() => btn.textContent = 'Sao chép prompt', 1200); } });
+  s.appendChild(btn);
+  s.appendChild(el('div', { class: 'note', html: 'Đặt tên file đúng: <code>' + it.name + '.png</code> rồi thả vào thư mục <code>assets/</code> hoặc dùng tab "Kiểm thư mục ảnh" để soát tên trước.' }));
+}
+
+/* ---------- tab: tổng quan ---------- */
+function counts(list) { let ok = 0, raw = 0, miss = 0, req = 0; list.forEach(it => { const s = statusOf(it); if (it.req) req++; if (s === 'ok') ok++; else if (s === 'raw') raw++; else if (it.req) miss++; }); return { ok, raw, miss, req, total: list.length }; }
+function viewTong(v) {
+  const g = (name, list, note) => { const c = counts(list); const done = list.filter(it => statusOf(it) === 'ok').length; return el('div', { class: 'card bar' }, [el('b', { text: name }), el('div', { class: 'n', text: done + ' / ' + list.length }), el('div', { class: 'track' }, [el('i', { style: 'width:' + (done / list.length * 100) + '%' })]), el('div', { class: 'note', text: note + (c.miss ? ' · thiếu bắt buộc: ' + c.miss : '') + (c.raw ? ' · chưa xử lý: ' + c.raw : '') })]); };
+  const hero = items.filter(i => i.group === 'hero');
+  const base = hero.filter(i => i.tier === 2), tim = hero.filter(i => i.tier === 3), do_ = hero.filter(i => i.tier === 4);
+  const newH = D.heroes.filter(h => P.base[h.code]).map(h => h.code);
+  v.appendChild(el('div', { class: 'bars' }, [
+    g('Tướng bản gốc (7 tư thế)', base, '20 tướng'),
+    g('10 tướng mới (7 tư thế)', base.filter(i => newH.includes(i.hero)), 'NV12–NV21'),
+    g('Ảnh Tím (card, idle, skill)', tim, 'tùy chọn, nâng cấp'),
+    g('Ảnh Đỏ (card, idle, skill)', do_, 'tùy chọn, nâng cấp'),
+    g('Quái (Q01–Q37)', items.filter(i => i.group === 'monster'), '37 quái'),
+    g('Nền (Map 1–8)', items.filter(i => i.group === 'bg'), '8 nền'),
+    g('Hiệu ứng (FX)', items.filter(i => i.group === 'fx'), '4 cũ + 8 mới'),
+  ]));
+  // danh sách thiếu bắt buộc theo tướng
+  const rows = D.heroes.map(h => { const miss = base.filter(i => i.hero === h.code && statusOf(i) !== 'ok').map(i => i.pose); return { h, miss }; }).filter(r => r.miss.length);
+  const card = el('div', { class: 'card' }, [el('b', { text: 'Tướng còn thiếu ảnh bản gốc' })]);
+  if (!rows.length) card.appendChild(el('div', { class: 'good', text: 'Đủ cả 20 tướng.' }));
+  else rows.forEach(r => card.appendChild(el('div', { class: 'note' }, [el('b', { text: r.h.code + ' ' + r.h.name.replace(/^(HCM|HN)\s*-\s*/i, '') + ': ' }), r.miss.join(', ')])));
+  v.appendChild(card);
+  const mm = items.filter(i => i.group === 'monster' && i.req && statusOf(i) !== 'ok');
+  v.appendChild(el('div', { class: 'card', style: 'margin-top:12px' }, [el('b', { text: 'Quái còn thiếu: ' }), mm.length ? mm.map(i => i.name.slice(0, 3).toUpperCase()).join(', ') : 'không']));
+  const bb = items.filter(i => i.group === 'bg' && statusOf(i) !== 'ok');
+  v.appendChild(el('div', { class: 'card', style: 'margin-top:12px' }, [el('b', { text: 'Nền còn thiếu: ' }), bb.length ? bb.map(i => i.name).join(', ') : 'không']));
+  v.appendChild(el('div', { class: 'note', text: 'Quy trình: tạo ảnh theo prompt → đặt tên đúng → (tùy chọn) soát ở tab "Kiểm thư mục ảnh" → chạy xu_ly_anh.py (cắt nền, ghi manifest) → thu_nho_anh.py → mở lại trang này bấm F5.' }));
+}
+
+/* ---------- tab: tướng ---------- */
+function viewTuong(v) {
+  const onlyNew = state.onlyNew, onlyMiss = state.onlyMiss;
+  v.appendChild(el('div', { class: 'row' }, [
+    el('label', {}, [el('input', { type: 'checkbox', ...(onlyNew ? { checked: '' } : {}), onchange: e => { state.onlyNew = e.target.checked; render(); } }), ' Chỉ 10 tướng mới']),
+    el('label', {}, [el('input', { type: 'checkbox', ...(onlyMiss ? { checked: '' } : {}), onchange: e => { state.onlyMiss = e.target.checked; render(); } }), ' Chỉ tướng còn thiếu']),
+  ]));
+  v.appendChild(legend());
+  const t = el('table'); const hd = el('tr', {}, [el('th', { text: 'Tướng' })]);
+  POSES.forEach(p => hd.appendChild(el('th', { text: p })));
+  T_POSES.forEach((p, i) => hd.appendChild(el('th', { class: i === 0 ? 't3' : '', text: 'Tím ' + p, style: 'color:var(--t3)' })));
+  T_POSES.forEach((p, i) => hd.appendChild(el('th', { class: i === 0 ? 't4' : '', text: 'Đỏ ' + p, style: 'color:var(--t4)' })));
+  t.appendChild(hd);
+  D.heroes.forEach(h => {
+    if (onlyNew && !P.base[h.code]) return;
+    const c = h.code.toLowerCase(), its = POSES.map(p => byName[c + '_' + p]);
+    if (onlyMiss && !items.filter(i => i.hero === h.code).some(i => statusOf(i) !== 'ok')) return;
+    const tr = el('tr', {}, [el('td', { class: 'nm', text: h.code + ' ' + h.name.replace(/^(HCM|HN)\s*-\s*/i, '') + (h.vip ? ' (VIP)' : '') })]);
+    its.forEach(it => tr.appendChild(el('td', {}, [cellFor(it)])));
+    [3, 4].forEach(tt => T_POSES.forEach((p, i) => tr.appendChild(el('td', { class: i === 0 ? 'g' + tt : '' }, [cellFor(byName[c + '_' + p + '_t' + tt])]))));
+    t.appendChild(tr);
+  });
+  v.appendChild(el('div', { class: 'card', style: 'overflow:auto' }, [t]));
+  v.appendChild(el('div', { class: 'note', text: 'VIP (NV20, NV21) chỉ cần bản gốc (Xanh dương) + Tím + Đỏ. Ảnh Tím/Đỏ là tùy chọn: thiếu thì game dùng ảnh gốc kèm khung màu.' }));
+}
+
+/* ---------- tab: quái ---------- */
+function listView(v, list, title) {
+  v.appendChild(legend());
+  const box = el('div', { class: 'list' });
+  list.forEach(it => { const s = statusOf(it), cls = s === 'miss' && !it.req ? 'opt' : s; box.appendChild(el('div', { class: 'item' + (state.sel === it.name ? ' sel' : ''), onclick: () => { state.sel = it.name; render(); } }, [el('span', { class: 'pill ' + cls, text: s === 'ok' ? 'Có' : s === 'raw' ? 'Chưa xử lý' : 'Thiếu' }), ' ', el('b', { text: it.label }), el('small', { text: it.name })])); });
+  v.appendChild(el('div', { class: 'card' }, [box]));
+}
+function viewQuai(v) {
+  const mons = items.filter(i => i.group === 'monster');
+  v.appendChild(el('div', { class: 'note', text: 'Mini-boss ở màn x-5 (Q16, Q21, Q26, Q31, Q36) là quái Tinh anh phóng to ×1,3, đổi màu bằng code; có ảnh riêng thì đặt cùng tên q**_idle.' }));
+  listView(v, mons);
+}
+function viewNen(v) {
+  v.appendChild(el('h3', { text: 'Nền' })); listView(v, items.filter(i => i.group === 'bg'));
+  v.appendChild(el('h3', { text: 'Hiệu ứng' })); listView(v, items.filter(i => i.group === 'fx'));
+}
+
+/* ---------- tab: kiểm thư mục ---------- */
+const norm = s => s.toLowerCase().replace(/\.[a-z0-9]+$/, '').trim().replace(/[\s\-]+/g, '_').replace(/_+/g, '_');
+function lev(a, b) { const m = a.length, n = b.length, d = Array.from({ length: m + 1 }, (_, i) => [i]); for (let j = 1; j <= n; j++) d[0][j] = j; for (let i = 1; i <= m; i++) for (let j = 1; j <= n; j++) d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1)); return d[m][n]; }
+function reorder(n) { const m = n.match(/^(nv\d+)_(t[34])_(idle|skill|card)$/); return m ? m[1] + '_' + m[3] + '_' + m[2] : n; }
+function suggest(n) {
+  if (byName[n]) return n; const r = reorder(n); if (byName[r]) return r;
+  let best = null, bd = 99; items.forEach(it => { const d = lev(n, it.name); if (d < bd) { bd = d; best = it.name; } });
+  return bd <= 2 ? best : null;
+}
+function analyze(file) {
+  return new Promise(res => {
+    const url = URL.createObjectURL(file), im = new Image();
+    im.onload = () => {
+      const w = im.naturalWidth, h = im.naturalHeight, c = document.createElement('canvas'); c.width = 64; c.height = Math.max(1, Math.round(64 * h / w));
+      const x = c.getContext('2d', { willReadFrequently: true }); x.drawImage(im, 0, 0, c.width, c.height);
+      const px = (a, b) => x.getImageData(a, b, 1, 1).data, corners = [px(1, 1), px(c.width - 2, 1), px(1, c.height - 2), px(c.width - 2, c.height - 2)];
+      const avg = corners.reduce((s, p) => [s[0] + p[0] / 4, s[1] + p[1] / 4, s[2] + p[2] / 4, s[3] + p[3] / 4], [0, 0, 0, 0]);
+      const spread = Math.max(...corners.map(p => Math.abs(p[0] - avg[0]) + Math.abs(p[1] - avg[1]) + Math.abs(p[2] - avg[2])));
+      // chạm mép: có điểm ảnh khác nền sát mép trên/dưới/trái/phải không
+      let touch = 0; const bg = avg, diff = p => Math.abs(p[0] - bg[0]) + Math.abs(p[1] - bg[1]) + Math.abs(p[2] - bg[2]) > 90 && p[3] > 40;
+      for (let i = 0; i < c.width; i++) { if (diff(px(i, 0))) touch++; if (diff(px(i, c.height - 1))) touch++; }
+      for (let j = 0; j < c.height; j++) { if (diff(px(0, j))) touch++; if (diff(px(c.width - 1, j))) touch++; }
+      URL.revokeObjectURL(url); res({ w, h, bg: avg, flat: spread < 40, touch });
+    };
+    im.onerror = () => { URL.revokeObjectURL(url); res(null); };
+    im.src = url;
+  });
+}
+function qualityWarns(it, a) {
+  const w = [], r = a.w / a.h, minS = Math.min(a.w, a.h);
+  if (it.group !== 'bg' && minS < 600) w.push('nhỏ (' + a.w + 'x' + a.h + '), nên ≥ 1024 px');
+  if (it.group === 'bg') { if (a.w < 1600) w.push('nền nhỏ, nên ≥ 1920 px'); if (Math.abs(r - 16 / 9) > 0.15) w.push('tỉ lệ ' + r.toFixed(2) + ', nên 16:9'); return w; }
+  if (it.group === 'fx') { if (it.name === 'fx_slash' || it.name === 'fx_wave') { if (r < 2) w.push('nên rộng 3:1'); } return w; }
+  if (it.pose === 'card' && Math.abs(r - 0.8) > 0.12) w.push('thẻ nên tỉ lệ 4:5, đang ' + r.toFixed(2));
+  if (it.pose === 'skill' && Math.abs(r - 1) > 0.2) w.push('skill nên vuông 1:1, đang ' + r.toFixed(2));
+  if (it.pose !== 'card') { const white = a.bg[0] > 225 && a.bg[1] > 225 && a.bg[2] > 225; if (!a.flat && a.bg[3] > 200) w.push('nền không phẳng, khó cắt nền'); else if (!white && a.bg[3] > 200) w.push('nền không phải trắng'); if (a.touch > 6) w.push('nhân vật chạm mép ảnh (có thể bị cắt)'); }
+  return w;
+}
+function viewThuMuc(v) {
+  const out = el('div', { id: 'rep' });
+  const inp = el('input', { type: 'file', multiple: '', webkitdirectory: '', id: 'pick' }), inp2 = el('input', { type: 'file', multiple: '', accept: 'image/*', id: 'pick2' });
+  const drop = el('div', { class: 'drop' }, ['Thả ảnh hoặc cả thư mục vào đây, hoặc chọn bên dưới']);
+  const run = async files => { out.innerHTML = ''; out.appendChild(el('div', { class: 'note', text: 'Đang phân tích ' + files.length + ' file…' })); await report(files, out); };
+  inp.addEventListener('change', () => run([...inp.files])); inp2.addEventListener('change', () => run([...inp2.files]));
+  drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('over'); }); drop.addEventListener('dragleave', () => drop.classList.remove('over'));
+  drop.addEventListener('drop', async e => { e.preventDefault(); drop.classList.remove('over'); run([...e.dataTransfer.files].filter(f => /^image\//.test(f.type))); });
+  v.appendChild(el('div', { class: 'card' }, [drop, el('div', { class: 'row', style: 'margin-top:10px' }, [el('label', { text: 'Chọn thư mục: ' }), inp, el('label', { text: 'hoặc chọn file: ' }), inp2]), el('div', { class: 'note', text: 'Trang đối chiếu tên file với danh sách ảnh cần có, báo tên sai kèm gợi ý, và kiểm nhanh kích thước, tỉ lệ, nền phẳng, nhân vật chạm mép. Trang không ghi hay đổi tên file nào; bạn tự đổi tên theo danh sách gợi ý.' })]));
+  v.appendChild(out);
+}
+async function report(files, out) {
+  const rows = [], matched = new Set(), renames = [];
+  for (const f of files) {
+    const n = norm(f.name), sug = suggest(n), exact = byName[n], it = exact || (sug ? byName[sug] : null);
+    const a = await analyze(f);
+    if (exact) matched.add(n);
+    const warns = it && a ? qualityWarns(it, a) : [];
+    const stem = f.name.replace(/\.[a-z0-9]+$/i, '');
+    if (exact && stem !== n) renames.push(f.name + '  →  ' + n + (f.name.match(/\.[a-z0-9]+$/i) || [''])[0].toLowerCase());
+    if (!exact && sug) renames.push(f.name + '  →  ' + sug + (f.name.match(/\.[a-z0-9]+$/i) || [''])[0].toLowerCase());
+    rows.push({ f, n, exact, sug, a, warns });
+  }
+  out.innerHTML = '';
+  const okN = rows.filter(r => r.exact).length, nearN = rows.filter(r => !r.exact && r.sug).length, unk = rows.filter(r => !r.exact && !r.sug).length;
+  out.appendChild(el('div', { class: 'card', style: 'margin-bottom:12px' }, [el('b', { text: 'Kết quả: ' }), el('span', { class: 'good', text: okN + ' đúng tên' }), ' · ', el('span', { class: 'warn', text: nearN + ' sai tên nhưng đoán được' }), ' · ', el('span', { class: 'bad', text: unk + ' không nhận ra' }), ' · ', rows.filter(r => r.warns.length).length + ' file có cảnh báo chất lượng']));
+  const t = el('table', { class: 'rep' }, [el('tr', {}, [el('th', { text: 'File' }), el('th', { text: 'Khớp' }), el('th', { text: 'Kích thước' }), el('th', { text: 'Cảnh báo' })])]);
+  rows.sort((a, b) => (b.exact ? 0 : 1) - (a.exact ? 0 : 1) || a.n.localeCompare(b.n)).forEach(r => t.appendChild(el('tr', {}, [
+    el('td', { text: r.f.name }),
+    el('td', { class: r.exact ? (r.f.name.replace(/\.[a-z0-9]+$/i, '') === r.n ? 'good' : 'warn') : r.sug ? 'warn' : 'bad', text: r.exact ? (r.f.name.replace(/\.[a-z0-9]+$/i, '') === r.n ? '✓ ' + r.n : '✓ ' + r.n + ' (tên file chưa chuẩn, đổi lại)') : r.sug ? 'đổi thành ' + r.sug : 'không nhận ra' }),
+    el('td', { text: r.a ? r.a.w + 'x' + r.a.h : '?' }),
+    el('td', { class: 'warn', text: r.warns.join('; ') })])));
+  out.appendChild(el('div', { class: 'card', style: 'overflow:auto' }, [t]));
+  if (renames.length) { const bx = el('div', { class: 'pbox', text: renames.join('\n') }); out.appendChild(el('div', { class: 'card', style: 'margin-top:12px' }, [el('b', { text: 'Danh sách đổi tên gợi ý' }), bx, el('button', { class: 'b', style: 'margin-top:8px', text: 'Sao chép', onclick: () => navigator.clipboard && navigator.clipboard.writeText(renames.join('\n')) })])); }
+  // còn thiếu bắt buộc sau khi gộp với assets hiện có
+  const have = new Set([...matched, ...items.filter(i => statusOf(i) !== 'miss').map(i => i.name)]);
+  const miss = items.filter(i => i.req && !have.has(i.name));
+  out.appendChild(el('div', { class: 'card', style: 'margin-top:12px' }, [el('b', { text: 'Sau khi gộp với thư mục này, vẫn thiếu bắt buộc: ' + miss.length }), el('div', { class: 'note', text: miss.map(i => i.name).join(', ') || 'không thiếu gì.' })]));
+}
+
+/* ---------- vẽ ---------- */
+function render() {
+  renderTabs(); const v = $('#view'); v.innerHTML = '';
+  ({ tong: viewTong, tuong: viewTuong, quai: viewQuai, nen: viewNen, thumuc: viewThuMuc })[state.tab](v);
+  sideRender();
+}
+render();
+scan().then(render);
+</script>
+</body>
+</html>

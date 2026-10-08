@@ -7,6 +7,7 @@
    "row": "front",
    "bio": "THỦ KHO VÀO LÀM ĐỦ 2 NĂM , GÌ CŨNG BIẾT CHỈ LÀ BIẾT KHÔNG SÂU , LẦM LẦM LÌ LÌ MÀ LẠI HAY QUÊN",
    "quote": "HUYNH ĐỆ À - CỨ BÌNH TỈNH ĐI ĐÓ MÀ",
+   "vip": false,
    "tiers": [
     {
      "tier": "Trắng",
@@ -126,6 +127,7 @@
    "row": "front",
    "bio": "THANH NIÊN LÀM LÂU NĂM , SỨC DÀI VAI RỘNG ,19 TUỔI VỚI KHUÔN MẶT CỦA KẺ 30 TUỔI , QUY TẮC VÀNG LÀM 5 LẦN ẮT SẼ SAI ÍT NHẤT 1 LẦN ,SAI LẦN NÀO THÌ CHƯA BIẾT THÔI ",
    "quote": "CÓ GÌ CỨ ĐÁNH TUI , MÀ NHỚ CHỪA MẶT TUI RA NHA",
+   "vip": false,
    "tiers": [
     {
      "tier": "Trắng",
@@ -270,6 +272,7 @@
    "row": "back",
    "bio": "MỚI VÀO LÀM ĐƯỢC VÀI THÁNG ,GÌ CŨNG CHƯA BIẾT , NHIỆT TÌNH NHƯNG HAY NHIỆT TÌNH NHẦM CHỖ ,SAI NHIỀU MÀ ĐÚNG CŨNG NHIỀU",
    "quote": "TẤT CẢ TRÁNH RA - ĐỂ TA LO TẤT",
+   "vip": false,
    "tiers": [
     {
      "tier": "Trắng",
@@ -414,6 +417,7 @@
    "row": "back",
    "bio": "SALE LÀM CŨNG HƠN 1 NĂM , CHỐT ĐƠN CŨNG NHIỀU MÀ TẠCH CŨNG QUÁ TRỜI , LÀ SALE ANH CẢ TRONG CHI NHÁNH HCM , HAY CƯỜI HÌ HÌ , LÀM VIỆC RẤT NGUYÊN TẮC .",
    "quote": "CHO XIN TÍ HUYẾT VỀ XÀO VỚI GIÁ NHÉ BẠN HIỀN",
+   "vip": false,
    "tiers": [
     {
      "tier": "Trắng",
@@ -558,6 +562,7 @@
    "row": "back",
    "bio": "SALE LÀM HƠN 1 NĂM , NHIỆT TÌNH ,TƯ VẤN KHÁCH BẤT CHẤP NGÀY GIỜ HAY NẮNG MƯA , CHẬM NHƯNG HAY ĂN CHẮC ,CHỐT TOÀN ĐƠN NGON",
    "quote": "CHẾT MÀY NÈ !!!! Ý Ý XIN LỖI",
+   "vip": false,
    "tiers": [
     {
      "tier": "Trắng",
@@ -727,6 +732,7 @@
    "row": "back",
    "bio": "LÀ 1 NGƯỜI NĂNG ĐỘNG ,CA HÁT NHÃY MÚA ĐỀU THÔNG THẠO , SỐ HƠI XUI ,ĐƠN CHỐT CHƯA NHIỀU \"TOÀN GẶP ÂM BINH \"",
    "quote": "CỨ ĐÁNH TẸT GA ,TRÀ CHIỀU ĐỂ CHỊ LO TẤT .",
+   "vip": false,
    "tiers": [
     {
      "tier": "Trắng",
@@ -871,6 +877,7 @@
    "row": "back",
    "bio": "LÀ NHÂN VẬT KHÁ LÂU NĂM TRONG CÔNG TY ,LÀM KẾ TOÁN CHI NHÁNH HCM , AI CŨNG PHẢI QUA TAY CÔ NÀNG , BIẾT ĐIỀU THÌ MỚI XUÔNG ĐƯỢC , À ĐANG GIẢM CÂN ,BỚT DỤ ĐỒ ĂN NHÉ .",
    "quote": "ANH EM CỨ CHIẾN , CHỌC ĐIÊN THÌ ĐỂ CHỊ LO.",
+   "vip": false,
    "tiers": [
     {
      "tier": "Trắng",
@@ -990,6 +997,7 @@
    "row": "back",
    "bio": "BEST SALE HCM , CHIỀU KHÁCH VÔ ĐỐI NHƯNG CHỐT ĐƠN CŨNG HOÀNH TRÁNG ,ĐƠN TO LÀ ANH CÓ MẶT ",
    "quote": "ANH BẠN À , HỞ SƯỜN RỒI KÌA HẸ HẸ !",
+   "vip": false,
    "tiers": [
     {
      "tier": "Trắng",
@@ -1159,6 +1167,7 @@
    "row": "front",
    "bio": "TỔ TRƯỞNG KHO , LÀ 1 NHÂN VẬT LÂU NĂM TẠI KHO HCM , BIẾT NHIỀU THỨ MÀ KHÔNG PHẢI AI CŨNG BIẾT , CHỈ LÀ LỚN TUỔI MẮT YẾU VÀ HAY QUÊN .",
    "quote": "TẤT CẢ TRÁNH RA XE NÂNG ĐẾN RỒI ĐÂY",
+   "vip": false,
    "tiers": [
     {
      "tier": "Trắng",
@@ -1303,6 +1312,7 @@
    "row": "back",
    "bio": "THANH NIÊN VÀO LÀM VỚI CHỨC VỤ THIẾT KẾ NHƯNG LẠI RẤT THÍCH CỰ VÀ GÂY THÙ CHUỐC OÁNH ( HAY CÒN GỌI LÀ CHAN ) , ĐỪNG CÓ XÍCH MÍT VỚI Ả NHÉ , SỐNG KHÔNG THỌ ĐÂU",
    "quote": "TẤT CẢ CHỈ LÀ HIỂU LẦM THÔI , NGỦ ĐI BÉ BÌ À.",
+   "vip": false,
    "tiers": [
     {
      "tier": "Trắng",
@@ -1439,6 +1449,1631 @@
      "có 20 % hồi sinh 1 đồng đội đã chết bất kỳ ( đồng đội được hồi sinh thành công sẽ còn 20% máu tối đa của đồng đội đó và hiệu ứng hồi sinh thành công chỉ có hiệu lực 1 lần trong 1 trận đấu )."
     ]
    }
+  },
+  {
+   "code": "NV12",
+   "name": "Chú Tư Bảo Vệ",
+   "role": "Tank",
+   "row": "front",
+   "bio": "BẢO VỆ CA ĐÊM LÂU NĂM, ĐI TUẦN BẰNG ĐÈN PIN VÀ ẤM TRÀ NÓNG, CHƯA TỪNG ĐỂ CON CHUỘT NÀO QUA CỔNG (TRỪ LÚC BUỒN NGỦ).",
+   "quote": "ĐÃ HẾT GIỜ LÀM VIỆC, AI VÀO CỔNG PHẢI KÝ SỔ!\\",
+   "vip": false,
+   "tiers": [
+    {
+     "tier": "Trắng",
+     "hp": 1450,
+     "atk": 60,
+     "df": 66,
+     "spd": 86,
+     "regen": 26,
+     "dodge": 0.02,
+     "acc": 0.02,
+     "crit": 0.02,
+     "critDmg": 1.5,
+     "critRes": 0.07
+    },
+    {
+     "tier": "Xanh lá",
+     "hp": 1667,
+     "atk": 69,
+     "df": 76,
+     "spd": 87,
+     "regen": 29.9,
+     "dodge": 0.025,
+     "acc": 0.025,
+     "crit": 0.025,
+     "critDmg": 1.5,
+     "critRes": 0.075
+    },
+    {
+     "tier": "Xanh dương",
+     "hp": 1885,
+     "atk": 78,
+     "df": 86,
+     "spd": 88,
+     "regen": 33.8,
+     "dodge": 0.03,
+     "acc": 0.03,
+     "crit": 0.03,
+     "critDmg": 1.55,
+     "critRes": 0.08
+    }
+   ],
+   "skill": {
+    "components": [
+     {
+      "kind": "Gây trạng thái",
+      "target": "Bản thân",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       1,
+       1,
+       1
+      ],
+      "dur": 1,
+      "status": "Khiêu khích",
+      "note": null
+     },
+     {
+      "kind": "Khiên",
+      "target": "Bản thân",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "% máu tối đa của người xả",
+      "n": [
+       1,
+       1,
+       1
+      ],
+      "mag": [
+       0.08,
+       0.1,
+       0.12
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": 2,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 2,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       1
+      ],
+      "mag": [
+       null,
+       null,
+       0.8
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": "Đập đèn pin."
+     }
+    ],
+    "name": "Chốt Cổng Ca Đêm",
+    "desc": [
+     "Đủ 100 nộ: khiêu khích 1 lượt (địch buộc đánh người này), tạo khiên 8% máu tối đa của bản thân, kéo dài 2 lượt.",
+     "Đủ 100 nộ: khiêu khích 1 lượt (địch buộc đánh người này), tạo khiên 10% máu tối đa của bản thân, kéo dài 2 lượt.",
+     "Đủ 100 nộ: khiêu khích 1 lượt (địch buộc đánh người này), tạo khiên 12% máu tối đa của bản thân, kéo dài 2 lượt, gây ×0,8 công lên 1 địch."
+    ]
+   },
+   "passive": {
+    "components": [
+     {
+      "kind": "Hồi máu",
+      "target": "1 đồng đội ngẫu nhiên",
+      "trigger": "Cuối lượt (sau khi ra đòn)",
+      "frm": 2,
+      "unit": "% máu tối đa của người nhận",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       0.02
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Ấm Trà Nóng",
+    "desc": [
+     null,
+     null,
+     "Mở từ Xanh dương: Cuối mỗi lượt: hồi 2% máu tối đa cho 1 đồng đội ngẫu nhiên."
+    ]
+   }
+  },
+  {
+   "code": "NV13",
+   "name": "Cô Bảy Xe Kéo",
+   "role": "Tank-Vật lý",
+   "row": "front",
+   "bio": "LÁI XE KÉO TAY Ở KHO NHƯ LÁI XE ĐUA, VÀO CUA LÀ ĐÒN, ĐÃ ĐÁNH LÀ PHẢI CHỐT, ZONE NÀO CŨNG LÀ ĐƯỜNG ĐUA.",
+   "quote": "TRÁNH ĐƯỜNG! XE KÉO HẾT PHANH RỒI!\\",
+   "vip": false,
+   "tiers": [
+    {
+     "tier": "Trắng",
+     "hp": 1150,
+     "atk": 100,
+     "df": 48,
+     "spd": 99,
+     "regen": 18,
+     "dodge": 0.04,
+     "acc": 0.04,
+     "crit": 0.06,
+     "critDmg": 1.6,
+     "critRes": 0.03
+    },
+    {
+     "tier": "Xanh lá",
+     "hp": 1323,
+     "atk": 115,
+     "df": 55,
+     "spd": 100,
+     "regen": 20.7,
+     "dodge": 0.045,
+     "acc": 0.045,
+     "crit": 0.065,
+     "critDmg": 1.6,
+     "critRes": 0.035
+    },
+    {
+     "tier": "Xanh dương",
+     "hp": 1495,
+     "atk": 130,
+     "df": 62,
+     "spd": 101,
+     "regen": 23.4,
+     "dodge": 0.05,
+     "acc": 0.05,
+     "crit": 0.07,
+     "critDmg": 1.65,
+     "critRes": 0.04
+    }
+   ],
+   "skill": {
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       1,
+       1,
+       1
+      ],
+      "mag": [
+       1.4,
+       1.5,
+       1.6
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.15,
+       0.18,
+       0.2
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ],
+    "name": "Cú Rồ Ga Xe Kéo",
+    "desc": [
+     "Đủ 100 nộ: gây ×1,4 công lên 1 địch, 15% Choáng 1 lượt.",
+     "Đủ 100 nộ: gây ×1,5 công lên 1 địch, 18% Choáng 1 lượt.",
+     "Đủ 100 nộ: gây ×1,6 công lên 1 địch, 20% Choáng 1 lượt."
+    ]
+   },
+   "passive": {
+    "components": [
+     {
+      "kind": "Hồi nộ",
+      "target": "Bản thân",
+      "trigger": "Đầu lượt",
+      "frm": 2,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       3
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": "Thiết kế gốc: +3 nộ mỗi lần bị đánh trúng (engine chưa hỗ trợ Hồi nộ ở kích hoạt này) → tạm +3 nộ mỗi đầu lượt."
+     }
+    ],
+    "name": "Tích Đà",
+    "desc": [
+     null,
+     null,
+     "Mở từ Xanh dương: Đầu mỗi lượt: bản thân +3 nộ."
+    ]
+   }
+  },
+  {
+   "code": "NV14",
+   "name": "Anh Khôi Đóng Gói",
+   "role": "Vật lý",
+   "row": "back",
+   "bio": "ĐÓNG GÓI HÀNG NHANH NHẤT KHO, MỘT CUỘN BĂNG KEO TRONG TAY LÀ TRÓI ĐƯỢC CẢ CON MÈO, CHỈ CÓ TÍNH HƠI HẤP TẤP.",
+   "quote": "ĐỨNG YÊN, ĐỂ ANH DÁN CHO GỌN!\\",
+   "vip": false,
+   "tiers": [
+    {
+     "tier": "Trắng",
+     "hp": 840,
+     "atk": 135,
+     "df": 34,
+     "spd": 103,
+     "regen": 10,
+     "dodge": 0.04,
+     "acc": 0.05,
+     "crit": 0.07,
+     "critDmg": 1.6,
+     "critRes": 0.01
+    },
+    {
+     "tier": "Xanh lá",
+     "hp": 966,
+     "atk": 155,
+     "df": 39,
+     "spd": 104,
+     "regen": 11.5,
+     "dodge": 0.045,
+     "acc": 0.055,
+     "crit": 0.075,
+     "critDmg": 1.6,
+     "critRes": 0.015
+    },
+    {
+     "tier": "Xanh dương",
+     "hp": 1092,
+     "atk": 176,
+     "df": 44,
+     "spd": 105,
+     "regen": 13,
+     "dodge": 0.05,
+     "acc": 0.06,
+     "crit": 0.08,
+     "critDmg": 1.65,
+     "critRes": 0.02
+    }
+   ],
+   "skill": {
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       1,
+       1,
+       null
+      ],
+      "mag": [
+       2,
+       2.2,
+       null
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 2,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       2
+      ],
+      "mag": [
+       null,
+       null,
+       1.3
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": "Xanh dương: đổi sang 2 địch ngẫu nhiên."
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 1,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0,
+       0.2,
+       0.25
+      ],
+      "dur": 1,
+      "status": "Làm chậm",
+      "note": null
+     }
+    ],
+    "name": "Băng Keo Trói Gọn",
+    "desc": [
+     "Đủ 100 nộ: gây ×2 công lên 1 địch.",
+     "Đủ 100 nộ: gây ×2,2 công lên 1 địch, 20% Làm chậm 1 lượt.",
+     "Đủ 100 nộ: gây ×1,3 công lên 2 địch ngẫu nhiên, mỗi mục tiêu 25% Làm chậm 1 lượt."
+    ]
+   },
+   "passive": {
+    "components": [
+     {
+      "kind": "Hồi nộ",
+      "target": "Bản thân",
+      "trigger": "Khi hạ gục địch",
+      "frm": 2,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       10
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Đóng Gói Gọn",
+    "desc": [
+     null,
+     null,
+     "Mở từ Xanh dương: Khi hạ gục địch: bản thân +10 nộ."
+    ]
+   }
+  },
+  {
+   "code": "NV15",
+   "name": "Chị Mai Tồn Kho",
+   "role": "Phép",
+   "row": "back",
+   "bio": "GIỮ SỔ TỒN KHO TRONG ĐẦU, NHÌN KHO LÀ BIẾT THIẾU BAO NHIÊU CÁI, CHỈ MỘT LỖI NHỎ LÀ \\\"LỆCH SỔ\\\" LÀ CẢ KHO RÙNG MÌNH.",
+   "quote": "SỔ NGHĨA LÀ SỔ, LỆCH MỘT CUỘN CŨNG PHẢI ĐỀN!\\",
+   "vip": false,
+   "tiers": [
+    {
+     "tier": "Trắng",
+     "hp": 900,
+     "atk": 100,
+     "df": 38,
+     "spd": 107,
+     "regen": 13,
+     "dodge": 0.04,
+     "acc": 0.05,
+     "crit": 0.04,
+     "critDmg": 1.5,
+     "critRes": 0.03
+    },
+    {
+     "tier": "Xanh lá",
+     "hp": 1035,
+     "atk": 115,
+     "df": 44,
+     "spd": 108,
+     "regen": 15,
+     "dodge": 0.045,
+     "acc": 0.055,
+     "crit": 0.045,
+     "critDmg": 1.5,
+     "critRes": 0.035
+    },
+    {
+     "tier": "Xanh dương",
+     "hp": 1170,
+     "atk": 130,
+     "df": 49,
+     "spd": 109,
+     "regen": 16.9,
+     "dodge": 0.05,
+     "acc": 0.06,
+     "crit": 0.05,
+     "critDmg": 1.55,
+     "critRes": 0.04
+    }
+   ],
+   "skill": {
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       2,
+       2,
+       3
+      ],
+      "mag": [
+       1,
+       1.1,
+       1.2
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": "Mỗi mục tiêu."
+     },
+     {
+      "kind": "Trừ nộ",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       15,
+       20,
+       25
+      ],
+      "prob": [
+       0.5,
+       0.6,
+       0.7
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Kiểm Kê Lệch Sổ",
+    "desc": [
+     "Đủ 100 nộ: gây ×1 công lên 2 địch ngẫu nhiên, 50% trừ 15 nộ mỗi mục tiêu.",
+     "Đủ 100 nộ: gây ×1,1 công lên 2 địch ngẫu nhiên, 60% trừ 20 nộ mỗi mục tiêu.",
+     "Đủ 100 nộ: gây ×1,2 công lên 3 địch ngẫu nhiên, 70% trừ 25 nộ mỗi mục tiêu."
+    ]
+   },
+   "passive": {
+    "components": [
+     {
+      "kind": "Trừ nộ",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đầu lượt",
+      "frm": 2,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       1
+      ],
+      "mag": [
+       null,
+       null,
+       10
+      ],
+      "prob": [
+       null,
+       null,
+       0.25
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Sổ Đỏ",
+    "desc": [
+     null,
+     null,
+     "Mở từ Xanh dương: Đầu mỗi lượt: 25% trừ 10 nộ 1 địch ngẫu nhiên."
+    ]
+   }
+  },
+  {
+   "code": "NV16",
+   "name": "Bé Na Thực Tập",
+   "role": "Hỗ trợ",
+   "row": "back",
+   "bio": "THỰC TẬP SINH MỚI VÀO, BƯNG TRÀ SỮA CHO CẢ KHO, ĐI ĐÂU CŨNG NẠP NỘ NHANH CẢ ĐỘI, CHỈ HƠI HAY NHẦM ĐƠN TỪ.",
+   "quote": "ANH CHỊ UỐNG TRÀ SỮA RỒI HÃY CHIẾN Ạ!\\",
+   "vip": false,
+   "tiers": [
+    {
+     "tier": "Trắng",
+     "hp": 980,
+     "atk": 68,
+     "df": 40,
+     "spd": 111,
+     "regen": 17,
+     "dodge": 0.05,
+     "acc": 0.03,
+     "crit": 0.03,
+     "critDmg": 1.5,
+     "critRes": 0.03
+    },
+    {
+     "tier": "Xanh lá",
+     "hp": 1127,
+     "atk": 78,
+     "df": 46,
+     "spd": 112,
+     "regen": 19.6,
+     "dodge": 0.055,
+     "acc": 0.035,
+     "crit": 0.035,
+     "critDmg": 1.5,
+     "critRes": 0.035
+    },
+    {
+     "tier": "Xanh dương",
+     "hp": 1274,
+     "atk": 88,
+     "df": 52,
+     "spd": 113,
+     "regen": 22.1,
+     "dodge": 0.06,
+     "acc": 0.04,
+     "crit": 0.04,
+     "critDmg": 1.55,
+     "critRes": 0.04
+    }
+   ],
+   "skill": {
+    "components": [
+     {
+      "kind": "Hồi máu",
+      "target": "Đồng đội % máu thấp nhất",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "% máu tối đa của người nhận",
+      "n": [
+       1,
+       1,
+       1
+      ],
+      "mag": [
+       0.14,
+       0.16,
+       0.18
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 1,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0,
+       0.15,
+       0.25
+      ],
+      "dur": 2,
+      "status": "Điên tiết",
+      "note": null
+     },
+     {
+      "kind": "Buff chỉ số",
+      "target": "Cả đội mình",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 2,
+      "unit": "% chỉ số (buff/debuff)",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       0.05
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": 2,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Trà Sữa Tiếp Lực",
+    "desc": [
+     "Đủ 100 nộ: hồi 14% máu tối đa cho đồng đội có % máu thấp nhất.",
+     "Đủ 100 nộ: hồi 16% máu tối đa cho đồng đội có % máu thấp nhất, 15% Điên tiết 2 lượt.",
+     "Đủ 100 nộ: hồi 18% máu tối đa cho đồng đội có % máu thấp nhất, 25% Điên tiết 2 lượt, cả đội +5% công trong 2 lượt."
+    ]
+   },
+   "passive": {
+    "components": [
+     {
+      "kind": "Hồi nộ",
+      "target": "Bản thân",
+      "trigger": "Đầu lượt",
+      "frm": 2,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       4
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Nhiệt Huyết Thực Tập",
+    "desc": [
+     null,
+     null,
+     "Mở từ Xanh dương: Đầu mỗi lượt: bản thân +4 nộ."
+    ]
+   }
+  },
+  {
+   "code": "NV17",
+   "name": "Anh Tùng Giao Hàng",
+   "role": "Sát thủ",
+   "row": "back",
+   "bio": "SHIPPER NHANH NHẤT CÔNG TY, GIAO HÀNG TRƯỚC GIỜ 30 PHÚT LUÔN, CHỈ LÀ HAY QUÊN KÝ PHIẾU.",
+   "quote": "GIAO HÀNG HỎA TỐC, KHÔNG NHẬN LẠI ĐÂU NHÉ!\\",
+   "vip": false,
+   "tiers": [
+    {
+     "tier": "Trắng",
+     "hp": 740,
+     "atk": 125,
+     "df": 26,
+     "spd": 127,
+     "regen": 8,
+     "dodge": 0.08,
+     "acc": 0.06,
+     "crit": 0.09,
+     "critDmg": 1.65,
+     "critRes": 0
+    },
+    {
+     "tier": "Xanh lá",
+     "hp": 851,
+     "atk": 144,
+     "df": 30,
+     "spd": 128,
+     "regen": 9.2,
+     "dodge": 0.085,
+     "acc": 0.065,
+     "crit": 0.095,
+     "critDmg": 1.65,
+     "critRes": 0.005
+    },
+    {
+     "tier": "Xanh dương",
+     "hp": 962,
+     "atk": 163,
+     "df": 34,
+     "spd": 129,
+     "regen": 10.4,
+     "dodge": 0.09,
+     "acc": 0.07,
+     "crit": 0.1,
+     "critDmg": 1.7,
+     "critRes": 0.01
+    }
+   ],
+   "skill": {
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch hàng sau ngẫu nhiên",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       1,
+       1,
+       1
+      ],
+      "mag": [
+       1.6,
+       1.7,
+       1.8
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 1,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0,
+       0.15,
+       0.2
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ],
+    "name": "Giao Hỏa Tốc",
+    "desc": [
+     "Đủ 100 nộ: gây ×1,6 công lên 1 địch hàng sau ngẫu nhiên.",
+     "Đủ 100 nộ: gây ×1,7 công lên 1 địch hàng sau ngẫu nhiên, 15% Choáng 1 lượt.",
+     "Đủ 100 nộ: gây ×1,8 công lên 1 địch hàng sau ngẫu nhiên, 20% Choáng 1 lượt."
+    ]
+   },
+   "passive": {
+    "components": [
+     {
+      "kind": "Buff chỉ số",
+      "target": "Bản thân",
+      "trigger": "Khi xả skill",
+      "frm": 2,
+      "unit": "% chỉ số (buff/debuff)",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       0.15
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": 2,
+      "status": null,
+      "note": "Thiết kế gốc: +15% tốc độ 2 lượt; engine hiện chỉ có buff công → tạm +15% công."
+     }
+    ],
+    "name": "Né Kẹt Xe",
+    "desc": [
+     null,
+     null,
+     "Mở từ Xanh dương: Khi xả skill: bản thân +15% công trong 2 lượt."
+    ]
+   }
+  },
+  {
+   "code": "NV18",
+   "name": "Cô Hạnh Kiểm Hàng",
+   "role": "Phép",
+   "row": "back",
+   "bio": "KIỂM HÀNG TRƯỚC KHI XUẤT, CÓ CON DẤU \\\"HÀNG LỖI\\\" TRONG TAY, ĐÓNG ĐÂU LÀ ĐỐI THỦ ĐỨNG HÌNH, CHỈ LÀ ĐÔI LÚC DÁN NHẦM CẢ ĐỒNG NGHIỆP.",
+   "quote": "HÀNG LỖI! KHÔNG ĐƯỢC QUA!\\",
+   "vip": false,
+   "tiers": [
+    {
+     "tier": "Trắng",
+     "hp": 920,
+     "atk": 95,
+     "df": 40,
+     "spd": 115,
+     "regen": 15,
+     "dodge": 0.04,
+     "acc": 0.04,
+     "crit": 0.04,
+     "critDmg": 1.5,
+     "critRes": 0.03
+    },
+    {
+     "tier": "Xanh lá",
+     "hp": 1058,
+     "atk": 109,
+     "df": 46,
+     "spd": 116,
+     "regen": 17.3,
+     "dodge": 0.045,
+     "acc": 0.045,
+     "crit": 0.045,
+     "critDmg": 1.5,
+     "critRes": 0.035
+    },
+    {
+     "tier": "Xanh dương",
+     "hp": 1196,
+     "atk": 124,
+     "df": 52,
+     "spd": 117,
+     "regen": 19.5,
+     "dodge": 0.05,
+     "acc": 0.05,
+     "crit": 0.05,
+     "critDmg": 1.55,
+     "critRes": 0.04
+    }
+   ],
+   "skill": {
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       2,
+       2,
+       3
+      ],
+      "mag": [
+       1,
+       1.1,
+       1.2
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": "Mỗi mục tiêu."
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.15,
+       0.2,
+       0.2
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ],
+    "name": "Dán Tem Hàng Lỗi",
+    "desc": [
+     "Đủ 100 nộ: gây ×1 công lên 2 địch ngẫu nhiên, mỗi mục tiêu 15% Choáng 1 lượt.",
+     "Đủ 100 nộ: gây ×1,1 công lên 2 địch ngẫu nhiên, mỗi mục tiêu 20% Choáng 1 lượt.",
+     "Đủ 100 nộ: gây ×1,2 công lên 3 địch ngẫu nhiên, mỗi mục tiêu 20% Choáng 1 lượt."
+    ]
+   },
+   "passive": {
+    "components": [
+     {
+      "kind": "Khiên",
+      "target": "1 đồng đội ngẫu nhiên",
+      "trigger": "Khi xả skill",
+      "frm": 2,
+      "unit": "% máu tối đa của người xả",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       0.08
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": 2,
+      "status": null,
+      "note": "Thiết kế gốc: khiên khi đồng đội gục (engine chưa hỗ trợ) → tạm khiên khi xả skill."
+     }
+    ],
+    "name": "Con Dấu Đã Kiểm",
+    "desc": [
+     null,
+     null,
+     "Mở từ Xanh dương: Khi xả skill: tạo khiên 8% máu tối đa cho 1 đồng đội ngẫu nhiên, kéo dài 2 lượt."
+    ]
+   }
+  },
+  {
+   "code": "NV19",
+   "name": "Thầy Ba Thợ Thảm",
+   "role": "Tank",
+   "row": "front",
+   "bio": "THỢ TRẢI THẢM LÃO LÀNG, TRẢI THẢM BẰNG TAY VÀ ĐẦY BÍ QUYẾT, HỄ ĐỨNG ĐÂU LÀ ĐẤT Ở ĐÓ ĐƯỢC TRẢI PHẲNG PHIU.",
+   "quote": "THẢM PHẢI TRẢI CHO PHẲNG, ĐỨNG ĐÓ NHÉ CON!\\",
+   "vip": false,
+   "tiers": [
+    {
+     "tier": "Trắng",
+     "hp": 1250,
+     "atk": 85,
+     "df": 54,
+     "spd": 90,
+     "regen": 20,
+     "dodge": 0.03,
+     "acc": 0.03,
+     "crit": 0.04,
+     "critDmg": 1.5,
+     "critRes": 0.05
+    },
+    {
+     "tier": "Xanh lá",
+     "hp": 1438,
+     "atk": 98,
+     "df": 62,
+     "spd": 91,
+     "regen": 23,
+     "dodge": 0.035,
+     "acc": 0.035,
+     "crit": 0.045,
+     "critDmg": 1.5,
+     "critRes": 0.055
+    },
+    {
+     "tier": "Xanh dương",
+     "hp": 1625,
+     "atk": 111,
+     "df": 70,
+     "spd": 92,
+     "regen": 26,
+     "dodge": 0.04,
+     "acc": 0.04,
+     "crit": 0.05,
+     "critDmg": 1.55,
+     "critRes": 0.06
+    }
+   ],
+   "skill": {
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       2,
+       2,
+       2
+      ],
+      "mag": [
+       0.8,
+       0.9,
+       1
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": "Mỗi mục tiêu."
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 2,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0,
+       0,
+       0.15
+      ],
+      "dur": 1,
+      "status": "Làm chậm",
+      "note": null
+     },
+     {
+      "kind": "Khiên",
+      "target": "Bản thân",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "% máu tối đa của người xả",
+      "n": [
+       1,
+       1,
+       1
+      ],
+      "mag": [
+       0.07,
+       0.09,
+       0.11
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": 2,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Trải Thảm Bay",
+    "desc": [
+     "Đủ 100 nộ: gây ×0,8 công lên 2 địch ngẫu nhiên, tạo khiên 7% máu tối đa của bản thân, kéo dài 2 lượt.",
+     "Đủ 100 nộ: gây ×0,9 công lên 2 địch ngẫu nhiên, tạo khiên 9% máu tối đa của bản thân, kéo dài 2 lượt.",
+     "Đủ 100 nộ: gây ×1 công lên 2 địch ngẫu nhiên, mỗi mục tiêu 15% Làm chậm 1 lượt, tạo khiên 11% máu tối đa của bản thân, kéo dài 2 lượt."
+    ]
+   },
+   "passive": {
+    "components": [
+     {
+      "kind": "Khiên",
+      "target": "Đồng đội % máu thấp nhất",
+      "trigger": "Khi xả skill",
+      "frm": 2,
+      "unit": "% máu tối đa của người nhận",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       0.06
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": 2,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Thảm Đỡ Đòn",
+    "desc": [
+     null,
+     null,
+     "Mở từ Xanh dương: Khi xả skill: tạo khiên 6% máu tối đa cho đồng đội có % máu thấp nhất, kéo dài 2 lượt."
+    ]
+   }
+  },
+  {
+   "code": "NV20",
+   "name": "Linh Thảm Bay",
+   "role": "Phép-Buff",
+   "row": "back",
+   "bio": "THẦN LINH SINH RA TỪ TẤM THẢM ĐẦU TIÊN GOMA XUẤT XƯỞNG; NGHÌN ĐƠN HÀNG ANH EM CẦU NGUYỆN \\\"ĐỪNG BỊ LỆCH SỔ\\\" ĐÃ HÓA THÀNH LINH. THÍCH BAY LÊN CAO NHÌN CẢ ĐỘI, CHỈ DUY NHẤT SỢ MỘT THỨ LÀ HÀNG TỒN KHO ÂM.",
+   "quote": "AI CŨNG CÓ MỘT LẦN TỒN KHO ... ĐỪNG LỆCH SỔ Ạ!\\",
+   "vip": true,
+   "tiers": [
+    {
+     "tier": "Trắng",
+     "hp": 1320,
+     "atk": 162,
+     "df": 54,
+     "spd": 117,
+     "regen": 23.1,
+     "dodge": 0.06,
+     "acc": 0.05,
+     "crit": 0.05,
+     "critDmg": 1.7,
+     "critRes": 0.05
+    },
+    {
+     "tier": "Xanh lá",
+     "hp": 1518,
+     "atk": 186,
+     "df": 62,
+     "spd": 118,
+     "regen": 26.6,
+     "dodge": 0.065,
+     "acc": 0.055,
+     "crit": 0.055,
+     "critDmg": 1.7,
+     "critRes": 0.055
+    },
+    {
+     "tier": "Xanh dương",
+     "hp": 1716,
+     "atk": 211,
+     "df": 70,
+     "spd": 119,
+     "regen": 30,
+     "dodge": 0.07,
+     "acc": 0.06,
+     "crit": 0.06,
+     "critDmg": 1.75,
+     "critRes": 0.06
+    }
+   ],
+   "skill": {
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 2,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       3
+      ],
+      "mag": [
+       null,
+       null,
+       1.3
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": "Mỗi mục tiêu."
+     },
+     {
+      "kind": "Hồi máu",
+      "target": "Cả đội mình",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 2,
+      "unit": "% máu tối đa của người nhận",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       0.08
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Buff chỉ số",
+      "target": "Cả đội mình",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 2,
+      "unit": "% chỉ số (buff/debuff)",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       0.1
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": 2,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Thảm Thần Giáng Thế",
+    "desc": [
+     null,
+     null,
+     "Đủ 100 nộ: gây ×1,3 công lên 3 địch ngẫu nhiên, hồi 8% máu tối đa cho cả đội, cả đội +10% công trong 2 lượt."
+    ]
+   },
+   "passive": {
+    "components": [
+     {
+      "kind": "Hồi nộ",
+      "target": "Cả đội mình",
+      "trigger": "Đầu lượt",
+      "frm": 2,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       6
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Phù Hộ Của Thảm Thần",
+    "desc": [
+     null,
+     null,
+     "Mở từ Xanh dương: Đầu mỗi lượt: cả đội +6 nộ."
+    ]
+   }
+  },
+  {
+   "code": "NV21",
+   "name": "Kiếm Khách Dao Rọc",
+   "role": "Sát thủ",
+   "row": "front",
+   "bio": "KIẾM KHÁCH LANG THANG BẤT BẠI TRONG KHO, VŨ KHÍ LÀ CON DAO RỌC GIẤY THẦN, VỎ KIẾM LÀ ỐNG BÌA THẢM. ÍT NÓI, NÓI LÀ MỘT NHÁT ĐỦ.",
+   "quote": "MỘT NHÁT RỌC ... CẢ KHO IM LẶNG.\\",
+   "vip": true,
+   "tiers": [
+    {
+     "tier": "Trắng",
+     "hp": 1470,
+     "atk": 165,
+     "df": 58,
+     "spd": 111,
+     "regen": 23.1,
+     "dodge": 0.07,
+     "acc": 0.06,
+     "crit": 0.1,
+     "critDmg": 1.75,
+     "critRes": 0.04
+    },
+    {
+     "tier": "Xanh lá",
+     "hp": 1690,
+     "atk": 190,
+     "df": 67,
+     "spd": 112,
+     "regen": 26.6,
+     "dodge": 0.075,
+     "acc": 0.065,
+     "crit": 0.105,
+     "critDmg": 1.75,
+     "critRes": 0.045
+    },
+    {
+     "tier": "Xanh dương",
+     "hp": 1911,
+     "atk": 215,
+     "df": 75,
+     "spd": 113,
+     "regen": 30,
+     "dodge": 0.08,
+     "acc": 0.07,
+     "crit": 0.11,
+     "critDmg": 1.8,
+     "critRes": 0.05
+    }
+   ],
+   "skill": {
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch hàng trước bất kỳ và 1 địch ngay sau (nếu có)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 2,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       2
+      ],
+      "mag": [
+       null,
+       null,
+       2.6
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": "Mỗi mục tiêu."
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 2,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       null,
+       null,
+       0.3
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     },
+     {
+      "kind": "Hồi máu",
+      "target": "Bản thân",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 2,
+      "unit": "% máu tối đa của người nhận",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       0.08
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Nhát Rọc Thần Tốc",
+    "desc": [
+     null,
+     null,
+     "Đủ 100 nộ: gây ×2,6 công lên 1 địch hàng trước và 1 địch ngay sau, mỗi mục tiêu 30% Choáng 1 lượt, hồi 8% máu tối đa cho bản thân."
+    ]
+   },
+   "passive": {
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Khi đánh trúng mục tiêu máu dưới 30%",
+      "frm": 2,
+      "unit": "% sát thương cộng thêm",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       0.3
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Hồi nộ",
+      "target": "Bản thân",
+      "trigger": "Khi skill nộ hạ gục địch",
+      "frm": 2,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       50
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ],
+    "name": "Một Nhát Là Đủ",
+    "desc": [
+     null,
+     null,
+     "Mở từ Xanh dương: Đánh trúng mục tiêu dưới 30% máu: gây thêm 30% sát thương. Skill nộ hạ gục địch: bản thân +50 nộ."
+    ]
+   }
   }
  ],
  "statuses": {
@@ -1503,7 +3138,7 @@
    8
   ]
  },
- "source": "Goma_Game_Data_v8.xlsx",
+ "source": "Goma_Game_Data_v9.xlsx",
  "monsters": [
   {
    "code": "Q01",
@@ -2658,6 +4293,2036 @@
     ]
    },
    "note": "Boss cuối 3.10."
+  },
+  {
+   "code": "Q13",
+   "name": "Ống Chỉ Biết Đi",
+   "kind": "Thường",
+   "map": "4",
+   "row": "front",
+   "stats": {
+    "hp": 2000,
+    "atk": 95,
+    "df": 60,
+    "spd": 95,
+    "regen": 0,
+    "dodge": 0.03,
+    "acc": 0,
+    "crit": 0.02,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Quấn Chặt",
+    "desc": "Đủ 100 nộ: gây ×1,6 công lên 1 địch, 40% Làm chậm 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       1.6,
+       1.6,
+       1.6
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.4,
+       0.4,
+       0.4
+      ],
+      "dur": 1,
+      "status": "Làm chậm",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Cuộn chỉ có chân, quấn chặt người đi ngang."
+  },
+  {
+   "code": "Q14",
+   "name": "Con Thoi Bay",
+   "kind": "Thường",
+   "map": "4",
+   "row": "back",
+   "stats": {
+    "hp": 1500,
+    "atk": 120,
+    "df": 35,
+    "spd": 118,
+    "regen": 0,
+    "dodge": 0.1,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Phóng Thoi",
+    "desc": "Đủ 100 nộ: gây ×1,5 công lên 2 địch ngẫu nhiên.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       2,
+       2,
+       2
+      ],
+      "mag": [
+       1.5,
+       1.5,
+       1.5
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Con thoi dệt bay vèo vèo, nhanh nhưng mỏng."
+  },
+  {
+   "code": "Q15",
+   "name": "Cuộn Vải Ma",
+   "kind": "Thường",
+   "map": "4",
+   "row": "front",
+   "stats": {
+    "hp": 2400,
+    "atk": 85,
+    "df": 80,
+    "spd": 88,
+    "regen": 20,
+    "dodge": 0.02,
+    "acc": 0,
+    "crit": 0.02,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Bọc Xác",
+    "desc": "Đủ 100 nộ: gây ×1,2 công lên 1 địch, 25% Ngủ 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.25,
+       0.25,
+       0.25
+      ],
+      "dur": 1,
+      "status": "Ngủ",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Cuộn vải hình bóng ma, thủ cao, tự hồi nhẹ."
+  },
+  {
+   "code": "Q16",
+   "name": "Máy Dệt Gầm Rú",
+   "kind": "Tinh anh",
+   "map": "4",
+   "row": "front",
+   "stats": {
+    "hp": 9500,
+    "atk": 115,
+    "df": 85,
+    "spd": 80,
+    "regen": 30,
+    "dodge": 0.01,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Kéo Sợi Hàng Loạt",
+    "desc": "Đủ 100 nộ: gây ×0,9 công lên 3 địch ngẫu nhiên, mỗi mục tiêu 35% Làm chậm 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       3,
+       3,
+       3
+      ],
+      "mag": [
+       0.9,
+       0.9,
+       0.9
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.35,
+       0.35,
+       0.35
+      ],
+      "dur": 1,
+      "status": "Làm chậm",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Tinh anh Map 4. Dùng lại ảnh phóng to 1,3 lần làm boss giữa map ở màn 4-5."
+  },
+  {
+   "code": "Q17",
+   "name": "Bà Chủ Xưởng Sợi",
+   "kind": "Boss",
+   "map": "4",
+   "row": "front",
+   "stats": {
+    "hp": 14000,
+    "atk": 130,
+    "df": 75,
+    "spd": 105,
+    "regen": 25,
+    "dodge": 0.04,
+    "acc": 0,
+    "crit": 0.05,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Đơn Hàng Gấp",
+    "desc": "Đủ 100 nộ: gây ×1,3 công lên 3 địch ngẫu nhiên, mỗi mục tiêu 30% Choáng 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       3,
+       3,
+       3
+      ],
+      "mag": [
+       1.3,
+       1.3,
+       1.3
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.3,
+       0.3,
+       0.3
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": "Tăng Ca",
+    "desc": "Khi đồng đội gục, cả đội +20 nộ.",
+    "components": [
+     {
+      "kind": "Hồi nộ",
+      "target": "Cả đội mình",
+      "trigger": "Khi đồng đội gục",
+      "frm": 0,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       20,
+       20,
+       20
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ]
+   },
+   "note": "Boss Map 4 (4-10)."
+  },
+  {
+   "code": "Q18",
+   "name": "Thùng Phuy Rỉ",
+   "kind": "Thường",
+   "map": "5",
+   "row": "front",
+   "stats": {
+    "hp": 2600,
+    "atk": 90,
+    "df": 90,
+    "spd": 85,
+    "regen": 0,
+    "dodge": 0.01,
+    "acc": 0,
+    "crit": 0.02,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Lăn Đè",
+    "desc": "Đủ 100 nộ: gây ×1,5 công lên 1 địch.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       1.5,
+       1.5,
+       1.5
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Thùng phuy rỉ sét lăn đè, thủ cao, chậm."
+  },
+  {
+   "code": "Q19",
+   "name": "Cua Càng Cẩu",
+   "kind": "Thường",
+   "map": "5",
+   "row": "front",
+   "stats": {
+    "hp": 2100,
+    "atk": 115,
+    "df": 55,
+    "spd": 100,
+    "regen": 0,
+    "dodge": 0.05,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Kẹp Đôi",
+    "desc": "Đủ 100 nộ: gây ×1,2 công lên 2 địch ngẫu nhiên, mỗi mục tiêu 30% Làm chậm 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       2,
+       2,
+       2
+      ],
+      "mag": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.3,
+       0.3,
+       0.3
+      ],
+      "dur": 1,
+      "status": "Làm chậm",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Cua có càng hình móc cẩu."
+  },
+  {
+   "code": "Q20",
+   "name": "Bảo Vệ Cảng Đêm",
+   "kind": "Thường",
+   "map": "5",
+   "row": "back",
+   "stats": {
+    "hp": 1700,
+    "atk": 125,
+    "df": 40,
+    "spd": 112,
+    "regen": 0,
+    "dodge": 0.08,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Đèn Pin Chói",
+    "desc": "Đủ 100 nộ: gây ×1 công lên 2 địch ngẫu nhiên, mỗi mục tiêu 30% Choáng 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       2,
+       2,
+       2
+      ],
+      "mag": [
+       1,
+       1,
+       1
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.3,
+       0.3,
+       0.3
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Bảo vệ ca đêm buồn ngủ, đèn pin chói mắt."
+  },
+  {
+   "code": "Q21",
+   "name": "Cẩu Khổng Lồ",
+   "kind": "Tinh anh",
+   "map": "5",
+   "row": "front",
+   "stats": {
+    "hp": 11000,
+    "atk": 120,
+    "df": 95,
+    "spd": 78,
+    "regen": 35,
+    "dodge": 0.01,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Thả Container",
+    "desc": "Đủ 100 nộ: gây ×1,5 công lên 2 địch ngẫu nhiên, mỗi mục tiêu 40% Choáng 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       2,
+       2,
+       2
+      ],
+      "mag": [
+       1.5,
+       1.5,
+       1.5
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.4,
+       0.4,
+       0.4
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Tinh anh Map 5, cũng là boss giữa map ở 5-5."
+  },
+  {
+   "code": "Q22",
+   "name": "Thuyền Trưởng Container",
+   "kind": "Boss",
+   "map": "5",
+   "row": "front",
+   "stats": {
+    "hp": 17000,
+    "atk": 135,
+    "df": 85,
+    "spd": 105,
+    "regen": 30,
+    "dodge": 0.04,
+    "acc": 0,
+    "crit": 0.05,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Hú Còi Tàu",
+    "desc": "Đủ 100 nộ: gây ×1,2 công lên 3 địch ngẫu nhiên, mỗi mục tiêu 35% Choáng 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       3,
+       3,
+       3
+      ],
+      "mag": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.35,
+       0.35,
+       0.35
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": "Chìm Cùng Tàu",
+    "desc": "Khi đồng đội gục, cả đội +20 nộ.",
+    "components": [
+     {
+      "kind": "Hồi nộ",
+      "target": "Cả đội mình",
+      "trigger": "Khi đồng đội gục",
+      "frm": 0,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       20,
+       20,
+       20
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ]
+   },
+   "note": "Boss Map 5 (5-10)."
+  },
+  {
+   "code": "Q23",
+   "name": "Xe Máy Hết Xăng",
+   "kind": "Thường",
+   "map": "6",
+   "row": "front",
+   "stats": {
+    "hp": 2800,
+    "atk": 100,
+    "df": 60,
+    "spd": 112,
+    "regen": 0,
+    "dodge": 0.06,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Đâm Thẳng",
+    "desc": "Đủ 100 nộ: gây ×1,7 công lên 1 địch.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       1.7,
+       1.7,
+       1.7
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Xe máy móp, mắt đèn pha giận dữ."
+  },
+  {
+   "code": "Q24",
+   "name": "Biển Báo Biết Chạy",
+   "kind": "Thường",
+   "map": "6",
+   "row": "front",
+   "stats": {
+    "hp": 3200,
+    "atk": 95,
+    "df": 100,
+    "spd": 98,
+    "regen": 0,
+    "dodge": 0.02,
+    "acc": 0,
+    "crit": 0.02,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Cấm Vào",
+    "desc": "Đủ 100 nộ: gây ×1,2 công lên 1 địch, 40% Làm chậm 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.4,
+       0.4,
+       0.4
+      ],
+      "dur": 1,
+      "status": "Làm chậm",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Biển cấm vào có chân, thủ cao."
+  },
+  {
+   "code": "Q25",
+   "name": "Shipper Ma",
+   "kind": "Thường",
+   "map": "6",
+   "row": "back",
+   "stats": {
+    "hp": 2100,
+    "atk": 130,
+    "df": 45,
+    "spd": 125,
+    "regen": 0,
+    "dodge": 0.12,
+    "acc": 0,
+    "crit": 0.04,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Giao Hỏa Tốc",
+    "desc": "Đủ 100 nộ: gây ×1,8 công lên 1 địch.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       1.8,
+       1.8,
+       1.8
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Bóng ma shipper, rất nhanh, né nhiều."
+  },
+  {
+   "code": "Q26",
+   "name": "Xe Container Độ",
+   "kind": "Tinh anh",
+   "map": "6",
+   "row": "front",
+   "stats": {
+    "hp": 13000,
+    "atk": 125,
+    "df": 90,
+    "spd": 100,
+    "regen": 35,
+    "dodge": 0.02,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Cán Qua",
+    "desc": "Đủ 100 nộ: gây ×1 công lên 3 địch ngẫu nhiên, mỗi mục tiêu 30% Choáng 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       3,
+       3,
+       3
+      ],
+      "mag": [
+       1,
+       1,
+       1
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.3,
+       0.3,
+       0.3
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Tinh anh Map 6, boss giữa map ở 6-5."
+  },
+  {
+   "code": "Q27",
+   "name": "Ông Vua Tốc Độ",
+   "kind": "Boss",
+   "map": "6",
+   "row": "front",
+   "stats": {
+    "hp": 20000,
+    "atk": 140,
+    "df": 80,
+    "spd": 128,
+    "regen": 30,
+    "dodge": 0.08,
+    "acc": 0,
+    "crit": 0.05,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Vượt Đèn Đỏ",
+    "desc": "Đủ 100 nộ: gây ×1,3 công lên 3 địch ngẫu nhiên, mỗi mục tiêu 30% Choáng 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       3,
+       3,
+       3
+      ],
+      "mag": [
+       1.3,
+       1.3,
+       1.3
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.3,
+       0.3,
+       0.3
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": "Phanh Gấp",
+    "desc": "Khi đồng đội gục, cả đội +20 nộ.",
+    "components": [
+     {
+      "kind": "Hồi nộ",
+      "target": "Cả đội mình",
+      "trigger": "Khi đồng đội gục",
+      "frm": 0,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       20,
+       20,
+       20
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ]
+   },
+   "note": "Boss Map 6 (6-10), ra đòn rất sớm."
+  },
+  {
+   "code": "Q28",
+   "name": "Linh Vật Bông Gòn",
+   "kind": "Thường",
+   "map": "7",
+   "row": "front",
+   "stats": {
+    "hp": 3800,
+    "atk": 100,
+    "df": 85,
+    "spd": 90,
+    "regen": 25,
+    "dodge": 0.02,
+    "acc": 0,
+    "crit": 0.02,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Ôm Chặt",
+    "desc": "Đủ 100 nộ: gây ×1,3 công lên 1 địch, 30% Ru ngủ 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       1.3,
+       1.3,
+       1.3
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.3,
+       0.3,
+       0.3
+      ],
+      "dur": 1,
+      "status": "Ru ngủ",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Linh vật bông gòn cười mãi."
+  },
+  {
+   "code": "Q29",
+   "name": "Hostess Mỉm Cười Mãi",
+   "kind": "Thường",
+   "map": "7",
+   "row": "back",
+   "stats": {
+    "hp": 2500,
+    "atk": 130,
+    "df": 50,
+    "spd": 118,
+    "regen": 0,
+    "dodge": 0.08,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Mời Dùng Thử",
+    "desc": "Đủ 100 nộ: gây ×1,4 công lên 2 địch ngẫu nhiên, mỗi mục tiêu 40% Ru ngủ 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       2,
+       2,
+       2
+      ],
+      "mag": [
+       1.4,
+       1.4,
+       1.4
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.4,
+       0.4,
+       0.4
+      ],
+      "dur": 1,
+      "status": "Ru ngủ",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Hostess nụ cười không bao giờ tắt."
+  },
+  {
+   "code": "Q30",
+   "name": "Robot Quảng Cáo",
+   "kind": "Thường",
+   "map": "7",
+   "row": "front",
+   "stats": {
+    "hp": 3000,
+    "atk": 120,
+    "df": 70,
+    "spd": 105,
+    "regen": 0,
+    "dodge": 0.04,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Loa Phát Thanh",
+    "desc": "Đủ 100 nộ: gây ×1,1 công lên 3 địch ngẫu nhiên.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       3,
+       3,
+       3
+      ],
+      "mag": [
+       1.1,
+       1.1,
+       1.1
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Robot loa phát thanh 24 giờ."
+  },
+  {
+   "code": "Q31",
+   "name": "Gian Hàng Khổng Lồ",
+   "kind": "Tinh anh",
+   "map": "7",
+   "row": "front",
+   "stats": {
+    "hp": 15500,
+    "atk": 130,
+    "df": 100,
+    "spd": 82,
+    "regen": 40,
+    "dodge": 0.01,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Khuyến Mãi Sốc",
+    "desc": "Đủ 100 nộ: gây ×1 công lên 3 địch ngẫu nhiên, mỗi mục tiêu 40% Choáng 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       3,
+       3,
+       3
+      ],
+      "mag": [
+       1,
+       1,
+       1
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.4,
+       0.4,
+       0.4
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Tinh anh Map 7, boss giữa map ở 7-5."
+  },
+  {
+   "code": "Q32",
+   "name": "Giám Đốc Triển Lãm",
+   "kind": "Boss",
+   "map": "7",
+   "row": "front",
+   "stats": {
+    "hp": 24000,
+    "atk": 145,
+    "df": 90,
+    "spd": 108,
+    "regen": 35,
+    "dodge": 0.04,
+    "acc": 0,
+    "crit": 0.05,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Cắt Băng Khánh Thành",
+    "desc": "Đủ 100 nộ: gây ×1,3 công lên 3 địch ngẫu nhiên, mỗi mục tiêu 35% Choáng 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       3,
+       3,
+       3
+      ],
+      "mag": [
+       1.3,
+       1.3,
+       1.3
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.35,
+       0.35,
+       0.35
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": "Lễ Khai Mạc",
+    "desc": "Khi đồng đội gục, cả đội +20 nộ.",
+    "components": [
+     {
+      "kind": "Hồi nộ",
+      "target": "Cả đội mình",
+      "trigger": "Khi đồng đội gục",
+      "frm": 0,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       20,
+       20,
+       20
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ]
+   },
+   "note": "Boss Map 7 (7-10)."
+  },
+  {
+   "code": "Q33",
+   "name": "Sợi Chỉ Hắc Ám",
+   "kind": "Thường",
+   "map": "8",
+   "row": "back",
+   "stats": {
+    "hp": 2800,
+    "atk": 140,
+    "df": 50,
+    "spd": 122,
+    "regen": 0,
+    "dodge": 0.1,
+    "acc": 0,
+    "crit": 0.04,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Xiết Cổ Chân",
+    "desc": "Đủ 100 nộ: gây ×1,6 công lên 2 địch ngẫu nhiên, mỗi mục tiêu 40% Làm chậm 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       2,
+       2,
+       2
+      ],
+      "mag": [
+       1.6,
+       1.6,
+       1.6
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.4,
+       0.4,
+       0.4
+      ],
+      "dur": 1,
+      "status": "Làm chậm",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Búi chỉ đen sống, nhanh, mỏng."
+  },
+  {
+   "code": "Q34",
+   "name": "Thảm Rách Bóng Tối",
+   "kind": "Thường",
+   "map": "8",
+   "row": "front",
+   "stats": {
+    "hp": 4600,
+    "atk": 105,
+    "df": 100,
+    "spd": 92,
+    "regen": 30,
+    "dodge": 0.02,
+    "acc": 0,
+    "crit": 0.02,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Che Mắt",
+    "desc": "Đủ 100 nộ: gây ×1,2 công lên 1 địch, 30% Ngủ 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "1 địch (hàng trước trước, random trong hàng)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.3,
+       0.3,
+       0.3
+      ],
+      "dur": 1,
+      "status": "Ngủ",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Thảm rách đứng dậy như áo choàng."
+  },
+  {
+   "code": "Q35",
+   "name": "Kế Toán Âm Phủ",
+   "kind": "Thường",
+   "map": "8",
+   "row": "back",
+   "stats": {
+    "hp": 3200,
+    "atk": 135,
+    "df": 60,
+    "spd": 114,
+    "regen": 0,
+    "dodge": 0.06,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Chốt Sổ Âm",
+    "desc": "Đủ 100 nộ: gây ×1,5 công lên 2 địch ngẫu nhiên, mỗi mục tiêu 30% Choáng 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       2,
+       2,
+       2
+      ],
+      "mag": [
+       1.5,
+       1.5,
+       1.5
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.3,
+       0.3,
+       0.3
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Bóng ma kế toán với bàn tính và sổ dày."
+  },
+  {
+   "code": "Q36",
+   "name": "Hộ Vệ Thảm Thần",
+   "kind": "Tinh anh",
+   "map": "8",
+   "row": "front",
+   "stats": {
+    "hp": 18000,
+    "atk": 140,
+    "df": 105,
+    "spd": 85,
+    "regen": 45,
+    "dodge": 0.01,
+    "acc": 0,
+    "crit": 0.03,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Dệt Lại Số Phận",
+    "desc": "Đủ 100 nộ: gây ×1,1 công lên 3 địch ngẫu nhiên, mỗi mục tiêu 40% Choáng 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       3,
+       3,
+       3
+      ],
+      "mag": [
+       1.1,
+       1.1,
+       1.1
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.4,
+       0.4,
+       0.4
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": null,
+    "desc": null,
+    "components": []
+   },
+   "note": "Tinh anh Map 8, boss giữa map ở 8-5."
+  },
+  {
+   "code": "Q37",
+   "name": "Thảm Thần Tồn Kho Âm",
+   "kind": "Boss",
+   "map": "8",
+   "row": "front",
+   "stats": {
+    "hp": 29000,
+    "atk": 155,
+    "df": 95,
+    "spd": 110,
+    "regen": 40,
+    "dodge": 0.05,
+    "acc": 0,
+    "crit": 0.05,
+    "critDmg": 1.5,
+    "critRes": 0
+   },
+   "skill": {
+    "name": "Tồn Kho Âm",
+    "desc": "Đủ 100 nộ: gây ×1,4 công lên 4 địch ngẫu nhiên, mỗi mục tiêu 35% Choáng 1 lượt.",
+    "components": [
+     {
+      "kind": "Sát thương",
+      "target": "Địch ngẫu nhiên (nhiều mục tiêu)",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": "× Công của người xả",
+      "n": [
+       4,
+       4,
+       4
+      ],
+      "mag": [
+       1.4,
+       1.4,
+       1.4
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     },
+     {
+      "kind": "Gây trạng thái",
+      "target": "Cùng mục tiêu với thành phần 1",
+      "trigger": "Đủ 100 nộ (skill nộ)",
+      "frm": 0,
+      "unit": null,
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       null,
+       null,
+       null
+      ],
+      "prob": [
+       0.35,
+       0.35,
+       0.35
+      ],
+      "dur": 1,
+      "status": "Choáng",
+      "note": null
+     }
+    ]
+   },
+   "passive": {
+    "name": "Tái Dệt",
+    "desc": "Khi đồng đội gục, cả đội +25 nộ.",
+    "components": [
+     {
+      "kind": "Hồi nộ",
+      "target": "Cả đội mình",
+      "trigger": "Khi đồng đội gục",
+      "frm": 0,
+      "unit": "Điểm nộ",
+      "n": [
+       null,
+       null,
+       null
+      ],
+      "mag": [
+       25,
+       25,
+       25
+      ],
+      "prob": [
+       null,
+       null,
+       null
+      ],
+      "dur": null,
+      "status": null,
+      "note": null
+     }
+    ]
+   },
+   "note": "Boss cuối game (8-10)."
   }
  ],
  "levels": [
@@ -3402,6 +7067,1356 @@
    "win": null,
    "turns": null,
    "reward": null
+  },
+  {
+   "map": 4,
+   "man": 1,
+   "name": "Cổng xưởng gỉ sét",
+   "place": "Xưởng dệt bỏ hoang",
+   "comp": [
+    {
+     "code": "Q13",
+     "count": 2
+    },
+    {
+     "code": "Q14",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 4,
+   "man": 2,
+   "name": "Dãy máy dệt",
+   "place": "Xưởng dệt bỏ hoang",
+   "comp": [
+    {
+     "code": "Q13",
+     "count": 1
+    },
+    {
+     "code": "Q14",
+     "count": 1
+    },
+    {
+     "code": "Q15",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 4,
+   "man": 3,
+   "name": "Phòng ống chỉ",
+   "place": "Xưởng dệt bỏ hoang",
+   "comp": [
+    {
+     "code": "Q16",
+     "count": 1
+    },
+    {
+     "code": "Q13",
+     "count": 2
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 4,
+   "man": 4,
+   "name": "Máy dệt tự chạy",
+   "place": "Xưởng dệt bỏ hoang",
+   "comp": [
+    {
+     "code": "Q14",
+     "count": 2
+    },
+    {
+     "code": "Q15",
+     "count": 1
+    },
+    {
+     "code": "Q13",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 4,
+   "man": 5,
+   "name": "Máy dệt gầm rú",
+   "place": "Xưởng dệt bỏ hoang",
+   "comp": [
+    {
+     "code": "Q16",
+     "count": 1
+    },
+    {
+     "code": "Q13",
+     "count": 1
+    },
+    {
+     "code": "Q15",
+     "count": 1
+    }
+   ],
+   "kind": "Boss",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 4,
+   "man": 6,
+   "name": "Kho vải ma",
+   "place": "Xưởng dệt bỏ hoang",
+   "comp": [
+    {
+     "code": "Q13",
+     "count": 2
+    },
+    {
+     "code": "Q14",
+     "count": 1
+    },
+    {
+     "code": "Q15",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 4,
+   "man": 7,
+   "name": "Xưởng nhuộm bỏ hoang",
+   "place": "Xưởng dệt bỏ hoang",
+   "comp": [
+    {
+     "code": "Q16",
+     "count": 1
+    },
+    {
+     "code": "Q14",
+     "count": 2
+    },
+    {
+     "code": "Q15",
+     "count": 1
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 4,
+   "man": 8,
+   "name": "Hành lang con thoi",
+   "place": "Xưởng dệt bỏ hoang",
+   "comp": [
+    {
+     "code": "Q13",
+     "count": 2
+    },
+    {
+     "code": "Q14",
+     "count": 2
+    },
+    {
+     "code": "Q15",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 4,
+   "man": 9,
+   "name": "Phòng đơn hàng gấp",
+   "place": "Xưởng dệt bỏ hoang",
+   "comp": [
+    {
+     "code": "Q16",
+     "count": 1
+    },
+    {
+     "code": "Q13",
+     "count": 1
+    },
+    {
+     "code": "Q14",
+     "count": 1
+    },
+    {
+     "code": "Q15",
+     "count": 1
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 4,
+   "man": 10,
+   "name": "Bà chủ xưởng sợi: tăng ca",
+   "place": "Xưởng dệt bỏ hoang",
+   "comp": [
+    {
+     "code": "Q17",
+     "count": 1
+    },
+    {
+     "code": "Q16",
+     "count": 1
+    },
+    {
+     "code": "Q13",
+     "count": 1
+    },
+    {
+     "code": "Q14",
+     "count": 1
+    }
+   ],
+   "kind": "Boss",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 5,
+   "man": 1,
+   "name": "Cổng cảng",
+   "place": "Cảng container đêm mưa",
+   "comp": [
+    {
+     "code": "Q18",
+     "count": 2
+    },
+    {
+     "code": "Q19",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 5,
+   "man": 2,
+   "name": "Bãi container",
+   "place": "Cảng container đêm mưa",
+   "comp": [
+    {
+     "code": "Q18",
+     "count": 1
+    },
+    {
+     "code": "Q19",
+     "count": 1
+    },
+    {
+     "code": "Q20",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 5,
+   "man": 3,
+   "name": "Cẩu thức giấc",
+   "place": "Cảng container đêm mưa",
+   "comp": [
+    {
+     "code": "Q21",
+     "count": 1
+    },
+    {
+     "code": "Q18",
+     "count": 2
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 5,
+   "man": 4,
+   "name": "Bảo vệ ca đêm",
+   "place": "Cảng container đêm mưa",
+   "comp": [
+    {
+     "code": "Q19",
+     "count": 2
+    },
+    {
+     "code": "Q20",
+     "count": 1
+    },
+    {
+     "code": "Q18",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 5,
+   "man": 5,
+   "name": "Cẩu khổng lồ nổi giận",
+   "place": "Cảng container đêm mưa",
+   "comp": [
+    {
+     "code": "Q21",
+     "count": 1
+    },
+    {
+     "code": "Q18",
+     "count": 1
+    },
+    {
+     "code": "Q20",
+     "count": 1
+    }
+   ],
+   "kind": "Boss",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 5,
+   "man": 6,
+   "name": "Bến phuy rỉ",
+   "place": "Cảng container đêm mưa",
+   "comp": [
+    {
+     "code": "Q18",
+     "count": 2
+    },
+    {
+     "code": "Q19",
+     "count": 1
+    },
+    {
+     "code": "Q20",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 5,
+   "man": 7,
+   "name": "Dưới chân cẩu",
+   "place": "Cảng container đêm mưa",
+   "comp": [
+    {
+     "code": "Q21",
+     "count": 1
+    },
+    {
+     "code": "Q19",
+     "count": 2
+    },
+    {
+     "code": "Q20",
+     "count": 1
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 5,
+   "man": 8,
+   "name": "Mưa trên boong",
+   "place": "Cảng container đêm mưa",
+   "comp": [
+    {
+     "code": "Q18",
+     "count": 2
+    },
+    {
+     "code": "Q19",
+     "count": 2
+    },
+    {
+     "code": "Q20",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 5,
+   "man": 9,
+   "name": "Kho lạnh số 9",
+   "place": "Cảng container đêm mưa",
+   "comp": [
+    {
+     "code": "Q21",
+     "count": 1
+    },
+    {
+     "code": "Q18",
+     "count": 1
+    },
+    {
+     "code": "Q19",
+     "count": 1
+    },
+    {
+     "code": "Q20",
+     "count": 1
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 5,
+   "man": 10,
+   "name": "Thuyền trưởng container",
+   "place": "Cảng container đêm mưa",
+   "comp": [
+    {
+     "code": "Q22",
+     "count": 1
+    },
+    {
+     "code": "Q21",
+     "count": 1
+    },
+    {
+     "code": "Q18",
+     "count": 1
+    },
+    {
+     "code": "Q19",
+     "count": 1
+    }
+   ],
+   "kind": "Boss",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 6,
+   "man": 1,
+   "name": "Trạm thu phí",
+   "place": "Đường cao tốc giao hàng",
+   "comp": [
+    {
+     "code": "Q23",
+     "count": 2
+    },
+    {
+     "code": "Q24",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 6,
+   "man": 2,
+   "name": "Làn xe máy",
+   "place": "Đường cao tốc giao hàng",
+   "comp": [
+    {
+     "code": "Q23",
+     "count": 1
+    },
+    {
+     "code": "Q24",
+     "count": 1
+    },
+    {
+     "code": "Q25",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 6,
+   "man": 3,
+   "name": "Tiếng còi từ xa",
+   "place": "Đường cao tốc giao hàng",
+   "comp": [
+    {
+     "code": "Q26",
+     "count": 1
+    },
+    {
+     "code": "Q23",
+     "count": 2
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 6,
+   "man": 4,
+   "name": "Đêm giao hàng",
+   "place": "Đường cao tốc giao hàng",
+   "comp": [
+    {
+     "code": "Q24",
+     "count": 2
+    },
+    {
+     "code": "Q25",
+     "count": 1
+    },
+    {
+     "code": "Q23",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 6,
+   "man": 5,
+   "name": "Xe container độ",
+   "place": "Đường cao tốc giao hàng",
+   "comp": [
+    {
+     "code": "Q26",
+     "count": 1
+    },
+    {
+     "code": "Q23",
+     "count": 1
+    },
+    {
+     "code": "Q25",
+     "count": 1
+    }
+   ],
+   "kind": "Boss",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 6,
+   "man": 6,
+   "name": "Cầu vượt",
+   "place": "Đường cao tốc giao hàng",
+   "comp": [
+    {
+     "code": "Q23",
+     "count": 2
+    },
+    {
+     "code": "Q24",
+     "count": 1
+    },
+    {
+     "code": "Q25",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 6,
+   "man": 7,
+   "name": "Hầm chui",
+   "place": "Đường cao tốc giao hàng",
+   "comp": [
+    {
+     "code": "Q26",
+     "count": 1
+    },
+    {
+     "code": "Q24",
+     "count": 2
+    },
+    {
+     "code": "Q25",
+     "count": 1
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 6,
+   "man": 8,
+   "name": "Đèn đỏ vô tận",
+   "place": "Đường cao tốc giao hàng",
+   "comp": [
+    {
+     "code": "Q23",
+     "count": 2
+    },
+    {
+     "code": "Q24",
+     "count": 2
+    },
+    {
+     "code": "Q25",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 6,
+   "man": 9,
+   "name": "Trạm dừng chân",
+   "place": "Đường cao tốc giao hàng",
+   "comp": [
+    {
+     "code": "Q26",
+     "count": 1
+    },
+    {
+     "code": "Q23",
+     "count": 1
+    },
+    {
+     "code": "Q24",
+     "count": 1
+    },
+    {
+     "code": "Q25",
+     "count": 1
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 6,
+   "man": 10,
+   "name": "Ông vua tốc độ",
+   "place": "Đường cao tốc giao hàng",
+   "comp": [
+    {
+     "code": "Q27",
+     "count": 1
+    },
+    {
+     "code": "Q26",
+     "count": 1
+    },
+    {
+     "code": "Q23",
+     "count": 1
+    },
+    {
+     "code": "Q24",
+     "count": 1
+    }
+   ],
+   "kind": "Boss",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 7,
+   "man": 1,
+   "name": "Cổng hội chợ",
+   "place": "Hội chợ triển lãm thảm quốc tế",
+   "comp": [
+    {
+     "code": "Q28",
+     "count": 2
+    },
+    {
+     "code": "Q29",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 7,
+   "man": 2,
+   "name": "Quầy phát mẫu",
+   "place": "Hội chợ triển lãm thảm quốc tế",
+   "comp": [
+    {
+     "code": "Q28",
+     "count": 1
+    },
+    {
+     "code": "Q29",
+     "count": 1
+    },
+    {
+     "code": "Q30",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 7,
+   "man": 3,
+   "name": "Gian hàng mở cửa",
+   "place": "Hội chợ triển lãm thảm quốc tế",
+   "comp": [
+    {
+     "code": "Q31",
+     "count": 1
+    },
+    {
+     "code": "Q28",
+     "count": 2
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 7,
+   "man": 4,
+   "name": "Hành lang linh vật",
+   "place": "Hội chợ triển lãm thảm quốc tế",
+   "comp": [
+    {
+     "code": "Q29",
+     "count": 2
+    },
+    {
+     "code": "Q30",
+     "count": 1
+    },
+    {
+     "code": "Q28",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 7,
+   "man": 5,
+   "name": "Gian hàng khổng lồ",
+   "place": "Hội chợ triển lãm thảm quốc tế",
+   "comp": [
+    {
+     "code": "Q31",
+     "count": 1
+    },
+    {
+     "code": "Q28",
+     "count": 1
+    },
+    {
+     "code": "Q30",
+     "count": 1
+    }
+   ],
+   "kind": "Boss",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 7,
+   "man": 6,
+   "name": "Khu robot quảng cáo",
+   "place": "Hội chợ triển lãm thảm quốc tế",
+   "comp": [
+    {
+     "code": "Q28",
+     "count": 2
+    },
+    {
+     "code": "Q29",
+     "count": 1
+    },
+    {
+     "code": "Q30",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 7,
+   "man": 7,
+   "name": "Phòng họp báo",
+   "place": "Hội chợ triển lãm thảm quốc tế",
+   "comp": [
+    {
+     "code": "Q31",
+     "count": 1
+    },
+    {
+     "code": "Q29",
+     "count": 2
+    },
+    {
+     "code": "Q30",
+     "count": 1
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 7,
+   "man": 8,
+   "name": "Sân khấu chính",
+   "place": "Hội chợ triển lãm thảm quốc tế",
+   "comp": [
+    {
+     "code": "Q28",
+     "count": 2
+    },
+    {
+     "code": "Q29",
+     "count": 2
+    },
+    {
+     "code": "Q30",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 7,
+   "man": 9,
+   "name": "Hậu trường",
+   "place": "Hội chợ triển lãm thảm quốc tế",
+   "comp": [
+    {
+     "code": "Q31",
+     "count": 1
+    },
+    {
+     "code": "Q28",
+     "count": 1
+    },
+    {
+     "code": "Q29",
+     "count": 1
+    },
+    {
+     "code": "Q30",
+     "count": 1
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 7,
+   "man": 10,
+   "name": "Giám đốc triển lãm",
+   "place": "Hội chợ triển lãm thảm quốc tế",
+   "comp": [
+    {
+     "code": "Q32",
+     "count": 1
+    },
+    {
+     "code": "Q31",
+     "count": 1
+    },
+    {
+     "code": "Q28",
+     "count": 1
+    },
+    {
+     "code": "Q29",
+     "count": 1
+    }
+   ],
+   "kind": "Boss",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 8,
+   "man": 1,
+   "name": "Chân núi thảm",
+   "place": "Đỉnh Thảm Thần",
+   "comp": [
+    {
+     "code": "Q33",
+     "count": 2
+    },
+    {
+     "code": "Q34",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 8,
+   "man": 2,
+   "name": "Bậc thang sợi chỉ",
+   "place": "Đỉnh Thảm Thần",
+   "comp": [
+    {
+     "code": "Q33",
+     "count": 1
+    },
+    {
+     "code": "Q34",
+     "count": 1
+    },
+    {
+     "code": "Q35",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 8,
+   "man": 3,
+   "name": "Sảnh kế toán âm phủ",
+   "place": "Đỉnh Thảm Thần",
+   "comp": [
+    {
+     "code": "Q36",
+     "count": 1
+    },
+    {
+     "code": "Q33",
+     "count": 2
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 8,
+   "man": 4,
+   "name": "Hành lang thảm rách",
+   "place": "Đỉnh Thảm Thần",
+   "comp": [
+    {
+     "code": "Q34",
+     "count": 2
+    },
+    {
+     "code": "Q35",
+     "count": 1
+    },
+    {
+     "code": "Q33",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 8,
+   "man": 5,
+   "name": "Hộ vệ thảm thần",
+   "place": "Đỉnh Thảm Thần",
+   "comp": [
+    {
+     "code": "Q36",
+     "count": 1
+    },
+    {
+     "code": "Q33",
+     "count": 1
+    },
+    {
+     "code": "Q35",
+     "count": 1
+    }
+   ],
+   "kind": "Boss",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 8,
+   "man": 6,
+   "name": "Kho sổ âm",
+   "place": "Đỉnh Thảm Thần",
+   "comp": [
+    {
+     "code": "Q33",
+     "count": 2
+    },
+    {
+     "code": "Q34",
+     "count": 1
+    },
+    {
+     "code": "Q35",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 8,
+   "man": 7,
+   "name": "Cầu thang dệt",
+   "place": "Đỉnh Thảm Thần",
+   "comp": [
+    {
+     "code": "Q36",
+     "count": 1
+    },
+    {
+     "code": "Q34",
+     "count": 2
+    },
+    {
+     "code": "Q35",
+     "count": 1
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 8,
+   "man": 8,
+   "name": "Đại sảnh bóng tối",
+   "place": "Đỉnh Thảm Thần",
+   "comp": [
+    {
+     "code": "Q33",
+     "count": 2
+    },
+    {
+     "code": "Q34",
+     "count": 2
+    },
+    {
+     "code": "Q35",
+     "count": 1
+    }
+   ],
+   "kind": "Thường",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 8,
+   "man": 9,
+   "name": "Trước ngai thảm",
+   "place": "Đỉnh Thảm Thần",
+   "comp": [
+    {
+     "code": "Q36",
+     "count": 1
+    },
+    {
+     "code": "Q33",
+     "count": 1
+    },
+    {
+     "code": "Q34",
+     "count": 1
+    },
+    {
+     "code": "Q35",
+     "count": 1
+    }
+   ],
+   "kind": "Tinh anh",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
+  },
+  {
+   "map": 8,
+   "man": 10,
+   "name": "Thảm Thần: Tồn kho âm",
+   "place": "Đỉnh Thảm Thần",
+   "comp": [
+    {
+     "code": "Q37",
+     "count": 1
+    },
+    {
+     "code": "Q36",
+     "count": 1
+    },
+    {
+     "code": "Q33",
+     "count": 1
+    },
+    {
+     "code": "Q34",
+     "count": 1
+    }
+   ],
+   "kind": "Boss",
+   "hpMul": null,
+   "atkMul": null,
+   "team": null,
+   "win": null,
+   "turns": null,
+   "reward": "Thắng lần đầu +1 lượt"
   }
  ]
 }

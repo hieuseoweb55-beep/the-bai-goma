@@ -33,10 +33,13 @@ def expected_files(data_path):
     exp = {}                                              # tên chuẩn -> (loại, bắt buộc)
     for c in codes:
         for p in POSES: exp[f"{c.lower()}_{p}"] = ("card" if p == "card" else "hero", True)
-    for i in range(1, 13): exp[f"q{i:02d}_idle"] = ("monster", i not in (3, 4))
-    for n in ("bg_kho", "bg_phongkhach", "bg_congtykhach", "bg_phonghop"): exp[n] = ("bg", True)
+    for c in codes:                                        # ảnh Tím/Đỏ riêng (tùy chọn): thiếu thì game dùng ảnh gốc
+        for t in (3, 4):
+            for p in ("card", "idle", "skill"): exp[f"{c.lower()}_{p}_t{t}"] = ("card" if p == "card" else "hero", False)
+    for i in range(1, 38): exp[f"q{i:02d}_idle"] = ("monster", i not in (3, 4))
+    for n in ("bg_kho", "bg_phongkhach", "bg_congtykhach", "bg_phonghop", "bg_xuongdet", "bg_cang", "bg_caotoc", "bg_hoicho", "bg_thamthan"): exp[n] = ("bg", True)
     for n in ("fx_bang", "fx_hoisinh", "fx_dientiet", "fx_khieukich"): exp[n] = ("fx", True)
-    for n in ("fx_sao", "fx_zzz", "fx_khien"): exp[n] = ("fx", False)
+    for n in ("fx_sao", "fx_zzz", "fx_khien", "fx_aura_t3", "fx_aura_t4", "fx_frame_t3", "fx_frame_t4", "fx_burst", "fx_slash", "fx_wave", "fx_heal"): exp[n] = ("fx", False)
     for g in ("nam", "nu"):
         for p in MAIN_POSES: exp[f"main_{g}_{p}"] = ("main", p in MAIN_REQ)
         exp[f"main_{g}_card"] = ("card", True)

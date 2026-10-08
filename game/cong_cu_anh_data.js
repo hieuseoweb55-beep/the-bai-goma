@@ -1,0 +1,101 @@
+/* Dữ liệu prompt cho cong_cu_anh.html (lấy từ tài liệu thiết kế, tab "Prompt ảnh & hoạt ảnh"). Sửa prompt ở đây, mở lại trang là thấy. */
+window.GOMA_PROMPTS = {
+  style: "Chibi cartoon style, thick clean dark outlines, flat vibrant colors with simple cel shading, cute exaggerated proportions, same art style as the reference image.",
+  tech: "Full body, single character, plain solid white background, NO ground shadow, no text, no floating props, character fills about 80% of the frame with a wide empty margin around, feet at the same baseline.",
+  techFx: "Pure solid black background (#000000), bright glowing effect only, no character, no ground, no text, centered, square 1:1.",
+  techBg: "Wide 16:9 game battle background, empty scene with NO characters, no text, a clear flat floor area across the lower third where characters can stand, soft depth of field, same chibi cartoon art style with thick clean outlines and flat vibrant colors.",
+  t3: "Legendary upgraded version of the SAME character: keep the face, hairstyle and body proportions identical to the reference. Add a flowing purple-and-gold cape or scarf made of ornate carpet fabric with Persian-style patterns, elegant gold trim on the outfit, soft violet glow around the hands, a few floating violet sparkles. Confident heroic pose.",
+  t4: "Mythic upgraded version of the SAME character: keep the face, hairstyle and body proportions identical to the reference. Armor made of layered carpet rolls with crimson-and-gold plates, a pair of small flying-carpet wings behind the back, glowing red eyes and a red-orange flame outline, drifting embers, dramatic powerful stance, larger presence than the purple version.",
+  poses: {
+    idle: "standing neutral confident pose, facing RIGHT, relaxed arms",
+    windup: "pulling back to prepare an attack, body leaning back, facing RIGHT",
+    attack: "striking forward with the signature prop, lunging, facing RIGHT",
+    hit: "flinching in pain, one eye shut, leaning backward, facing RIGHT",
+    dead: "lying defeated on the ground, swirly eyes, small stars above",
+    card: "three-quarter portrait from the waist up, facing RIGHT, friendly expression, art fills a 4:5 frame, simple soft backdrop color",
+    skill: "dramatic dynamic casting pose using the signature skill, big motion, facing RIGHT, art fills a square frame"
+  },
+  /* prompt riêng + tư thế skill của 10 tướng MỚI (bản Xanh dương, ảnh gốc) */
+  base: {
+    NV12: ["A stocky middle-aged night-shift security guard with a thick mustache, grey security uniform and cap, a flashlight in one hand and a steel tea thermos in the other, tired but kind expression.", "slamming the flashlight on the ground and raising the thermos, a shield-shaped glow in front of him"],
+    NV13: ["A sturdy woman in her forties, orange hi-vis vest over a grey work shirt, hair tied up with safety goggles on her head, fingerless gloves, pushing a small hand pallet jack, fierce confident grin.", "charging forward at full speed behind the pallet jack, motion lines, one fist raised"],
+    NV14: ["A lanky young man in a cardboard-box-patterned vest, rolls of packing tape worn like bracelets on both arms, a tape gun in one hand, playful smirk.", "spinning wildly with strips of packing tape flying outward from both hands"],
+    NV15: ["A strict woman with round glasses and a neat hair bun, a giant ledger book in her arms and a pen behind her ear, a calculator clipped to her belt, stern raised eyebrow.", "holding the open ledger high while glowing red numbers float out of its pages"],
+    NV16: ["A very young cheerful girl intern in an oversized black company t-shirt with a lanyard badge, holding a big cup of bubble tea with a straw, sparkling eager eyes.", "raising the bubble tea cup with both hands, pearls and sparkles bursting around her"],
+    NV17: ["A delivery rider in a green helmet and a delivery box backpack, rolled-up sleeves, sneakers, a parcel in one hand, cocky grin, leaning forward ready to sprint.", "dashing with a parcel thrown forward like a ninja star, long speed streaks behind him"],
+    NV18: ["A sharp young woman with a neat bob haircut, a clipboard in one hand and a big red REJECT stamp in the other, a magnifying glass hanging from her neck, strict smile.", "slamming the red stamp down so that a giant glowing red stamp mark appears in the air"],
+    NV19: ["An elderly carpet installer with a white beard and flat cap, knee pads, a tool belt and a kicker tool in hand, a rolled carpet under one arm, wise gentle smile.", "unrolling a huge carpet that flies out like a magic wave in front of him"],
+    NV20: ["A mystical carpet spirit: a small translucent ghostly figure with a gentle smile sitting cross-legged on a flying Persian-style carpet with golden tassels, long flowing scarf, glowing blue eyes, small floating stars around.", "spreading both arms wide while the carpet beneath expands into a huge glowing carpet wave, golden light all around"],
+    NV21: ["A calm samurai-style swordsman with a cardboard straw hat and armor made from cardboard and carpet scraps, a huge utility cutter knife held like a katana with a carpet-roll tube as its sheath on the back, long scarf, serious eyes.", "a lightning-fast horizontal slash with the cutter blade, a single bright white slash line cutting across the whole frame"]
+  },
+  /* "thêm cho Tím" / "thêm cho Đỏ" / tư thế skill (Tím/Đỏ), cho cả 20 tướng */
+  tier: {
+    NV01: ["a big round shield made of stacked carpet rolls bound with purple-gold straps", "full carpet-roll armor and a giant carpet-roll tower shield with a crimson GOMA emblem", "planting the shield into the ground, a glowing dome shockwave around him"],
+    NV02: ["pallet-wood spikes on the shoulders and violet-glowing gauntlets", "crimson spiked armor of pallet planks and a huge red exclamation mark glowing behind him", "arms spread wide shouting, a red exclamation mark flashing behind him"],
+    NV03: ["a giant utility cutter blade glowing violet", "a huge cutter blade wreathed in red flames with a long ribbon of sparks", "a high leaping overhead slash, blade trailing a bright arc"],
+    NV04: ["a golden carpet-roll mace with violet ribbons", "a flaming carpet-roll hammer with red ribbons and sparks", "smashing the roll down with both hands, a ground crack and snow-white frost burst"],
+    NV05: ["a feather duster fan with purple wind swirls and tiny dust sparkles", "a giant fan with a red tornado of carpet scraps and dust around her", "spinning with the fan, a storm of dust and carpet scraps whirling around"],
+    NV06: ["a floating golden tea set and tray, warm violet glow", "a phoenix of red-gold tea steam curling behind her, a floating tea set", "lifting the tea tray, healing golden mist rising and drifting to the sides"],
+    NV07: ["a floating golden ledger book with a violet aura", "a flaming abacus halo behind her and a crimson ledger in hand", "holding the ledger up, glowing coins and numbers flying out to all sides"],
+    NV08: ["a dark purple shadow cloak, a thin glowing dagger hidden in the sleeve", "a crimson cloak and a blade made of a glowing red contract paper", "vanishing into a dash behind the targets, a single sharp diagonal slash"],
+    NV09: ["a mini golden forklift frame strapped to his back, violet glow", "a giant crimson mecha forklift towering behind him, flames from its exhaust", "charging forward with the forklift forks lifted, shockwave ahead"],
+    NV11: ["a floating crescent moon and violet sleeping stars around her", "a giant crimson moon behind her and a glowing star lantern in hand", "rocking a floating cradle of stars, soft glowing lullaby waves spreading out"],
+    NV12: ["a purple night cloak and a flashlight emitting a violet beam", "heavy crimson gate-guard armor, a glowing red lantern and a floating thermos", "slamming the flashlight down, a huge gate of light closing in front of him"],
+    NV13: ["a golden hi-vis vest and a pallet jack with violet glowing wheels", "a flame-trailing mecha pallet jack and crimson armored vest", "charging forward, flames trailing from the wheels, motion streaks"],
+    NV14: ["golden packing-tape bracelets glowing violet", "crimson tape wings and ribbons of burning tape swirling around him", "spinning with long glowing tape ribbons streaming out to all sides"],
+    NV15: ["a glowing violet ledger floating open and golden glasses", "a giant crimson ledger floating behind her with burning pages", "holding the ledger high, red numbers raining down on the targets"],
+    NV16: ["a golden bubble tea cup and violet sparkles", "a giant crimson bubble tea cup behind her, floating glowing pearls", "raising the cup with both hands, a wave of sparkles and pearls bursting out"],
+    NV17: ["a violet-glowing delivery box and speed streaks", "a crimson flaming delivery box with small carpet wings on the helmet", "a ninja-star parcel throw with a bright streak of speed lines"],
+    NV18: ["a violet glowing stamp and a golden magnifier", "a giant crimson stamp floating behind her, burning REJECT mark", "slamming the stamp, a huge glowing mark appears in the air"],
+    NV19: ["a violet-glowing carpet roll and a golden kicker tool", "a flying carpet armor and glowing red carpet wings", "unrolling a huge flying carpet that surges forward like a wave"],
+    NV20: ["larger carpet with a violet halo, more floating stars and tassels", "giant carpet with crimson and gold wings, a blazing halo and floating carpet fragments", "arms wide, the carpet expanding into a glowing wave that sweeps the whole frame"],
+    NV21: ["violet glowing cutter blade, a longer scarf of carpet fabric", "a blazing crimson cutter blade, a red carpet-fabric cape snapping in the wind", "a lightning slash, a single bright white line cutting across the entire frame"]
+  },
+  /* quái Q13-Q37 (prompt viết thêm; quái quay sang TRÁI) */
+  monsters: {
+    Q13: "A walking spool of thread with tiny legs and angry eyes, loose thread tendrils reaching out to wrap around passers-by.",
+    Q14: "A flying weaving shuttle with small wings and a mischievous face, thin and fast, leaving a trail of thread.",
+    Q15: "A ghost-shaped roll of fabric with a spooky wavy bottom edge and sleepy glowing eyes, wrapped in cloth bandages.",
+    Q16: "A huge roaring industrial loom machine with a furious face, gears for teeth, shuttles on its arms, steam puffing out.",
+    Q17: "A stern old factory-owner lady in a thread-spool crown and apron, wielding giant knitting needles like swords, a cloud of thread spools floating around her.",
+    Q18: "A rusty oil drum with a scowling face, rolling on its side, dents and rust patches, dripping oil.",
+    Q19: "A crab whose claws are shaped like cargo crane hooks, orange container-colored shell, grumpy face.",
+    Q20: "A sleepy harbor night guard in a rain poncho holding a blinding flashlight, drooping eyelids, a thermos at his belt.",
+    Q21: "A gigantic harbor crane monster with a face on its cabin, a huge hook swinging like an arm, chained containers hanging off it.",
+    Q22: "A burly ship captain made of shipping containers, captain hat on top, anchor-shaped hook for a hand, stern face.",
+    Q23: "A dented scooter with angry glowing headlight eyes, a cracked mirror like horns, a puff of exhaust smoke.",
+    Q24: "A no-entry road sign with tiny running legs and a stern face.",
+    Q25: "A ghostly delivery rider with a translucent body, a floating delivery box backpack and a glowing helmet, smirking.",
+    Q26: "A tuned-up container truck monster with a wide grille mouth, neon underglow, big exhaust pipes and flame decals.",
+    Q27: "A speed king racer in a helmet with tiny wings, a racing flag cape, wheels instead of feet, arrogant grin.",
+    Q28: "A fluffy cotton mascot costume with a permanent huge smile, round and soft, empty black eyes.",
+    Q29: "A trade-show hostess with a frozen never-fading wide smile, sash and brochure in hand, slightly uncanny.",
+    Q30: "A loudspeaker robot with a megaphone head and flashing LED screen face, advertising banners on its arms.",
+    Q31: "A giant exhibition booth monster, a stall with eyes on its signboard and curtain arms, balloons and promo flags on top.",
+    Q32: "A showman exhibition director in a sparkly suit and top hat, a ribbon-cutting giant scissors, a fake wide smile.",
+    Q33: "A living tangle of black thread with two glowing eyes, thin and spiky, loose strands whipping around.",
+    Q34: "A torn dark carpet standing up like a ragged cloak, holes for eyes, frayed edges dripping shadow.",
+    Q35: "A ghostly accountant with an abacus and a thick ledger, round glasses, pale translucent body, sinister smile.",
+    Q36: "A towering carpet-guardian knight with armor made of rolled carpets, a huge carpet-roll shield and tassel helmet.",
+    Q37: "The final boss: a colossal carpet deity, a floating mountain-sized figure woven from endless carpet with glowing violet eyes, loose threads like tentacles, an enormous negative-balance ledger floating behind him, ominous and grand."
+  },
+  monsterTech: "Full body, single monster, facing LEFT, plain solid white background, NO ground shadow, no text, character fills about 80% of the frame with a wide empty margin around, feet at the same baseline.",
+  bg: {
+    bg_xuongdet: "Abandoned textile factory interior, rows of old looms and giant thread spools, dusty light beams through high windows, scattered fabric rolls, creepy but playful mood.",
+    bg_cang: "Rainy night cargo harbor, stacked shipping containers, wet concrete dock, harbor lamps with fog, a crane silhouette far away, moody blue and orange lights.",
+    bg_caotoc: "Night highway with long light streaks of passing vehicles, road signs, neon glow, empty asphalt road in the foreground, speed and motion feeling.",
+    bg_hoicho: "Colorful trade fair hall, rows of promotional booths with balloons and banners, confetti in the air, bright cheerful lights with a slightly uncanny sweet feel.",
+    bg_thamthan: "Summit of a mountain made of stacked carpet, violet dusk sky, giant glowing loom thread arcs in the sky, floating carpet fragments, epic and mysterious."
+  },
+  fx: [
+    ["fx_aura_t3", "Vòng hào quang sau lưng tướng Tím", "Soft purple and violet energy aura ring, swirling thin light ribbons, small glowing particles floating upward, centered, symmetrical, 1024x1024"],
+    ["fx_aura_t4", "Hào quang tướng Đỏ", "Fiery crimson and gold energy aura, rising flame-like light ribbons, ember sparks, bigger and more intense than a purple aura, centered, 1024x1024"],
+    ["fx_frame_t3", "Khung thẻ Tím", "Ornate card frame border, purple crystal corners with silver filigree, faint glow, empty center, portrait ratio 3:4"],
+    ["fx_frame_t4", "Khung thẻ Đỏ", "Ornate card frame border, red lacquer and gold dragon-scale corners, strong glow, empty center, portrait ratio 3:4"],
+    ["fx_burst", "Nổ khi tung skill Tím/Đỏ", "Radial burst of light rays with a bright white core, comic-impact shape, golden edge, 1024x1024"],
+    ["fx_slash", "Vệt chém cho Sát thủ và Vật lý", "Single sweeping white-gold diagonal slash trail with motion blur, tapered ends, 1536x512"],
+    ["fx_wave", "Sóng năng lượng cho Phép", "Horizontal shockwave arc of translucent energy, bright rim, soft inner gradient, 1536x512"],
+    ["fx_heal", "Hồi máu", "Rising green-gold sparkles and soft light pillars, gentle, 1024x1024"]
+  ],
+  fxTail: "transparent background, game VFX sprite, no text, no characters"
+};

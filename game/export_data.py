@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Xuất số liệu từ file Excel (Goma_Game_Data_v8.xlsx) ra data.json cho game đọc.
+"""Xuất số liệu từ file Excel (Goma_Game_Data_v9.xlsx) ra data.json cho game đọc.
 Chạy lại mỗi khi anh sửa Excel:  python export_data.py [đường_dẫn_xlsx]
 Lưu ý: cần mở Excel rồi LƯU (hoặc chạy recalc) để các ô công thức có giá trị."""
 import sys, json, warnings; warnings.filterwarnings("ignore")
 from openpyxl import load_workbook
 import os
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "data", "Goma_Game_Data_v8.xlsx")
+SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "data", "Goma_Game_Data_v9.xlsx")
 OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "data.json")
 wb = load_workbook(SRC, data_only=True)
 V = lambda ws, a: wb[ws][a].value
@@ -20,7 +20,7 @@ for r in range(6, 35):
     if not code or not name: continue
     heroes[code] = dict(code=code, name=str(name).strip(), role=n.cell(row=r, column=4).value,
         row="front" if n.cell(row=r, column=5).value == "Hàng trước" else "back",
-        bio=n.cell(row=r, column=6).value, quote=n.cell(row=r, column=7).value, tiers=[], skill=dict(components=[]), passive=dict(components=[]))
+        bio=n.cell(row=r, column=6).value, quote=n.cell(row=r, column=7).value, vip=('VIP' in str(n.cell(row=r, column=8).value or '')), tiers=[], skill=dict(components=[]), passive=dict(components=[]))
 c = wb["CHỈ_SỐ_TÍNH"]; TIERS = ["Trắng", "Xanh lá", "Xanh dương"]
 for r in range(5, 160):
     code, tier = c.cell(row=r, column=1).value, c.cell(row=r, column=3).value
@@ -55,7 +55,7 @@ data = dict(heroes=list(heroes.values()), statuses=fx, gacha=dict(tiers=TIERS, w
 # --- quái, boss, map ---
 mon = {}
 q = wb["QUÁI_BOSS"]
-for r in range(5, 25):
+for r in range(5, 70):
     code = q.cell(row=r, column=1).value
     if not code: continue
     g = lambda c: q.cell(row=r, column=c).value
@@ -63,7 +63,7 @@ for r in range(5, 25):
         stats=dict(hp=g(6), atk=g(7), df=g(8), spd=g(9), regen=g(10) or 0, dodge=g(11) or 0, acc=g(12) or 0, crit=g(13) or 0, critDmg=g(14) or 1.5, critRes=g(15) or 0),
         skill=dict(name=g(16), desc=g(17), components=[]), passive=dict(name=g(18), desc=g(19), components=[]), note=g(20))
 qc = wb["QUÁI_THÀNH_PHẦN"]
-for r in range(5, 55):
+for r in range(5, 140):
     code = qc.cell(row=r, column=1).value
     if code not in mon: continue
     g = lambda c: qc.cell(row=r, column=c).value
@@ -72,7 +72,7 @@ for r in range(5, 55):
     mon[code]["skill" if g(3) == "Skill nộ" else "passive"]["components"].append(comp)
 levels = []
 mm = wb["MAP_MÀN"]
-for r in range(5, 40):
+for r in range(5, 100):
     mp = mm.cell(row=r, column=1).value
     if mp is None: continue
     g = lambda c: mm.cell(row=r, column=c).value
