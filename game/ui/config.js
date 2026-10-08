@@ -14,11 +14,9 @@ window.GOMA_CONFIG = {
   dropRateFar: 0.035,            // 3,5% ở max-13 trở về trước (quái yếu, thông map nhanh)
   shardsByTier: [1, 5, 10, 20],  // mảnh nhận được khi rút trúng tướng ĐÃ CÓ: Trắng 1, Xanh lá 5, Xanh dương 10, Tím 20
   mergeCost: [12, 35, 80, 200],  // mảnh cần để lên bậc kế (Trắng->Lá, Lá->Dương, Dương->Tím, Tím->Đỏ), cần thêm chính tướng ở bậc hiện tại
-  gachaWeightsEarly: [70, 30, 0],   // trước khi thắng màn 2.6: chỉ ra Trắng/Xanh lá
-  gachaWeightsLate: [66, 29, 5],    // sau khi thắng màn 2.6: Xanh dương xuất hiện (5%)
-  blueUnlockLevel: { map: 2, man: 6 },
-  gachaWeightsTop: [60, 24, 10, 5, 1],   // sau khi thắng 3-10 (mở 4-1): Trắng 60 / Lá 24 / Dương 10 / Tím 5 / Đỏ 1
-  topUnlockLevel: { map: 3, man: 10 },
+  gachaWeightsEarly: [62, 28, 10],  // trước khi thắng màn 2.6: Trắng/Xanh lá/Xanh dương (Xanh dương KHÔNG còn bị chặn); chưa ra Tím/Đỏ
+  gachaWeightsTop: [60, 24, 10, 5, 1],   // sau khi thắng 2-6: Trắng 60 / Lá 24 / Dương 10 / Tím 5 / Đỏ 1 (tỉ lệ bình thường)
+  topUnlockLevel: { map: 2, man: 6 },     // mốc mở Tím/Đỏ (trước đây 3-10)
   vipShare: 0.20,                // ra Tím: 20% là VIP bản Xanh dương; ra Đỏ: 20% là VIP bản Tím (cả gacha lẫn ô Tím/Đỏ trong shop)
   honorPerPull: 1,               // mỗi lượt quay trả về 1 thẻ bài danh dự = 1 huân công
   shop: { resetHours: 5, prices: [5, 30, 70, 170, 500], exchangeNormal: 2, exchangeVip: 3 },   // giá (huân công) ô Trắng/Lá/Dương/Tím/Đỏ; đổi mảnh 2 -> 1 tướng thường, 3 -> 1 tướng VIP

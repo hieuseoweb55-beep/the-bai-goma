@@ -109,9 +109,8 @@
   U.playerName = () => U.save.name || 'Nhân viên mới';
 
   // ---------- gacha ----------
-  U.blueUnlocked = () => { const l = D.levels.find(x => x.map === C.blueUnlockLevel.map && x.man === C.blueUnlockLevel.man); return !!l && U.isCleared(l); };
   U.topUnlocked = () => { const l = D.levels.find(x => x.map === C.topUnlockLevel.map && x.man === C.topUnlockLevel.man); return !!l && U.isCleared(l); };   // đã thắng 3-10 (mở 4-1): Tím/Đỏ + VIP vào gacha
-  U.gachaWeights = () => U.topUnlocked() ? C.gachaWeightsTop : (U.blueUnlocked() ? C.gachaWeightsLate : C.gachaWeightsEarly);
+  U.gachaWeights = () => U.topUnlocked() ? C.gachaWeightsTop : C.gachaWeightsEarly;
   U.nonVip = () => D.heroes.filter(h => !h.vip);
   U.vipHeroes = () => D.heroes.filter(h => h.vip);
   U.hasVip = () => U.vipHeroes().some(h => U.save.owned[h.code] !== undefined);

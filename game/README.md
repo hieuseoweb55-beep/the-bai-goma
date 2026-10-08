@@ -211,3 +211,6 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 - **Quà hằng ngày**: lần mở bản đồ đầu tiên trong ngày (giờ máy) +10 lượt quay (`dailyGiftPulls`), hiện popup "Quà hằng ngày". Chế độ `?debug=1` không tặng.
 - **Shop**: ô Tím giá 170 huân công (trước 120). Giá luôn lấy theo config nên có hiệu lực ngay cả khi bảng 5 giờ đã sinh.
 - Save mới: `tickets {n,t}`, `giftDay`. Test nhanh giờ: thêm `?now=<epoch_ms>` vào URL.
+
+## Vòng 40 – Bỏ chặn Xanh dương, mở Tím/Đỏ từ 2-6 (cache ?v=41)
+- Gacha: ngay từ đầu đã ra Xanh dương: Trắng 62 / Lá 28 / Dương 10 (`gachaWeightsEarly`). Tím/Đỏ vẫn bị chặn đến khi thắng màn 2-6 (`topUnlockLevel` đổi 3-10 → 2-6); sau đó bảng bình thường 60/24/10/5/1. Đã xóa bảng `gachaWeightsLate` và `blueUnlockLevel` (không còn dùng).

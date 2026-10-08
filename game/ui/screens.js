@@ -171,8 +171,7 @@
       el('div', { style: 'position:absolute;left:760px;right:100px;top:240px;font-size:32px;line-height:1.6;background:rgba(18,14,30,.85);border:4px solid #4a4560;border-radius:20px;padding:30px 40px' }, [
         el('div', { style: 'font-weight:900;color:#ffb340;font-size:38px', text: 'Tỉ lệ phẩm chất' }),
         el('div', { text: `Trước khi thắng màn 2.6: Trắng ${C.gachaWeightsEarly[0]}% · Xanh lá ${C.gachaWeightsEarly[1]}% · Xanh dương ${C.gachaWeightsEarly[2]}%` }),
-        el('div', { text: `Sau khi thắng màn 2.6: Trắng ${C.gachaWeightsLate[0]}% · Xanh lá ${C.gachaWeightsLate[1]}% · Xanh dương ${C.gachaWeightsLate[2]}%` }),
-        el('div', { text: `Sau khi thắng 3.10 (mở 4.1): Trắng ${C.gachaWeightsTop[0]}% · Lá ${C.gachaWeightsTop[1]}% · Dương ${C.gachaWeightsTop[2]}% · Tím ${C.gachaWeightsTop[3]}% · Đỏ ${C.gachaWeightsTop[4]}%` }),
+        el('div', { text: `Sau khi thắng màn 2.6: Trắng ${C.gachaWeightsTop[0]}% · Lá ${C.gachaWeightsTop[1]}% · Dương ${C.gachaWeightsTop[2]}% · Tím ${C.gachaWeightsTop[3]}% · Đỏ ${C.gachaWeightsTop[4]}%` }),
         el('div', { text: `Ra Tím: ${U.pct(C.vipShare)}% là tướng VIP bản Xanh dương. Ra Đỏ: ${U.pct(C.vipShare)}% là tướng VIP bản Tím.` }),
         el('div', { text: `Tướng thường chọn đều (VIP chỉ ra theo cách trên). Mỗi lượt quay +${C.honorPerPull} huân công.` }),
         el('div', { text: 'Rút bậc CAO hơn bản đang có: thay thẳng, bản cũ đổi thành mảnh.' }),
