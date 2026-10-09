@@ -232,3 +232,6 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 
 ## Vòng 44 – Rút ngắn trận (cache ?v=46)
 * Sát thương tướng x1,25 → x1,35 (+8%), sát thương quái x1,3 → x1,4 (+7% làm tròn). Mục đích: giảm số lượt/trận. Đo thử 40 seed ở 7 màn (đội mạnh): lượt TB giảm khoảng 5–10% (vd 2-8: 5,9 → 5,3; 5-5: 11,5 → 10,9). Tỉ lệ thắng gần như không đổi vì tướng +8% ≈ quái +7%.
+
+## Vòng 45 – Điện thoại: vuốt dọc cuộn danh sách tướng (cache ?v=47)
+* Lỗi: thẻ trong danh sách tướng ở màn xếp đội có touch-action:none nên vuốt trên thẻ không cuộn được (chỉ cuộn được khi vuốt trúng khe). Sửa: thẻ trong danh sách dùng touch-action:pan-y (vuốt dọc = cuộn, kéo ngang = kéo thả như cũ); ô đội hình vẫn none. Thêm: trình duyệt giành cử chỉ cuộn giữa chừng (pointercancel) thì huỷ kéo, không thả nhầm. Bấm thẻ để thêm/bỏ vẫn dùng được.

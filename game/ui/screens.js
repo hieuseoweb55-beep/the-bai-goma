@@ -341,7 +341,7 @@
     const rerender = () => { saveTeam(); U.screenTeam(level, { pos, tierOv }); };
     // ---- kéo thả bằng pointer (chuột + cảm ứng) ----
     function makeDraggable(node, code, from) {
-      node.style.touchAction = 'none'; node.classList.add('draggable');
+      node.style.touchAction = from ? 'none' : 'pan-y'; node.classList.add('draggable');   // thẻ trong danh sách: cho phép vuốt dọc để cuộn trên điện thoại (kéo thả theo chiều ngang vẫn được); ô đội hình giữ 'none'
       node.addEventListener('pointerdown', ev => {
         if (ev.button !== undefined && ev.button !== 0) return;
         const sx = ev.clientX, sy = ev.clientY, r = node.getBoundingClientRect(); let ghost = null, over = null;
@@ -359,6 +359,7 @@
         const up = e => {
           window.removeEventListener('pointermove', mv); window.removeEventListener('pointerup', up); window.removeEventListener('pointercancel', up);
           if (over) over.classList.remove('over');
+          if (e.type === 'pointercancel') { if (ghost) { ghost.remove(); ghost = null; node.style.opacity = ''; } return; }   // trình duyệt giành cử chỉ để cuộn -> huỷ kéo
           if (!ghost) return;                                       // không kéo -> để sự kiện click xử lý
           ghost.remove(); node.style.opacity = ''; node.__dragged = true; setTimeout(() => { node.__dragged = false; }, 0);
           const tg = targetAt(e.clientX, e.clientY);
