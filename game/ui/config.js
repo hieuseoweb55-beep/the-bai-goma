@@ -22,7 +22,7 @@ window.GOMA_CONFIG = {
   honorPerPull: 1,               // mỗi lượt quay trả về 1 thẻ bài danh dự = 1 huân công
   shop: { resetHours: 5, prices: [5, 30, 70, 170, 500], exchangeNormal: 2, exchangeVip: 3 },   // giá (huân công) ô Trắng/Lá/Dương/Tím/Đỏ; đổi mảnh 2 -> 1 tướng thường, 3 -> 1 tướng VIP
   enemyHpMul: 0.80,               // máu quái nhân 0,9 (nhân thêm vào hpMul của từng màn; không sửa Excel/engine)
-  knobs: { enemyDmgMul: 1.3, heroDmgMul: 1.25 },   // núm cân bằng của engine (không đổi luật): sát thương quái x1,3 (Vòng 35: 1,2 → 1,3 theo yêu cầu)
+  knobs: { enemyDmgMul: 1.4, heroDmgMul: 1.35 },   // núm cân bằng của engine (không đổi luật): sát thương quái x1,3 (Vòng 35: 1,2 → 1,3 theo yêu cầu)
   maxTurns: 20,                  // số lượt tối đa mỗi trận (engine mặc định 15, UI ghi đè lên E.K.MAX_TURNS; không sửa engine.js)
   difficulty: {                  // CÔNG THỨC ĐỘ KHÓ (Vòng 29-30), áp cho Map 2 trở đi. Hệ số nền + mốc neo: ui/difficulty_base.js (do calibrate_difficulty.py sinh ra).
     // THƯỚC ĐO: thắng ~25-30% = "vừa đủ qua" (người chơi đánh lại nhiều lần); 50-60% = "dư sức".
@@ -43,6 +43,7 @@ window.GOMA_CONFIG = {
   speeds: [1, 2, 4],
   defaultSpeed: 1,
   heroBodyPx: 175,               // chiều cao thân tướng trong trận (px, khung 1920x1080)
+  skillPoseScale: 1.2,   // ảnh tung skill to thêm 20% so với bình thường
   monsterScale: { Q13: 0.9, Q14: 0.7, Q15: 1.0, Q16: 1.4, Q17: 1.4, Q18: 1.0, Q19: 0.8, Q20: 0.9, Q21: 1.5, Q22: 1.45, Q23: 0.9, Q24: 1.0, Q25: 0.9, Q26: 1.5, Q27: 1.4, Q28: 1.1, Q29: 0.95, Q30: 1.0, Q31: 1.5, Q32: 1.4, Q33: 0.9, Q34: 1.1, Q35: 0.95, Q36: 1.5, Q37: 1.7, Q01: 0.45, Q02: 0.65, Q03: 0.8, Q04: 1.3, Q05: 1.2, Q06: 1.0, Q07: 1.0, Q08: 0.75, Q09: 1.35, Q10: 1.1, Q11: 1.35, Q12: 1.5 },
   lanesY: [710, 865, 1020],       // đường đáy (chân) 3 làn, đã hạ xuống để đứng trên nền sàn (spec cũ 640/760/880 làm nhân vật lơ lửng)
   heroX: { front: 880, back: 512 },

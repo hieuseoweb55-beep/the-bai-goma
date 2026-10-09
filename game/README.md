@@ -223,3 +223,12 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 - Giờ (thẻ đặc quyền, quà ngày, giới hạn 30 thắng) lấy từ server qua `U._nowOff` khi đã đăng nhập.
 - Mật khẩu: game băm SHA-256 trước khi gửi, server băm thêm kèm muối; không lưu mật khẩu thô. Quên mật khẩu: admin xóa dòng trong Sheet.
 - Test: Code.gs chạy trong Node (mock Sheet) + Playwright đủ luồng: đăng ký, sai mật khẩu, tự lưu, reload giữ phiên, đăng nhập 2 máy, hết phiên, đăng xuất, tắt cloud.
+
+## Vòng 42 – Bấm thẻ tướng xem thông tin (cache ?v=44)
+* Mọi thẻ tướng (shop, rút gacha, đổi mảnh...) bấm vào là hiện cửa sổ thông tin: chỉ số, tiểu sử, skill, nội tại theo bậc đang có (`U.heroInfo` trong ui/core.js). Thẻ có thao tác bấm/kéo riêng (danh sách xếp đội, ô đội hình, chọn tướng nhận mảnh) có nút ⓘ ở góc trái trên. Bộ sưu tập giữ cửa sổ cũ (có nút ghép). Thẻ chưa có (???) không xem được.
+
+## Vòng 43 – Ảnh tung skill to thêm 20% (cache ?v=45)
+* `skillPoseScale: 1.2` trong `ui/config.js`: ảnh pose skill phóng thêm 20% so với kích thước thường (chân giữ nguyên chỗ). Đổi số này để chỉnh (1 = như cũ). Áp cho mọi đơn vị có ảnh skill.
+
+## Vòng 44 – Rút ngắn trận (cache ?v=46)
+* Sát thương tướng x1,25 → x1,35 (+8%), sát thương quái x1,3 → x1,4 (+7% làm tròn). Mục đích: giảm số lượt/trận. Đo thử 40 seed ở 7 màn (đội mạnh): lượt TB giảm khoảng 5–10% (vd 2-8: 5,9 → 5,3; 5-5: 11,5 → 10,9). Tỉ lệ thắng gần như không đổi vì tướng +8% ≈ quái +7%.

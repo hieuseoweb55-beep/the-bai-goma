@@ -59,6 +59,7 @@
       if (!imgs[pose]) {
         let sc = scaleOf(key);
         if (pose === 'dead' && e.body_w && e.body_h) sc = Math.min(targetH * 0.9 / e.body_w, targetH * 0.55 / e.body_h);   // xác: ảnh nằm vốn rất rộng → ép vào khung chung (Vòng 36)
+        if (pose === 'skill') sc *= (window.GOMA_CONFIG.skillPoseScale || 1);   // ảnh tung skill phóng thêm (Vòng 43), chân giữ nguyên chỗ
         const im = new Image(); im.src = 'assets/' + e.file; im.draggable = false;
         im.style.cssText = `width:${e.w * sc}px;height:${e.h * sc}px;left:${-e.cx * sc}px;top:${-e.foot_y * sc}px`;
         root.appendChild(im); imgs[pose] = im;
@@ -91,7 +92,36 @@
       info.appendChild(el('div', { class: 'tr', text: U.tierNames[tier] }));
       if (o.stats) { const t = hero.tiers[tier]; info.appendChild(el('div', { class: 'rl', text: `HP ${t.hp} · Công ${t.atk}` })); }
     }
-    return el('div', { class: `hcard t${tier}${o.small ? ' small' : ''}${o.locked ? ' locked' : ''}${o.pick ? ' pick' : ''}` }, [art, info]);
+    const card = el('div', { class: `hcard t${tier}${o.small ? ' small' : ''}${o.locked ? ' locked' : ''}${o.pick ? ' pick' : ''}` }, [art, info]);
+    // bấm vào thẻ -> xem thông tin tướng. Thẻ đã có thao tác bấm/kéo riêng (pick/drag) thì dùng nút ⓘ ở góc; thẻ khoá (???) không xem được.
+    if (!o.locked && !o.noInfo) {
+      if (o.pick || o.drag) {
+        const b = el('div', { class: 'infobtn', 'data-info': hero.code, text: 'i', title: 'Xem thông tin tướng' });
+        b.addEventListener('pointerdown', ev => ev.stopPropagation());
+        b.addEventListener('click', ev => { ev.stopPropagation(); U.heroInfo(hero, tier); });
+        card.appendChild(b);
+      } else {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', ev => { ev.stopPropagation(); U.heroInfo(hero, tier); });
+      }
+    }
+    return card;
+  };
+
+  // cửa sổ thông tin tướng (chỉ xem): chỉ số, tiểu sử, skill, nội tại theo bậc đang có
+  U.heroInfo = function (h, t) {
+    const st = h.tiers[t], sk = h.skill || {}, pa = h.passive;
+    return U.modal(el('div', { class: 'detail', 'data-heroinfo': h.code }, [
+      U.heroCard(h, t, { noInfo: true }),
+      el('div', { class: 'txtc' }, [
+        el('h2', { text: U.shortName(h.name) }),
+        el('div', { text: `${U.branch(h.name) ? U.branch(h.name) + ' · ' : ''}${h.role} · ${U.tierNames[t]}` }),
+        el('div', { class: 'st' }, [`HP ${st.hp}`, `Công ${st.atk}`, `Thủ ${st.df}`, `Tốc ${st.spd}`].map(x => el('div', { text: x }))),
+        el('div', { style: 'opacity:.9', text: U.cap(h.bio || '') }),
+        el('div', { class: 'sk' }, [el('b', { text: 'Skill – ' + (sk.name || '') + ': ' }), (sk.desc && sk.desc[Math.min(t, 2)]) || '']),
+        pa && pa.name ? el('div', { class: 'sk' }, [el('b', { text: 'Nội tại – ' + pa.name + ': ' }), t >= 2 ? ((pa.desc && pa.desc[2]) || '') : 'Mở từ phẩm chất Xanh dương.']) : null,
+      ]),
+    ]));
   };
 
   // ---------- lưu tiến trình ----------

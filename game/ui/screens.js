@@ -395,7 +395,7 @@
         const box = el('div', { class: 'slot', 'data-row': row, 'data-slot': i }, [c ? null : '+']);
         if (c) {
           box.style.border = '4px solid transparent';
-          const hc = U.heroCard(U.hero(c), tierOf(c), { small: true }); hc.setAttribute('data-hero-slot', c); box.appendChild(hc); makeDraggable(hc, c, true);
+          const hc = U.heroCard(U.hero(c), tierOf(c), { small: true, drag: true }); hc.setAttribute('data-hero-slot', c); box.appendChild(hc); makeDraggable(hc, c, true);
         }
         sl.appendChild(box);
       }
@@ -423,7 +423,7 @@
     const grid = el('div', { class: 'colgrid' });
     D.heroes.forEach(h => {
       const t = S().owned[h.code], has = t !== undefined;
-      const card = U.heroCard(h, has ? t : 0, { small: true, locked: !has, pick: true });
+      const card = U.heroCard(h, has ? t : 0, { small: true, locked: !has, pick: true, noInfo: true });
       card.setAttribute('data-hero', h.code);
       if (has) { const need = U.mergeNeed(h.code); card.appendChild(el('div', { class: 'shardbadge' + (U.canMerge(h.code) ? ' ready' : ''), text: need == null ? 'Bậc tối đa' : 'Mảnh ' + U.shardsOf(h.code) + '/' + need })); }
       card.addEventListener('click', () => { if (!has) { U.toast('Chưa có tướng này'); return; } detail(h, t); });
@@ -442,7 +442,7 @@
       const st = h.tiers[t];
       const sk = h.skill, pa = h.passive;
       const c = el('div', { class: 'detail' }, [
-        U.heroCard(h, t),
+        U.heroCard(h, t, { noInfo: true }),
         el('div', { class: 'txtc' }, [
           el('h2', { text: U.shortName(h.name) }),
           el('div', { text: `${U.branch(h.name) ? U.branch(h.name) + ' · ' : ''}${h.role} · ${U.tierNames[t]}` }),

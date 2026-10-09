@@ -216,3 +216,7 @@ body.vport #fsbtn{top:8px!important;bottom:auto!important}body.vport #sndbtn{top
 .offer .slotlbl{font-size:22px;font-weight:800;padding:2px 14px;border-radius:10px;background:#2d2a3b}
 .slotlbl.t3{color:#c98bff}.slotlbl.t4{color:#ff7a7a}.slotlbl.t2{color:#6aa8ff}.slotlbl.t1{color:#46dc5a}
 .exbox{position:absolute;left:120px;right:120px;top:600px;background:rgba(18,14,30,.88);border:4px solid #4a4560;border-radius:20px;padding:18px 30px;display:flex;flex-direction:column;gap:12px}
+
+.infobtn{position:absolute;top:6px;left:6px;width:38px;height:38px;border-radius:50%;background:#000b;border:3px solid #ffb340;color:#ffb340;font:italic 900 26px/32px Georgia,serif;text-align:center;z-index:4;cursor:pointer}
+.hcard.small .infobtn{width:34px;height:34px;font-size:23px;line-height:28px}
+.infobtn:hover{background:#ffb340;color:#222}

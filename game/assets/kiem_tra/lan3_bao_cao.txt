@@ -1,0 +1,170 @@
+Tìm thấy 78 ảnh trong c3. Cần có 200 ảnh bắt buộc + 146 tùy chọn.
+
+== THIẾU (bắt buộc): 146 ==
+  - nv01_idle
+  - nv01_windup
+  - nv01_attack
+  - nv01_skill
+  - nv01_hit
+  - nv01_dead
+  - nv01_card
+  - nv02_idle
+  - nv02_windup
+  - nv02_attack
+  - nv02_skill
+  - nv02_hit
+  - nv02_dead
+  - nv02_card
+  - nv03_idle
+  - nv03_windup
+  - nv03_attack
+  - nv03_skill
+  - nv03_hit
+  - nv03_dead
+  - nv03_card
+  - nv04_idle
+  - nv04_windup
+  - nv04_attack
+  - nv04_skill
+  - nv04_hit
+  - nv04_dead
+  - nv04_card
+  - nv05_idle
+  - nv05_windup
+  - nv05_attack
+  - nv05_skill
+  - nv05_hit
+  - nv05_dead
+  - nv05_card
+  - nv06_idle
+  - nv06_windup
+  - nv06_attack
+  - nv06_skill
+  - nv06_hit
+  - nv06_dead
+  - nv06_card
+  - nv07_idle
+  - nv07_windup
+  - nv07_attack
+  - nv07_skill
+  - nv07_hit
+  - nv07_dead
+  - nv07_card
+  - nv08_idle
+  - nv08_windup
+  - nv08_attack
+  - nv08_skill
+  - nv08_hit
+  - nv08_dead
+  - nv08_card
+  - nv09_idle
+  - nv09_windup
+  - nv09_attack
+  - nv09_skill
+  - nv09_hit
+  - nv09_dead
+  - nv09_card
+  - nv11_idle
+  - nv11_windup
+  - nv11_attack
+  - nv11_skill
+  - nv11_hit
+  - nv11_dead
+  - nv11_card
+  - nv12_idle
+  - nv12_windup
+  - nv12_attack
+  - nv12_skill
+  - nv12_hit
+  - nv12_dead
+  - nv12_card
+  - nv13_idle
+  - nv13_windup
+  - nv13_attack
+  - nv13_skill
+  - nv13_hit
+  - nv13_dead
+  - nv13_card
+  - nv14_idle
+  - nv14_windup
+  - nv14_attack
+  - nv14_skill
+  - nv14_hit
+  - nv14_dead
+  - nv14_card
+  - nv15_idle
+  - nv15_windup
+  - nv15_attack
+  - nv15_skill
+  - nv15_hit
+  - nv15_dead
+  - nv15_card
+  - nv16_idle
+  - nv16_windup
+  - nv16_attack
+  - nv16_skill
+  - nv16_hit
+  - nv16_dead
+  - nv16_card
+  - nv17_idle
+  - nv17_attack
+  - nv17_skill
+  - nv17_hit
+  - nv17_dead
+  - nv17_card
+  - q01_idle
+  - q02_idle
+  - q05_idle
+  - q06_idle
+  - q07_idle
+  - q08_idle
+  - q09_idle
+  - q10_idle
+  - q11_idle
+  - q12_idle
+  - bg_kho
+  - bg_phongkhach
+  - bg_congtykhach
+  - bg_phonghop
+  - bg_xuongdet
+  - bg_cang
+  - bg_caotoc
+  - bg_hoicho
+  - bg_thamthan
+  - fx_bang
+  - fx_hoisinh
+  - fx_dientiet
+  - fx_khieukich
+  - main_nam_idle
+  - main_nam_cheer
+  - main_nam_win
+  - main_nam_cry
+  - main_nam_worry
+  - main_nam_card
+  - main_nu_idle
+  - main_nu_cheer
+  - main_nu_win
+  - main_nu_cry
+  - main_nu_worry
+  - main_nu_card
+
+== THIẾU (tùy chọn): 122 ==
+  nv01_card_t3, nv01_idle_t3, nv01_skill_t3, nv01_card_t4, nv01_idle_t4, nv01_skill_t4, nv02_card_t3, nv02_idle_t3, nv02_skill_t3, nv02_card_t4, nv02_idle_t4, nv02_skill_t4, nv03_card_t3, nv03_idle_t3, nv03_skill_t3, nv03_card_t4, nv03_idle_t4, nv03_skill_t4, nv04_card_t3, nv04_idle_t3, nv04_skill_t3, nv04_card_t4, nv04_idle_t4, nv04_skill_t4, nv05_card_t3, nv05_idle_t3, nv05_skill_t3, nv05_card_t4, nv05_idle_t4, nv05_skill_t4, nv06_card_t3, nv06_idle_t3, nv06_skill_t3, nv06_card_t4, nv06_idle_t4, nv06_skill_t4, nv07_card_t3, nv07_idle_t3, nv07_skill_t3, nv07_card_t4, nv07_idle_t4, nv07_skill_t4, nv08_card_t3, nv08_idle_t3, nv08_skill_t3, nv08_card_t4, nv08_idle_t4, nv08_skill_t4, nv09_card_t3, nv09_idle_t3, nv09_skill_t3, nv09_card_t4, nv09_idle_t4, nv09_skill_t4, nv11_card_t3, nv11_idle_t3, nv11_skill_t3, nv11_card_t4, nv11_idle_t4, nv11_skill_t4, nv12_card_t3, nv12_idle_t3, nv12_skill_t3, nv12_card_t4, nv12_idle_t4, nv12_skill_t4, nv13_card_t3, nv13_idle_t3, nv13_skill_t3, nv13_card_t4, nv13_idle_t4, nv13_skill_t4, nv14_card_t3, nv14_idle_t3, nv14_skill_t3, nv14_card_t4, nv14_idle_t4, nv14_skill_t4, nv15_card_t3, nv15_idle_t3, nv15_skill_t3, nv15_card_t4, nv15_idle_t4, nv15_skill_t4, nv16_card_t3, nv16_idle_t3, nv16_skill_t3, nv16_card_t4, nv16_idle_t4, nv16_skill_t4, nv17_card_t3, nv17_idle_t3, nv17_skill_t3, nv17_card_t4, nv17_idle_t4, nv17_skill_t4, q03_idle, q04_idle, fx_sao, fx_zzz, fx_khien, fx_aura_t3, fx_aura_t4, fx_frame_t3, fx_frame_t4, fx_burst, fx_slash, fx_wave, fx_heal, main_nam_shout, main_nam_scared, main_nam_joy, main_nam_sad, main_nam_sleepy, main_nu_shout, main_nu_scared, main_nu_joy, main_nu_sad, main_nu_sleepy, intro_hieu_chao, intro_hieu_gietminh, intro_hieu_gai_dau
+
+== TÊN LẠ (không có trong danh sách): 0 ==
+
+== CẢNH BÁO TỪNG ẢNH ==
+  nv21_idle: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv21_windup: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv21_attack: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv21_skill: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv21_hit: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv21_dead: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv20_skill_t3: nhân vật hoặc hiệu ứng chạm mép ảnh (có thể bị cắt)
+  nv21_skill_t3: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  nv21_idle_t4: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  q17_idle: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  q33_idle: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+  q37_idle: có bóng đổ dưới chân (đã tự bỏ; lần sau nhờ Flow 'no ground shadow')
+
+Tổng: 78 ảnh hợp lệ, 146 thiếu bắt buộc, 0 tên lạ, 12 ảnh có cảnh báo.
