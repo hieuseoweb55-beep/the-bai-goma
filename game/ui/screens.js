@@ -473,7 +473,8 @@
         el('div', { style: 'display:flex;gap:20px' }, [el('button', { class: 'btn sec', text: 'Hủy', onclick: () => m.close() }), el('button', { class: 'btn', id: 'btn-reset-ok', text: 'Xóa hết', onclick: () => { U.resetSave(); m.close(); U.boot(); } })]),
       ]); const m = U.modal(c);
     } })]));
-    box.appendChild(el('div', { style: 'font-size:24px;opacity:.8;margin-top:10px', text: NOTE + '. Dữ liệu lưu trong trình duyệt của máy này.' }));
+    const crow = U.cloudSettingsRow && U.cloudSettingsRow(); if (crow) box.appendChild(crow);
+    box.appendChild(el('div', { style: 'font-size:24px;opacity:.8;margin-top:10px', text: NOTE + (crow ? '. Tiến trình tự lưu lên server mỗi vài phút.' : '. Dữ liệu lưu trong trình duyệt của máy này.') }));
     root.appendChild(box); U.show(root);
   };
 })();

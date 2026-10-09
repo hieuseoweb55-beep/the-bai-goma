@@ -4,6 +4,7 @@ window.GOMA_CONFIG = {
   enableMap23: false,            // (cũ) true = mở tất cả map
   enableMap2: true,              // GIẢ ĐỊNH: mở Map 2 vì anh nhắc "màn 2.x" (xem README)
   ticketMinutes: 10, ticketMax: 20, quickChoices: [1, 5, 10, 20],   // Thẻ đặc quyền: 10 phút +1 thẻ, tối đa 20; 1 thẻ = đánh nhanh 1 trận đã thắng
+  cloud: { url: 'https://script.google.com/macros/s/AKfycbz8zXhoOCCezFPLdavzSj0JMH6AtW20L9iZNLzYiPpbqwm7Jjm8cJmDZhrQ4JEnvGTx/exec', autosaveMinutes: 3 },   // lưu game lên Google Sheet: dán URL Web App (xem cloud/HUONG_DAN.md) vào url; để trống = tắt, game lưu trong trình duyệt như cũ
   dailyGiftPulls: 10,            // quà đăng nhập đầu tiên mỗi ngày: +10 lượt quay
   dailyWinLimit: 30,             // tối đa số lần THẮNG mỗi màn / ngày (chống cày gacha)
   pullFirstClear: 1,             // thắng lần đầu một màn: +1 lượt quay

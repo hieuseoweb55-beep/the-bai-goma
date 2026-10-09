@@ -214,3 +214,12 @@ Thư mục này gồm phần "bộ não" của game (giao diện do Cowork dựn
 
 ## Vòng 40 – Bỏ chặn Xanh dương, mở Tím/Đỏ từ 2-6 (cache ?v=41)
 - Gacha: ngay từ đầu đã ra Xanh dương: Trắng 62 / Lá 28 / Dương 10 (`gachaWeightsEarly`). Tím/Đỏ vẫn bị chặn đến khi thắng màn 2-6 (`topUnlockLevel` đổi 3-10 → 2-6); sau đó bảng bình thường 60/24/10/5/1. Đã xóa bảng `gachaWeightsLate` và `blueUnlockLevel` (không còn dùng).
+
+## Vòng 41 – Tài khoản + lưu game lên Google Sheet (cache ?v=42)
+- Mới: `ui/cloud.js` (đăng ký/đăng nhập, tự lưu, đăng xuất), `cloud/Code.gs` (Apps Script Web App), `cloud/HUONG_DAN.md` (cách cài, 5 phút). Cấu hình: `config.js` → `cloud: { url: '', autosaveMinutes: 3 }`. **Để `url` trống thì tắt cloud, game chạy như cũ** (lưu trong trình duyệt). `?debug=1` hoặc `?cloud=off` cũng tắt.
+- Save game = JSON trong cột `save` của sheet `players`. Tự lưu mỗi 3 phút khi có thay đổi, + khi ẩn/đóng tab, + nút "Lưu ngay"/"Đăng xuất" ở Cài đặt. Góc dưới phải hiện trạng thái ("đã lưu hh:mm" / "chưa lưu" / "mất mạng").
+- Đăng ký: nếu máy đang có tiến trình thì đưa lên tài khoản mới. Đăng nhập: save server thắng save trong máy. Mất mạng: chơi tiếp bằng bản trong máy, có mạng sẽ lưu lại.
+- Mỗi lần đăng nhập đổi token ⇒ chỉ 1 máy lưu được cùng lúc; máy cũ báo "hết phiên" và phải đăng nhập lại (không ghi đè được save mới).
+- Giờ (thẻ đặc quyền, quà ngày, giới hạn 30 thắng) lấy từ server qua `U._nowOff` khi đã đăng nhập.
+- Mật khẩu: game băm SHA-256 trước khi gửi, server băm thêm kèm muối; không lưu mật khẩu thô. Quên mật khẩu: admin xóa dòng trong Sheet.
+- Test: Code.gs chạy trong Node (mock Sheet) + Playwright đủ luồng: đăng ký, sai mật khẩu, tự lưu, reload giữ phiên, đăng nhập 2 máy, hết phiên, đăng xuất, tắt cloud.

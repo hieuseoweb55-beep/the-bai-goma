@@ -97,6 +97,7 @@
   // ---------- lưu tiến trình ----------
   const KEY = U.debug ? 'goma_save_v1_debug' : 'goma_save_v1';
   const defaults = () => ({ v: 1, sex: null, name: '', owned: { NV01: 0 }, shards: {}, pulls: 0, firstPullDone: false, cleared: {}, tickets: null, giftDay: '', dailyWins: { day: '', n: {} }, speed: C.defaultSpeed, honor: 0, shop: null, shopSeed: 0 });
+  U.defaultSave = defaults;
   function load() {
     try { const s = localStorage.getItem(KEY); if (s) return Object.assign(defaults(), JSON.parse(s)); } catch (e) { /* bỏ qua */ }
     const d = defaults();

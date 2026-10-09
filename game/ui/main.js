@@ -26,6 +26,7 @@
   document.getElementById('btn-fs').addEventListener('click', goFullscreen);
 
   U.boot = function () {
+    if (U.cloudBoot && U.cloudBoot(U.boot)) return;   // có cloud: đăng nhập / tải save xong sẽ gọi lại U.boot
     const S = U.save;
     if (!S.sex) U.screenMainSelect();
     else if (!S.firstPullDone && !U.debug) U.screenIntro(false);
