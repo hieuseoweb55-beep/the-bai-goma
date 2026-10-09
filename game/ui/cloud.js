@@ -94,21 +94,19 @@
       if (!/^[a-z0-9_]{3,20}$/.test(user)) { msg.textContent = 'Tên đăng nhập chỉ gồm a-z, 0-9, _ (3-20 ký tự)'; return; }
       if (pass.length < 4) { msg.textContent = 'Mật khẩu từ 4 ký tự trở lên'; return; }
       msg.textContent = 'Đang xử lý…'; bR.disabled = bL.disabled = true;
-      const hasLocal = !!(U.save && U.save.sex);                                   // máy đang có tiến trình: đăng ký sẽ đưa lên tài khoản mới
-      api(kind, { user, h: sha256(user + ':' + pass + ':goma'), save: kind === 'register' && hasLocal ? U.save : undefined }).then(res => {
+      api(kind, { user, h: sha256(user + ':' + pass + ':goma'), save: undefined }).then(res => {
         bR.disabled = bL.disabled = false;
         if (!res || !res.ok) { msg.textContent = (res && res.error) || 'Lỗi không rõ'; return; }
         cloud.user = user; cloud.token = res.token; cloud.guest = false; cloud.offline = false; storeSession({ user, token: res.token });
-        if (res.save) setSave(res.save); else if (kind === 'login' && !hasLocal) U.resetSave();
-        cloud.dirty = kind === 'login' && !res.save && hasLocal; cloud.lastSaved = res.savedAt || U.now(); paint();
+        if (res.save) setSave(res.save); else U.resetSave();   // tài khoản mới / chưa có save: bắt đầu từ đầu, không mang tiến trình cũ trong máy
+        cloud.dirty = false; cloud.lastSaved = res.savedAt || U.now(); paint();
         const nx = after; after = null; (nx || U.boot)();
-      }).catch(() => { bR.disabled = bL.disabled = false; msg.textContent = 'Không kết nối được server. Kiểm tra mạng hoặc chơi offline.'; });
+      }).catch(() => { bR.disabled = bL.disabled = false; msg.textContent = 'Không kết nối được server. Kiểm tra mạng rồi thử lại.'; });
     };
     const bL = el('button', { class: 'btn', id: 'btn-login', text: 'Đăng nhập', onclick: () => run('login') });
     const bR = el('button', { class: 'btn sec', id: 'btn-register', text: 'Đăng ký', onclick: () => run('register') });
-    const bG = el('button', { class: 'btn sec sm', id: 'btn-guest', text: 'Chơi offline (không lưu lên server)', onclick: () => { cloud.guest = true; cloud.user = null; paint(); const nx = after; after = null; (nx || U.boot)(); } });
     [u, pw].forEach(i => i.addEventListener('keydown', ev => { if (ev.key === 'Enter') run('login'); }));
-    root.appendChild(el('div', { class: 'panel', style: 'left:560px;top:220px;width:800px' }, [u, pw, msg, el('div', { style: 'display:flex;gap:20px;margin:10px 0 20px' }, [bL, bR]), bG,
+    root.appendChild(el('div', { class: 'panel', style: 'left:560px;top:220px;width:800px' }, [u, pw, msg, el('div', { style: 'display:flex;gap:20px;margin:10px 0 20px' }, [bL, bR]),
       el('div', { style: 'font-size:22px;opacity:.75;margin-top:18px', text: 'Chưa có tài khoản? Nhập tên + mật khẩu rồi bấm Đăng ký. Quên mật khẩu: nhờ quản trị viên đặt lại.' })]));
     U.show(root);
   }
@@ -119,10 +117,10 @@
   U.cloudBoot = function (next) {
     if (booted) return false; booted = true; after = next;
     const s = loadSession();
-    if (!s) { screenLogin(); return true; }
+    if (!s) { U.resetSave(); screenLogin(); return true; }   // chưa đăng nhập: xoá tiến trình cũ lưu trong máy
     api('load', { user: s.user, token: s.token }).then(res => {
       if (res && res.ok) { cloud.user = s.user; cloud.token = s.token; if (res.save) setSave(res.save); cloud.dirty = !res.save; cloud.lastSaved = res.savedAt || U.now(); paint(); const nx = after; after = null; nx(); }
-      else { storeSession(null); screenLogin(res && res.code === 'token' ? 'Phiên cũ đã hết hạn, vui lòng đăng nhập lại.' : (res && res.error)); }
+      else { storeSession(null); U.resetSave(); screenLogin(res && res.code === 'token' ? 'Phiên cũ đã hết hạn, vui lòng đăng nhập lại.' : (res && res.error)); }
     }).catch(() => { cloud.user = s.user; cloud.token = s.token; cloud.offline = true; cloud.dirty = true; paint(); const nx = after; after = null; nx(); });   // mất mạng: dùng bản lưu trong máy, lưu lại khi có mạng
     return true;
   };
